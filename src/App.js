@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { User, Mail, Phone, Euro, AlertCircle, CheckCircle, Calendar, Wifi, Wind, UtensilsCrossed, Car, Sparkles, Waves } from 'lucide-react';
-
+/* eslint-disable no-restricted-globals */
 const API_URL = 'https://villa-marina-api.onrender.com/api';
 
 const VillaMarinaSite = () => {
