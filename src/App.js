@@ -557,7 +557,7 @@ const VillaMarinaSite = () => {
       <div className="pt-24">
         {/* HOME */}
         {activeSection === 'home' && (
-          <section className="relative h-screen bg-gradient-to-br from-blue-900 via-blue-700 to-cyan-600 flex items-center justify-center overflow-hidden">
+          <section className="relative h-screen bg-gradient-to-br from-blue-900 via-blue-700 to-cyan-600 flex items-center justify-center overflow-hidden -mt-24 pt-24">
             <div className="absolute inset-0 bg-black/20"></div>
             <div className="relative z-10 text-center text-white px-4 animate-fade-in">
               <h2 className="text-6xl md:text-7xl font-bold mb-6 drop-shadow-lg">
