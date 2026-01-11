@@ -308,9 +308,9 @@ const VillaMarinaSite = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 overflow-x-hidden">
       {/* Header */}
-      <header className="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 text-white fixed w-full top-0 z-50 shadow-lg">
+      <header className="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 text-white fixed w-full top-0 left-0 right-0 z-50 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
             <div>
