@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { User, Mail, Phone, Euro, AlertCircle, CheckCircle, Calendar, Wifi, Wind, UtensilsCrossed, Car, Sparkles, Waves } from 'lucide-react';
-import { notifyAdminNewBooking } from './emailService';
-/* eslint-disable no-restricted-globals */
+
 const API_URL = 'https://villa-marina-api.onrender.com/api';
 
 const VillaMarinaSite = () => {
@@ -17,15 +16,22 @@ const VillaMarinaSite = () => {
     guests: 1,
     notes: ''
   });
+  const [contactForm, setContactForm] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
+  const [contactSuccess, setContactSuccess] = useState(null);
+  const [contactError, setContactError] = useState(null);
 
   useEffect(() => {
     if (activeSection === 'prenota') {
       loadBookings();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentMonth, activeSection]);
 
   const loadBookings = async () => {
@@ -71,7 +77,6 @@ const VillaMarinaSite = () => {
 
   const isDateBooked = (date) => {
     return bookings.some(booking => {
-      // Mostra come occupate sia le confirmed che le pending
       if (booking.status === 'cancelled') return false;
       const start = new Date(booking.start_date);
       const end = new Date(booking.end_date);
@@ -141,24 +146,7 @@ const VillaMarinaSite = () => {
           notes: formData.notes
         })
       });
-if (response.ok) {
-  const result = await response.json();
-  
-  // Invia email notifica admin
-  await notifyAdminNewBooking({
-    name: formData.name,
-    email: formData.email,
-    phone: formData.phone,
-    guests: formData.guests,
-    startDate: selectedDates.start,
-    endDate: selectedDates.end,
-    price: calculatePrice(),
-    notes: formData.notes
-  });
-  
-  setSuccess('Richiesta inviata! Riceverai conferma via email entro 24 ore.');
-  // ... resto del codice
-}
+
       if (response.ok) {
         setSuccess('Richiesta di prenotazione inviata! Riceverai una conferma via email entro 24 ore.');
         setShowBookingForm(false);
@@ -172,6 +160,44 @@ if (response.ok) {
       }
     } catch (err) {
       setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleSubmitContact = async (e) => {
+    e.preventDefault();
+    
+    if (!contactForm.name || !contactForm.email || !contactForm.message) {
+      setContactError('Compila tutti i campi obbligatori');
+      return;
+    }
+
+    setLoading(true);
+    setContactError(null);
+    
+    try {
+      const response = await fetch(`${API_URL}/contact`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: contactForm.name,
+          email: contactForm.email,
+          phone: contactForm.phone,
+          message: contactForm.message
+        })
+      });
+
+      if (response.ok) {
+        setContactSuccess('Messaggio inviato con successo! Ti risponderemo al più presto.');
+        setContactForm({ name: '', email: '', phone: '', message: '' });
+        setTimeout(() => setContactSuccess(null), 5000);
+      } else {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Errore durante l\'invio del messaggio');
+      }
+    } catch (err) {
+      setContactError(err.message);
     } finally {
       setLoading(false);
     }
@@ -367,7 +393,7 @@ if (response.ok) {
           </section>
         )}
 
-        {/* PRENOTA (Sistema Prenotazioni) */}
+        {/* PRENOTA */}
         {activeSection === 'prenota' && (
           <section className="py-20 px-4 bg-gradient-to-br from-blue-50 to-cyan-50">
             <div className="max-w-6xl mx-auto">
@@ -539,6 +565,20 @@ if (response.ok) {
             <div className="max-w-4xl mx-auto">
               <h2 className="text-5xl font-bold text-center text-blue-900 mb-12">Contattaci</h2>
               
+              {contactError && (
+                <div className="mb-6 bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg flex items-start gap-3">
+                  <AlertCircle className="text-red-500 flex-shrink-0 mt-0.5" size={20} />
+                  <p className="text-red-700">{contactError}</p>
+                </div>
+              )}
+
+              {contactSuccess && (
+                <div className="mb-6 bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg flex items-start gap-3">
+                  <CheckCircle className="text-green-500 flex-shrink-0 mt-0.5" size={20} />
+                  <p className="text-green-700">{contactSuccess}</p>
+                </div>
+              )}
+              
               <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
                 <div className="grid md:grid-cols-2 gap-8">
                   <div>
@@ -553,41 +593,44 @@ if (response.ok) {
 
                   <div>
                     <h3 className="text-2xl font-bold text-blue-900 mb-6">Invia un Messaggio</h3>
-                    <div className="space-y-4">
+                    <form onSubmit={handleSubmitContact} className="space-y-4">
                       <input 
                         type="text" 
-                        placeholder="Nome e Cognome"
+                        placeholder="Nome e Cognome *"
+                        value={contactForm.name}
+                        onChange={(e) => setContactForm({...contactForm, name: e.target.value})}
                         className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none"
+                        required
                       />
                       <input 
                         type="email" 
-                        placeholder="Email"
+                        placeholder="Email *"
+                        value={contactForm.email}
+                        onChange={(e) => setContactForm({...contactForm, email: e.target.value})}
+                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none"
+                        required
+                      />
+                      <input 
+                        type="tel" 
+                        placeholder="Telefono (opzionale)"
+                        value={contactForm.phone}
+                        onChange={(e) => setContactForm({...contactForm, phone: e.target.value})}
                         className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none"
                       />
                       <textarea 
-                        placeholder="Messaggio"
+                        placeholder="Messaggio *"
                         rows="4"
+                        value={contactForm.message}
+                        onChange={(e) => setContactForm({...contactForm, message: e.target.value})}
                         className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none"
+                        required
                       />
-                      <button className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
-                        Invia Richiesta
+                      <button 
+                        type="submit"
+                        disabled={loading}
+                        className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition disabled:opacity-50"
+                      >
+                        {loading ? 'Invio in corso...' : 'Invia Richiesta'}
                       </button>
-                    </div>
+                    </form>
                   </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        )}
-      </div>
-
-      {/* Footer */}
-      <footer className="bg-blue-900 text-white py-8 text-center">
-        <p className="mb-2">&copy; 2024 Villa Marina. Tutti i diritti riservati.</p>
-        <p className="text-sm text-blue-300">P.IVA: 12345678901 | Privacy Policy | Cookie Policy</p>
-      </footer>
-    </div>
-  );
-};
-
-export default VillaMarinaSite;
