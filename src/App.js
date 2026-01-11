@@ -21,6 +21,13 @@ const VillaMarinaSite = () => {
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
 
+  
+  const [contactForm, setContactForm] = useState({
+  name: '',
+  email: '',
+  message: ''
+});
+
   useEffect(() => {
     if (activeSection === 'prenota') {
       loadBookings();
@@ -116,6 +123,38 @@ const VillaMarinaSite = () => {
     const dailyRate = Math.round(weeklyRate / 7);
     return (weeks * weeklyRate) + (extraDays * dailyRate);
   };
+
+  
+  const handleSubmitContact = async () => {
+  if (!contactForm.name || !contactForm.email || !contactForm.message) {
+    setError('Compila tutti i campi del modulo contatti');
+    return;
+  }
+
+  setLoading(true);
+  setError(null);
+  
+  try {
+    const response = await fetch(`${API_URL}/contacts`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(contactForm)
+    });
+
+    if (response.ok) {
+      setSuccess('Messaggio inviato con successo! Ti ricontatteremo presto.');
+      setContactForm({ name: '', email: '', message: '' });
+      setTimeout(() => setSuccess(null), 5000);
+    } else {
+      const errorData = await response.json();
+      throw new Error(errorData.error || 'Errore durante l\'invio del messaggio');
+    }
+  } catch (err) {
+    setError(err.message);
+  } finally {
+    setLoading(false);
+  }
+};
 
   const handleSubmitBooking = async () => {
     if (!selectedDates.start || !selectedDates.end || !formData.name || !formData.email || !formData.phone) {
@@ -534,51 +573,75 @@ if (response.ok) {
         )}
 
         {/* CONTATTI */}
-        {activeSection === 'contatti' && (
-          <section className="py-20 px-4">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-5xl font-bold text-center text-blue-900 mb-12">Contattaci</h2>
-              
-              <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div>
-                    <h3 className="text-2xl font-bold text-blue-900 mb-6">Informazioni</h3>
-                    <div className="space-y-4 text-gray-700">
-                      <p><strong>Indirizzo:</strong><br/>Via del Mare 123<br/>00100 Località Marina</p>
-                      <p><strong>Telefono:</strong><br/>+39 123 456 7890</p>
-                      <p><strong>Email:</strong><br/>info@villamarina.it</p>
-                      <p><strong>Orari:</strong><br/>Lun-Ven: 9:00 - 18:00<br/>Sab: 9:00 - 13:00</p>
-                    </div>
-                  </div>
+{activeSection === 'contatti' && (
+  <section className="py-20 px-4">
+    <div className="max-w-4xl mx-auto">
+      <h2 className="text-5xl font-bold text-center text-blue-900 mb-12">Contattaci</h2>
+      
+      {error && (
+        <div className="mb-6 bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg flex items-start gap-3">
+          <AlertCircle className="text-red-500 flex-shrink-0 mt-0.5" size={20} />
+          <p className="text-red-700">{error}</p>
+        </div>
+      )}
 
-                  <div>
-                    <h3 className="text-2xl font-bold text-blue-900 mb-6">Invia un Messaggio</h3>
-                    <div className="space-y-4">
-                      <input 
-                        type="text" 
-                        placeholder="Nome e Cognome"
-                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none"
-                      />
-                      <input 
-                        type="email" 
-                        placeholder="Email"
-                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none"
-                      />
-                      <textarea 
-                        placeholder="Messaggio"
-                        rows="4"
-                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none"
-                      />
-                      <button className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
-                        Invia Richiesta
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+      {success && (
+        <div className="mb-6 bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg flex items-start gap-3">
+          <CheckCircle className="text-green-500 flex-shrink-0 mt-0.5" size={20} />
+          <p className="text-green-700">{success}</p>
+        </div>
+      )}
+      
+      <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
+        <div className="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 className="text-2xl font-bold text-blue-900 mb-6">Informazioni</h3>
+            <div className="space-y-4 text-gray-700">
+              <p><strong>Indirizzo:</strong><br/>Via del Mare 123<br/>00100 Località Marina</p>
+              <p><strong>Telefono:</strong><br/>+39 123 456 7890</p>
+              <p><strong>Email:</strong><br/>info@villamarina.it</p>
+              <p><strong>Orari:</strong><br/>Lun-Ven: 9:00 - 18:00<br/>Sab: 9:00 - 13:00</p>
             </div>
-          </section>
-        )}
+          </div>
+
+          <div>
+            <h3 className="text-2xl font-bold text-blue-900 mb-6">Invia un Messaggio</h3>
+            <div className="space-y-4">
+              <input 
+                type="text" 
+                placeholder="Nome e Cognome"
+                value={contactForm.name}
+                onChange={(e) => setContactForm({...contactForm, name: e.target.value})}
+                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none"
+              />
+              <input 
+                type="email" 
+                placeholder="Email"
+                value={contactForm.email}
+                onChange={(e) => setContactForm({...contactForm, email: e.target.value})}
+                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none"
+              />
+              <textarea 
+                placeholder="Messaggio"
+                rows="4"
+                value={contactForm.message}
+                onChange={(e) => setContactForm({...contactForm, message: e.target.value})}
+                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none"
+              />
+              <button 
+                onClick={handleSubmitContact}
+                disabled={loading}
+                className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition disabled:opacity-50"
+              >
+                {loading ? 'Invio...' : 'Invia Richiesta'}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+)}
       </div>
 
       {/* Footer */}
