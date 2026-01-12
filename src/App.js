@@ -1281,10 +1281,10 @@ if (!validatePhone(formData.phone)) {
         {activeSection === 'proprieta' && (
           <section className="py-20 px-4">
             <div className="max-w-6xl mx-auto">
-              <h2 className="text-5xl font-bold text-center text-blue-900 mb-12">La Nostra Villa</h2>
-              
-              <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
-                <h3 className="text-3xl font-bold text-blue-800 mb-6">Un'Esperienza Indimenticabile</h3>
+             <h2 className="text-5xl font-bold text-center text-blue-900 mb-12">{t.ourVilla}</h2>
+
+<div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
+  <h3 className="text-3xl font-bold text-blue-800 mb-6">{t.unforgettableExp}</h3>
                 <p className="text-lg text-gray-700 mb-4 leading-relaxed">
   {t.villaDescription1}
 </p>
@@ -1315,7 +1315,7 @@ if (!validatePhone(formData.phone)) {
         {activeSection === 'galleria' && (
           <section className="py-20 px-4 bg-gradient-to-br from-blue-50 to-cyan-50">
             <div className="max-w-6xl mx-auto">
-              <h2 className="text-5xl font-bold text-center text-blue-900 mb-12">Galleria Fotografica</h2>
+              <h2 className="text-5xl font-bold text-center text-blue-900 mb-12">{t.photoGallery}</h2>
               <div className="grid md:grid-cols-3 gap-6">
   {galleryImages.map((image, idx) => (
     <div key={idx} className="group relative h-64 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition transform hover:scale-105">
@@ -1338,7 +1338,7 @@ if (!validatePhone(formData.phone)) {
         {activeSection === 'servizi' && (
           <section className="py-20 px-4">
             <div className="max-w-6xl mx-auto">
-              <h2 className="text-5xl font-bold text-center text-blue-900 mb-12">Servizi Inclusi</h2>
+              <h2 className="text-5xl font-bold text-center text-blue-900 mb-12">{t.servicesIncluded}</h2>
               <div className="grid md:grid-cols-3 gap-8">
                 {[
   { icon: Wifi, title: t.cinCir, desc: t.cinCirDesc },
@@ -1363,7 +1363,7 @@ if (!validatePhone(formData.phone)) {
         {activeSection === 'prenota' && (
           <section className="py-20 px-4 bg-gradient-to-br from-blue-50 to-cyan-50">
             <div className="max-w-6xl mx-auto">
-              <h2 className="text-5xl font-bold text-center text-blue-900 mb-12">Prenota la Tua Vacanza</h2>
+              <h2 className="text-5xl font-bold text-center text-blue-900 mb-12">{t.bookYourVacation}</h2>
 
               {error && (
                 <div className="mb-6 bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg flex items-start gap-3 max-w-4xl mx-auto">
@@ -1383,39 +1383,39 @@ if (!validatePhone(formData.phone)) {
                 <div className="bg-white rounded-2xl shadow-lg p-6 border-t-4 border-blue-400">
                   <div className="flex items-center gap-3 mb-4">
                     <Euro className="text-blue-600" size={28} />
-                    <h3 className="text-2xl font-bold text-blue-900">Bassa Stagione</h3>
+                    <h3 className="text-2xl font-bold text-blue-900">{t.lowSeason}</h3>
                   </div>
                   <p className="text-gray-600 mb-2">{t.octoberMay}</p>
-                  <p className="text-4xl font-bold text-blue-600">€1.500<span className="text-xl text-gray-500">/settimana</span></p>
+                  <p className="text-4xl font-bold text-blue-600">€1.500<span className="text-xl text-gray-500">{t.perWeek}</span></p>
                 </div>
 
                 <div className="bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl shadow-lg p-6 text-white transform scale-105">
                   <div className="flex items-center gap-3 mb-4">
                     <Euro size={28} />
-                    <h3 className="text-2xl font-bold">Alta Stagione</h3>
+                    <h3 className="text-2xl font-bold">{t.highSeason}</h3>
                   </div>
                   <p className="mb-2 opacity-90">{t.juneSeptember}</p>
-                  <p className="text-4xl font-bold">€2.800<span className="text-xl opacity-75">/settimana</span></p>
+                  <p className="text-4xl font-bold">€2.800<span className="text-xl opacity-75">{t.perWeek}</span></p>
                 </div>
               </div>
 
               <div className="bg-white rounded-2xl shadow-xl p-8 max-w-4xl mx-auto">
                 <div className="flex items-center justify-between mb-6">
                   <button
-                    onClick={() => setCurrentMonth(new Date(currentMonth.getFullYear(), currentMonth.getMonth() - 1, 1))}
-                    className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
-                  >
-                    ← Precedente
-                  </button>
+  onClick={() => setCurrentMonth(new Date(currentMonth.getFullYear(), currentMonth.getMonth() - 1, 1))}
+  className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
+>
+  {t.previous}
+</button>
                   <h3 className="text-2xl font-bold text-blue-900">
   {t.monthNames[currentMonth.getMonth()]} {currentMonth.getFullYear()}
 </h3>
                   <button
-                    onClick={() => setCurrentMonth(new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1, 1))}
-                    className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
-                  >
-                    Successivo →
-                  </button>
+  onClick={() => setCurrentMonth(new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1, 1))}
+  className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
+>
+  {t.next}
+</button>
                 </div>
 
                 <div className="grid grid-cols-7 gap-2 mb-6">
@@ -1425,16 +1425,16 @@ if (!validatePhone(formData.phone)) {
                 {selectedDates.start && (
                   <div className="p-4 bg-blue-50 rounded-lg">
                     <p className="text-blue-900 font-semibold">
-                      {selectedDates.end ? (
-                        <>
-                          Check-in: {selectedDates.start.toLocaleDateString('it-IT')} | 
-                          Check-out: {selectedDates.end.toLocaleDateString('it-IT')} | 
-                          Totale: €{calculatePrice()}
-                        </>
-                      ) : (
-                        `Data selezionata: ${selectedDates.start.toLocaleDateString('it-IT')} - Seleziona data di fine`
-                      )}
-                    </p>
+  {selectedDates.end ? (
+    <>
+      {t.checkIn}: {selectedDates.start.toLocaleDateString('it-IT')} | 
+      {t.checkOut}: {selectedDates.end.toLocaleDateString('it-IT')} | 
+      {t.total}: €{calculatePrice()}
+    </>
+  ) : (
+    `${t.selectedDate}: ${selectedDates.start.toLocaleDateString('it-IT')} - ${t.selectEndDate}`
+  )}
+</p>
                   </div>
                 )}
               </div>
@@ -1442,14 +1442,14 @@ if (!validatePhone(formData.phone)) {
               {showBookingForm && (
                 <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
                   <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full max-h-[90vh] overflow-y-auto">
-                    <h3 className="text-2xl font-bold text-blue-900 mb-6">Completa la Prenotazione</h3>
+                    <h3 className="text-2xl font-bold text-blue-900 mb-6">{t.completeBooking}</h3>
                     
                     <div className="space-y-4">
                       <div>
                         <label className="block text-gray-700 font-semibold mb-2">
-                          <User className="inline mr-2" size={18} />
-                          Nome Completo *
-                        </label>
+  <User className="inline mr-2" size={18} />
+  {t.fullName} {t.required}
+</label>
                         <input
                           type="text"
                           value={formData.name}
@@ -1460,9 +1460,9 @@ if (!validatePhone(formData.phone)) {
 
                       <div>
                         <label className="block text-gray-700 font-semibold mb-2">
-                          <Mail className="inline mr-2" size={18} />
-                          Email *
-                        </label>
+  <Mail className="inline mr-2" size={18} />
+  {t.email} {t.required}
+</label>
                         <input
                           type="email"
                           value={formData.email}
@@ -1474,9 +1474,9 @@ if (!validatePhone(formData.phone)) {
 
                       <div>
                         <label className="block text-gray-700 font-semibold mb-2">
-                          <Phone className="inline mr-2" size={18} />
-                          Telefono *
-                        </label>
+  <Phone className="inline mr-2" size={18} />
+  {t.phone} {t.required}
+</label>
                         <input
                           type="tel"
                           value={formData.phone}
@@ -1487,7 +1487,7 @@ if (!validatePhone(formData.phone)) {
                       </div>
 
                       <div>
-                        <label className="block text-gray-700 font-semibold mb-2">Ospiti</label>
+                        <label className="block text-gray-700 font-semibold mb-2">{t.guests}</label>
                         <select
                           value={formData.guests}
                           onChange={(e) => setFormData({...formData, guests: parseInt(e.target.value)})}
@@ -1498,7 +1498,7 @@ if (!validatePhone(formData.phone)) {
                       </div>
 
                       <div className="bg-blue-50 p-4 rounded-lg">
-                        <p className="text-lg font-bold text-blue-900">Totale: €{calculatePrice()}</p>
+                        <p className="text-lg font-bold text-blue-900">{t.total}: €{calculatePrice()}</p>
                       </div>
 
                       <div className="border-t-2 border-gray-200 pt-4">
@@ -1510,35 +1510,35 @@ if (!validatePhone(formData.phone)) {
                             className="mt-1 w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                           />
                           <span className="text-sm text-gray-700">
-                            Ho letto e accetto l'<button 
-                              type="button"
-                              onClick={() => setShowPrivacyModal(true)} 
-                              className="text-blue-600 underline hover:text-blue-800"
-                            >
-                              informativa privacy
-                            </button> e autorizzo il trattamento dei miei dati personali ai sensi del GDPR (Regolamento UE 2016/679) per l'elaborazione della prenotazione *
-                          </span>
+  {t.readAccept}<button 
+    type="button"
+    onClick={() => setShowPrivacyModal(true)} 
+    className="text-blue-600 underline hover:text-blue-800"
+  >
+    {t.privacyInfo}
+  </button> {t.gdprConsent} {t.forBooking} {t.required}
+</span>
                         </label>
                       </div>
 
                       <div className="flex gap-3">
                         <button
-                          onClick={() => {
-                            setShowBookingForm(false);
-                            setSelectedDates({ start: null, end: null });
-                            setPrivacyConsent({ ...privacyConsent, booking: false });
-                          }}
-                          className="flex-1 px-6 py-3 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition font-semibold"
-                        >
-                          Annulla
-                        </button>
-                        <button
-                          onClick={handleSubmitBooking}
-                          disabled={loading}
-                          className="flex-1 px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition font-semibold disabled:opacity-50"
-                        >
-                          {loading ? 'Invio...' : 'Conferma'}
-                        </button>
+  onClick={() => {
+    setShowBookingForm(false);
+    setSelectedDates({ start: null, end: null });
+    setPrivacyConsent({ ...privacyConsent, booking: false });
+  }}
+  className="flex-1 px-6 py-3 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition font-semibold"
+>
+  {t.cancel}
+</button>
+<button
+  onClick={handleSubmitBooking}
+  disabled={loading}
+  className="flex-1 px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition font-semibold disabled:opacity-50"
+>
+  {loading ? t.sending : t.confirm}
+</button>
                       </div>
                     </div>
                   </div>
@@ -1552,7 +1552,7 @@ if (!validatePhone(formData.phone)) {
         {activeSection === 'contatti' && (
           <section className="py-20 px-4">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-5xl font-bold text-center text-blue-900 mb-12">Contattaci</h2>
+              <h2 className="text-5xl font-bold text-center text-blue-900 mb-12">{t.contactUs}</h2>
               
               {error && (
                 <div className="mb-6 bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg flex items-start gap-3">
@@ -1571,39 +1571,39 @@ if (!validatePhone(formData.phone)) {
               <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
                 <div className="grid md:grid-cols-2 gap-8">
                   <div>
-                    <h3 className="text-2xl font-bold text-blue-900 mb-6">Informazioni</h3>
-                    <div className="space-y-4 text-gray-700">
-                      <p><strong>Indirizzo:</strong><br/>Via del Mare 123<br/>00100 Località Marina</p>
-                      <p><strong>Telefono:</strong><br/>+39 123 456 7890</p>
-                      <p><strong>Email:</strong><br/>info@casamare.it</p>
-                      <p><strong>Orari:</strong><br/>Lun-Ven: 9:00 - 18:00<br/>Sab: 9:00 - 13:00</p>
-                    </div>
+                    <h3 className="text-2xl font-bold text-blue-900 mb-6">{t.information}</h3>
+<div className="space-y-4 text-gray-700">
+  <p><strong>{t.address}:</strong><br/>{t.addressDetails}</p>
+  <p><strong>{t.telephone}:</strong><br/>+39 123 456 7890</p>
+  <p><strong>Email:</strong><br/>info@casamare.it</p>
+  <p><strong>{t.hours}:</strong><br/>{t.hoursDetails}</p>
+</div>
                   </div>
 
                   <div>
-                    <h3 className="text-2xl font-bold text-blue-900 mb-6">Invia un Messaggio</h3>
+                    <h3 className="text-2xl font-bold text-blue-900 mb-6">{t.sendMessage}</h3>
                     <div className="space-y-4">
                       <input 
-                        type="text" 
-                        placeholder="Nome e Cognome"
-                        value={contactForm.name}
-                        onChange={(e) => setContactForm({...contactForm, name: e.target.value})}
-                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none"
-                      />
-                      <input 
-                        type="email" 
-                        placeholder="Email"
-                        value={contactForm.email}
-                        onChange={(e) => setContactForm({...contactForm, email: e.target.value})}
-                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none"
-                      />
-                      <textarea 
-                        placeholder="Messaggio"
-                        rows="4"
-                        value={contactForm.message}
-                        onChange={(e) => setContactForm({...contactForm, message: e.target.value})}
-                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none"
-                      />
+  type="text" 
+  placeholder={t.name}
+  value={contactForm.name}
+  onChange={(e) => setContactForm({...contactForm, name: e.target.value})}
+  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none"
+/>
+<input 
+  type="email" 
+  placeholder={t.email}
+  value={contactForm.email}
+  onChange={(e) => setContactForm({...contactForm, email: e.target.value})}
+  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none"
+/>
+<textarea 
+  placeholder={t.message}
+  rows="4"
+  value={contactForm.message}
+  onChange={(e) => setContactForm({...contactForm, message: e.target.value})}
+  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none"
+/>
                       
                       <div className="border-t-2 border-gray-200 pt-4">
                         <label className="flex items-start gap-3 cursor-pointer">
@@ -1614,24 +1614,24 @@ if (!validatePhone(formData.phone)) {
                             className="mt-1 w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
                           />
                           <span className="text-sm text-gray-700">
-                            Ho letto e accetto l'<button 
-                              type="button"
-                              onClick={() => setShowPrivacyModal(true)} 
-                              className="text-blue-600 underline hover:text-blue-800"
-                            >
-                              informativa privacy
-                            </button> e autorizzo il trattamento dei miei dati personali ai sensi del GDPR (Regolamento UE 2016/679) *
-                          </span>
+  {t.readAccept}<button 
+    type="button"
+    onClick={() => setShowPrivacyModal(true)} 
+    className="text-blue-600 underline hover:text-blue-800"
+  >
+    {t.privacyInfo}
+  </button> {t.gdprConsent} {t.required}
+</span>
                         </label>
                       </div>
 
                       <button 
-                        onClick={handleSubmitContact}
-                        disabled={loading}
-                        className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition disabled:opacity-50"
-                      >
-                        {loading ? 'Invio...' : 'Invia Richiesta'}
-                      </button>
+  onClick={handleSubmitContact}
+  disabled={loading}
+  className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition disabled:opacity-50"
+>
+  {loading ? t.sending : t.sendRequest}
+</button>
                     </div>
                   </div>
                 </div>
@@ -1643,25 +1643,25 @@ if (!validatePhone(formData.phone)) {
 
       {/* Footer */}
       <footer className="bg-blue-900 text-white py-8 text-center">
-        <p className="mb-2">&copy; 2024 Casa Marè. Tutti i diritti riservati.</p>
-        <div className="flex justify-center gap-4 text-sm text-blue-300 flex-wrap px-4">
-          <button 
-            onClick={() => setShowPrivacyModal(true)}
-            className="hover:text-white underline"
-          >
-            Privacy Policy
-          </button>
-          <span>|</span>
-          <button 
-            onClick={() => setShowCookieModal(true)}
-            className="hover:text-white underline"
-          >
-            Cookie Policy
-          </button>
-          <span>|</span>
-          <span>P.IVA: 12345678901</span>
-        </div>
-      </footer>
+  <p className="mb-2">{t.copyright}</p>
+  <div className="flex justify-center gap-4 text-sm text-blue-300 flex-wrap px-4">
+    <button 
+      onClick={() => setShowPrivacyModal(true)}
+      className="hover:text-white underline"
+    >
+      {t.privacyPolicy}
+    </button>
+    <span>|</span>
+    <button 
+      onClick={() => setShowCookieModal(true)}
+      className="hover:text-white underline"
+    >
+      {t.cookiePolicy}
+    </button>
+    <span>|</span>
+    <span>{t.vat}</span>
+  </div>
+</footer>
     </div>
   );
 };
