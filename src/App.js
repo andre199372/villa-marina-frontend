@@ -39,12 +39,12 @@ const CasaMareSite = () => {
   });
   // Gallery images URLs - SOSTITUISCI QUESTI URL CON I TUOI
   const galleryImages = [
-    { url: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=500', title: 'Vista Esterna' },
-    { url: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=500', title: 'Soggiorno' },
-    { url: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=500', title: 'Camera Matrimoniale' },
-    { url: 'https://images.unsplash.com/photo-1556912173-46c336c7fd55?w=500', title: 'Cucina' },
-    { url: 'https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=500', title: 'Piscina' },
-    { url: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=500', title: 'Terrazza' }
+    { url: 'https://raw.githubusercontent.com/andre199372/images/de1b6c5b9e6db80f7d364ba0c991d53182f326d9/Vistaest.jpeg', title: 'Vista Esterna' },
+    { url: 'https://raw.githubusercontent.com/andre199372/images/de1b6c5b9e6db80f7d364ba0c991d53182f326d9/sogg.jpeg', title: 'Soggiorno' },
+    { url: 'https://raw.githubusercontent.com/andre199372/images/de1b6c5b9e6db80f7d364ba0c991d53182f326d9/matr.jpeg', title: 'Camera Matrimoniale' },
+    { url: 'https://raw.githubusercontent.com/andre199372/images/de1b6c5b9e6db80f7d364ba0c991d53182f326d9/cuc1.jpeg', title: 'Cucina' },
+    { url: 'https://raw.githubusercontent.com/andre199372/images/de1b6c5b9e6db80f7d364ba0c991d53182f326d9/panorama.jpeg', title: 'Panorama' },
+    { url: 'https://raw.githubusercontent.com/andre199372/images/58f9c74e9a08ccedd1b47e43d21aff701ca34b7f/terr.jpeg', title: 'Terrazza' }
   ];
 
   // Translations
@@ -987,12 +987,12 @@ if (!validatePhone(formData.phone)) {
               <h2 className="text-5xl font-bold text-center text-blue-900 mb-12">Servizi Inclusi</h2>
               <div className="grid md:grid-cols-3 gap-8">
                 {[
-                  { icon: Wifi, title: 'WiFi Alta Velocità', desc: 'Fibra in tutta la villa' },
+                  { icon: Wifi, title: 'CIN e CIR', desc: 'CIN IT053006C2RQZ6FHWS CIR 053006LTN2665' },
                   { icon: Wind, title: 'Aria Condizionata', desc: 'In tutte le stanze' },
                   { icon: UtensilsCrossed, title: 'Cucina Attrezzata', desc: 'Completa di elettrodomestici' },
-                  { icon: Car, title: 'Parcheggio Privato', desc: 'Sicuro e coperto per 3 auto' },
-                  { icon: Sparkles, title: 'Servizio Pulizie', desc: 'Settimanale incluso' },
-                  { icon: Waves, title: 'Accesso Spiaggia', desc: 'Diretto e privato' }
+                  { icon: Car, title: 'Parcheggio Privato', desc: 'Sicuro per 1 auto' },
+                  { icon: Sparkles, title: 'Casa Pulita', desc: 'Sempre in Ordine' },
+                  { icon: Waves, title: 'Vista Mare', desc: 'Dal Soggiorno, Giardino o dalla Terrazza' }
                 ].map((service, idx) => (
                   <div key={idx} className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition border-t-4 border-blue-500">
                     <service.icon className="text-blue-600 mb-4" size={48} />
