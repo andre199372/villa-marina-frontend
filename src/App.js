@@ -917,17 +917,6 @@ if (!validatePhone(formData.phone)) {
   >
     {t.bookNow}
   </button>
-</div>
-              <p className="text-2xl md:text-3xl mb-8 text-blue-100 drop-shadow-lg">
-                Una villa esclusiva affacciata sul mare cristallino
-              </p>
-              <button
-                onClick={() => scrollToSection('prenota')}
-                className="bg-cyan-400 text-blue-900 px-8 py-4 rounded-full text-xl font-bold hover:bg-cyan-300 transform hover:scale-105 transition shadow-2xl"
-              >
-                Prenota Ora
-              </button>
-            </div>
           </section>
         )}
 
