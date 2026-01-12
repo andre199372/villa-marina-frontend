@@ -917,6 +917,7 @@ if (!validatePhone(formData.phone)) {
   >
     {t.bookNow}
   </button>
+      </div>
           </section>
         )}
 
