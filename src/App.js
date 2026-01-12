@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { User, Mail, Phone, Euro, AlertCircle, CheckCircle, Calendar, Wifi, Wind, UtensilsCrossed, Car, Sparkles, Waves, X, Shield } from 'lucide-react';
+import { User, Mail, Phone, Euro, AlertCircle, CheckCircle, Calendar, Wifi, Wind, UtensilsCrossed, Car, Sparkles, Waves, X, Shield, Home, Menu } from 'lucide-react';
 import { notifyAdminNewBooking } from './emailService';
 /* eslint-disable no-restricted-globals */
 const API_URL = 'https://villa-marina-api.onrender.com/api';
 
-const VillaMarinaSite = () => {
+const CasaMareSite = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [selectedDates, setSelectedDates] = useState({ start: null, end: null });
   const [bookings, setBookings] = useState([]);
   const [currentMonth, setCurrentMonth] = useState(new Date());
   const [showBookingForm, setShowBookingForm] = useState(false);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -44,7 +45,7 @@ const VillaMarinaSite = () => {
   }, [currentMonth, activeSection]);
 
   useEffect(() => {
-    const cookieConsent = localStorage.getItem('villa-marina-cookie-consent');
+    const cookieConsent = localStorage.getItem('casa-mare-cookie-consent');
     if (!cookieConsent) {
       setTimeout(() => setShowCookieBanner(true), 1000);
     }
@@ -73,17 +74,28 @@ const VillaMarinaSite = () => {
 
   const scrollToSection = (section) => {
     setActiveSection(section);
+    setShowMobileMenu(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const acceptCookies = () => {
-    localStorage.setItem('villa-marina-cookie-consent', 'accepted');
+    localStorage.setItem('casa-mare-cookie-consent', 'accepted');
     setShowCookieBanner(false);
   };
 
   const declineCookies = () => {
-    localStorage.setItem('villa-marina-cookie-consent', 'declined');
+    localStorage.setItem('casa-mare-cookie-consent', 'declined');
     setShowCookieBanner(false);
+  };
+
+  const validateEmail = (email) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  };
+
+  const validatePhone = (phone) => {
+    const re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+    return re.test(phone.replace(/\s/g, ''));
   };
 
   const checkAvailability = async (startDate, endDate) => {
@@ -154,6 +166,11 @@ const VillaMarinaSite = () => {
       return;
     }
 
+    if (!validateEmail(contactForm.email)) {
+      setError('Inserisci un indirizzo email valido');
+      return;
+    }
+
     if (!privacyConsent.contact) {
       setError('Devi accettare l\'informativa privacy per procedere');
       return;
@@ -188,6 +205,16 @@ const VillaMarinaSite = () => {
   const handleSubmitBooking = async () => {
     if (!selectedDates.start || !selectedDates.end || !formData.name || !formData.email || !formData.phone) {
       setError('Compila tutti i campi obbligatori');
+      return;
+    }
+
+    if (!validateEmail(formData.email)) {
+      setError('Inserisci un indirizzo email valido');
+      return;
+    }
+
+    if (!validatePhone(formData.phone)) {
+      setError('Inserisci un numero di telefono valido');
       return;
     }
 
@@ -314,9 +341,11 @@ const VillaMarinaSite = () => {
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
             <div>
-              <h1 className="text-3xl font-bold">Villa Marina</h1>
+              <h1 className="text-3xl font-bold">Casa Marè</h1>
               <p className="text-blue-200 text-sm italic">Affitti Esclusivi sul Mare</p>
             </div>
+            
+            {/* Desktop Menu */}
             <nav className="hidden md:flex gap-6">
               {['home', 'proprieta', 'galleria', 'servizi', 'prenota', 'contatti'].map(section => (
                 <button
@@ -332,9 +361,47 @@ const VillaMarinaSite = () => {
                 </button>
               ))}
             </nav>
+
+            {/* Mobile Menu Button */}
+            <button 
+              onClick={() => setShowMobileMenu(!showMobileMenu)}
+              className="md:hidden p-2 hover:bg-blue-700/50 rounded-lg transition"
+            >
+              <Menu size={28} />
+            </button>
           </div>
+
+          {/* Mobile Menu Dropdown */}
+          {showMobileMenu && (
+            <nav className="md:hidden mt-4 pb-4 flex flex-col gap-2">
+              {['home', 'proprieta', 'galleria', 'servizi', 'prenota', 'contatti'].map(section => (
+                <button
+                  key={section}
+                  onClick={() => scrollToSection(section)}
+                  className={`px-4 py-3 rounded-lg transition capitalize text-left ${
+                    activeSection === section 
+                      ? 'bg-blue-600 text-white' 
+                      : 'bg-blue-700/30 hover:bg-blue-700/50'
+                  }`}
+                >
+                  {section}
+                </button>
+              ))}
+            </nav>
+          )}
         </div>
       </header>
+
+      {/* Floating Home Button (visible on non-home sections) */}
+      {activeSection !== 'home' && (
+        <button
+          onClick={() => scrollToSection('home')}
+          className="fixed bottom-8 right-8 z-40 bg-blue-600 text-white p-4 rounded-full shadow-2xl hover:bg-blue-700 transition transform hover:scale-110"
+          title="Torna alla Home"
+        >
+          <Home size={24} />
+        </button>
+      )}
 
       {/* Cookie Banner */}
       {showCookieBanner && (
@@ -389,8 +456,8 @@ const VillaMarinaSite = () => {
             <div className="p-6 space-y-4 text-gray-700">
               <section>
                 <h3 className="text-xl font-bold text-blue-900 mb-3">1. Titolare del Trattamento</h3>
-                <p>Villa Marina S.r.l., con sede in Via del Mare 123, 00100 Località Marina</p>
-                <p>Email: privacy@villamarina.it | Tel: +39 123 456 7890</p>
+                <p>Casa Marè S.r.l., con sede in Via del Mare 123, 00100 Località Marina</p>
+                <p>Email: privacy@casamare.it | Tel: +39 123 456 7890</p>
               </section>
 
               <section>
@@ -447,7 +514,7 @@ const VillaMarinaSite = () => {
                   <li>Revocare il consenso in qualsiasi momento</li>
                   <li>Proporre reclamo al Garante Privacy</li>
                 </ul>
-                <p className="mt-2">Per esercitare i tuoi diritti, contattaci a: privacy@villamarina.it</p>
+                <p className="mt-2">Per esercitare i tuoi diritti, contattaci a: privacy@casamare.it</p>
               </section>
 
               <section>
@@ -505,7 +572,7 @@ const VillaMarinaSite = () => {
                     <h4 className="font-bold text-blue-900 mb-2">Cookie Tecnici (Necessari)</h4>
                     <p className="text-sm mb-2">Sono essenziali per il funzionamento del sito e non possono essere disabilitati.</p>
                     <ul className="list-disc list-inside ml-4 space-y-1 text-sm">
-                      <li><strong>villa-marina-cookie-consent</strong>: memorizza la tua preferenza sui cookie</li>
+                      <li><strong>casa-mare-cookie-consent</strong>: memorizza la tua preferenza sui cookie</li>
                       <li>Durata: 12 mesi</li>
                       <li>Finalità: ricordare la tua scelta sui cookie</li>
                     </ul>
@@ -557,13 +624,22 @@ const VillaMarinaSite = () => {
       <div className="pt-24">
         {/* HOME */}
         {activeSection === 'home' && (
-          <section className="relative h-screen bg-gradient-to-br from-blue-900 via-blue-700 to-cyan-600 flex items-center justify-center overflow-hidden -mt-24 pt-24">
-            <div className="absolute inset-0 bg-black/20"></div>
-            <div className="relative z-10 text-center text-white px-4 animate-fade-in">
-              <h2 className="text-6xl md:text-7xl font-bold mb-6 drop-shadow-lg">
+          <section className="relative h-screen flex items-center justify-center overflow-hidden -mt-24 pt-24">
+            {/* Background Image */}
+            <div 
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+              style={{
+                backgroundImage: `url('https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?w=1920&h=1080&fit=crop')`,
+              }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 via-blue-800/60 to-cyan-700/70"></div>
+            </div>
+            
+            <div className="relative z-10 text-center text-white px-4">
+              <h2 className="text-6xl md:text-7xl font-bold mb-6 drop-shadow-2xl">
                 Benvenuti in Paradiso
               </h2>
-              <p className="text-2xl md:text-3xl mb-8 text-blue-100">
+              <p className="text-2xl md:text-3xl mb-8 text-blue-100 drop-shadow-lg">
                 Una villa esclusiva affacciata sul mare cristallino
               </p>
               <button
@@ -585,7 +661,7 @@ const VillaMarinaSite = () => {
               <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
                 <h3 className="text-3xl font-bold text-blue-800 mb-6">Un'Esperienza Indimenticabile</h3>
                 <p className="text-lg text-gray-700 mb-4 leading-relaxed">
-                  Villa Marina è una splendida proprietà di lusso situata direttamente sulla costa, con accesso privato alla spiaggia. 
+                  Casa Marè è una splendida proprietà di lusso situata direttamente sulla costa, con accesso privato alla spiaggia. 
                   Questa residenza esclusiva offre un rifugio perfetto per chi cerca tranquillità e comfort in un ambiente mozzafiato.
                 </p>
                 <p className="text-lg text-gray-700 mb-8 leading-relaxed">
@@ -764,6 +840,7 @@ const VillaMarinaSite = () => {
                           value={formData.email}
                           onChange={(e) => setFormData({...formData, email: e.target.value})}
                           className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none"
+                          placeholder="esempio@email.com"
                         />
                       </div>
 
@@ -777,6 +854,7 @@ const VillaMarinaSite = () => {
                           value={formData.phone}
                           onChange={(e) => setFormData({...formData, phone: e.target.value})}
                           className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:outline-none"
+                          placeholder="+39 123 456 7890"
                         />
                       </div>
 
@@ -869,7 +947,7 @@ const VillaMarinaSite = () => {
                     <div className="space-y-4 text-gray-700">
                       <p><strong>Indirizzo:</strong><br/>Via del Mare 123<br/>00100 Località Marina</p>
                       <p><strong>Telefono:</strong><br/>+39 123 456 7890</p>
-                      <p><strong>Email:</strong><br/>info@villamarina.it</p>
+                      <p><strong>Email:</strong><br/>info@casamare.it</p>
                       <p><strong>Orari:</strong><br/>Lun-Ven: 9:00 - 18:00<br/>Sab: 9:00 - 13:00</p>
                     </div>
                   </div>
@@ -937,7 +1015,7 @@ const VillaMarinaSite = () => {
 
       {/* Footer */}
       <footer className="bg-blue-900 text-white py-8 text-center">
-        <p className="mb-2">&copy; 2024 Villa Marina. Tutti i diritti riservati.</p>
+        <p className="mb-2">&copy; 2024 Casa Marè. Tutti i diritti riservati.</p>
         <div className="flex justify-center gap-4 text-sm text-blue-300 flex-wrap px-4">
           <button 
             onClick={() => setShowPrivacyModal(true)}
@@ -960,4 +1038,4 @@ const VillaMarinaSite = () => {
   );
 };
 
-export default VillaMarinaSite;
+export default CasaMareSite;
