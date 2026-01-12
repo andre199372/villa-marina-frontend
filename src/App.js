@@ -362,13 +362,14 @@ const CasaMareSite = () => {
   };
 
   const isDateBooked = (date) => {
-    return bookings.some(booking => {
-      if (booking.status === 'cancelled') return false;
-      const start = new Date(booking.start_date);
-      const end = new Date(booking.end_date);
-      return date >= start && date <= end;
-    });
-  };
+  return bookings.some(booking => {
+    // Solo le prenotazioni CONFERMATE bloccano il calendario
+    if (booking.status !== 'confirmed') return false;
+    const start = new Date(booking.start_date);
+    const end = new Date(booking.end_date);
+    return date >= start && date <= end;
+  });
+};
 
   const isDateInPast = (date) => {
     const today = new Date();
