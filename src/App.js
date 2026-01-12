@@ -37,254 +37,632 @@ const CasaMareSite = () => {
     booking: false,
     contact: false
   });
-  // Gallery images URLs - SOSTITUISCI QUESTI URL CON I TUOI
-  const galleryImages = [
-    { url: 'https://raw.githubusercontent.com/andre199372/images/de1b6c5b9e6db80f7d364ba0c991d53182f326d9/Vistaest.jpeg', title: 'Vista Esterna' },
-    { url: 'https://raw.githubusercontent.com/andre199372/images/de1b6c5b9e6db80f7d364ba0c991d53182f326d9/sogg.jpeg', title: 'Soggiorno' },
-    { url: 'https://raw.githubusercontent.com/andre199372/images/de1b6c5b9e6db80f7d364ba0c991d53182f326d9/matr.jpeg', title: 'Camera Matrimoniale' },
-    { url: 'https://raw.githubusercontent.com/andre199372/images/de1b6c5b9e6db80f7d364ba0c991d53182f326d9/cuc1.jpeg', title: 'Cucina' },
-    { url: 'https://raw.githubusercontent.com/andre199372/images/de1b6c5b9e6db80f7d364ba0c991d53182f326d9/panorama.jpeg', title: 'Panorama' },
-    { url: 'https://raw.githubusercontent.com/andre199372/images/58f9c74e9a08ccedd1b47e43d21aff701ca34b7f/terr.jpeg', title: 'Terrazza' }
-  ];
-
   // Translations
   const translations = {
-    it: {
-      heroTitle: "Il Tuo Rifugio Sul Mare",
-      heroSubtitle: "Dove il lusso incontra l'orizzonte infinito del Mediterraneo",
-      bookNow: "Prenota Ora",
-      home: "home",
-      property: "proprietà",
-      gallery: "galleria",
-      services: "servizi",
-      booking: "prenota",
-      contacts: "contatti",
-      invalidEmail: "Inserisci un indirizzo email valido",
-      invalidPhone: "Inserisci un numero di telefono valido",
-      fillAllFields: "Compila tutti i campi obbligatori",
-      fillAllContactFields: "Compila tutti i campi del modulo contatti",
-      acceptPrivacy: "Devi accettare l'informativa privacy per procedere",
-      bookingSuccess: "Richiesta di prenotazione inviata! Riceverai una conferma via email entro 24 ore.",
-      contactSuccess: "Messaggio inviato con successo! Ti ricontatteremo presto.",
-      ourVilla: "La Nostra Villa",
-      unforgettableExp: "Un'Esperienza Indimenticabile",
-      photoGallery: "Galleria Fotografica",
-      servicesIncluded: "Servizi Inclusi",
-      bookYourVacation: "Prenota la Tua Vacanza",
-      lowSeason: "Bassa Stagione",
-      highSeason: "Alta Stagione",
-      perWeek: "/settimana",
-      previous: "← Precedente",
-      next: "Successivo →",
-      checkIn: "Check-in",
-      checkOut: "Check-out",
-      total: "Totale",
-      selectedDate: "Data selezionata",
-      selectEndDate: "Seleziona data di fine",
-      completeBooking: "Completa la Prenotazione",
-      fullName: "Nome Completo",
-      email: "Email",
-      phone: "Telefono",
-      guests: "Ospiti",
-      cancel: "Annulla",
-      confirm: "Conferma",
-      sending: "Invio...",
-      contactUs: "Contattaci",
-      information: "Informazioni",
-      address: "Indirizzo",
-      hours: "Orari",
-      sendMessage: "Invia un Messaggio",
-      name: "Nome e Cognome",
-      message: "Messaggio",
-      sendRequest: "Invia Richiesta",
-      privacyPolicy: "Privacy Policy",
-      cookiePolicy: "Cookie Policy",
-      readAccept: "Ho letto e accetto l'",
-      privacyInfo: "informativa privacy",
-      gdprConsent: "e autorizzo il trattamento dei miei dati personali ai sensi del GDPR (Regolamento UE 2016/679)",
-      forBooking: "per l'elaborazione della prenotazione",
-      required: "*",
-      close: "Chiudi",
-      allRightsReserved: "Tutti i diritti riservati"
-    },
-    en: {
-      heroTitle: "Your Seaside Retreat",
-      heroSubtitle: "Where luxury meets the endless Mediterranean horizon",
-      bookNow: "Book Now",
-      home: "home",
-      property: "property",
-      gallery: "gallery",
-      services: "services",
-      booking: "book",
-      contacts: "contacts",
-      invalidEmail: "Please enter a valid email address",
-      invalidPhone: "Please enter a valid phone number",
-      fillAllFields: "Please fill in all required fields",
-      fillAllContactFields: "Please fill in all contact form fields",
-      acceptPrivacy: "You must accept the privacy policy to proceed",
-      bookingSuccess: "Booking request sent! You will receive a confirmation email within 24 hours.",
-      contactSuccess: "Message sent successfully! We will contact you soon.",
-      ourVilla: "Our Villa",
-      unforgettableExp: "An Unforgettable Experience",
-      photoGallery: "Photo Gallery",
-      servicesIncluded: "Services Included",
-      bookYourVacation: "Book Your Vacation",
-      lowSeason: "Low Season",
-      highSeason: "High Season",
-      perWeek: "/week",
-      previous: "← Previous",
-      next: "Next →",
-      checkIn: "Check-in",
-      checkOut: "Check-out",
-      total: "Total",
-      selectedDate: "Selected date",
-      selectEndDate: "Select end date",
-      completeBooking: "Complete Booking",
-      fullName: "Full Name",
-      email: "Email",
-      phone: "Phone",
-      guests: "Guests",
-      cancel: "Cancel",
-      confirm: "Confirm",
-      sending: "Sending...",
-      contactUs: "Contact Us",
-      information: "Information",
-      address: "Address",
-      hours: "Hours",
-      sendMessage: "Send a Message",
-      name: "Name and Surname",
-      message: "Message",
-      sendRequest: "Send Request",
-      privacyPolicy: "Privacy Policy",
-      cookiePolicy: "Cookie Policy",
-      readAccept: "I have read and accept the",
-      privacyInfo: "privacy policy",
-      gdprConsent: "and authorize the processing of my personal data in accordance with GDPR (EU Regulation 2016/679)",
-      forBooking: "for booking processing",
-      required: "*",
-      close: "Close",
-      allRightsReserved: "All rights reserved"
-    },
-    de: {
-      heroTitle: "Ihr Refugium am Meer",
-      heroSubtitle: "Wo Luxus auf den endlosen mediterranen Horizont trifft",
-      bookNow: "Jetzt Buchen",
-      home: "startseite",
-      property: "objekt",
-      gallery: "galerie",
-      services: "dienstleistungen",
-      booking: "buchen",
-      contacts: "kontakte",
-      invalidEmail: "Bitte geben Sie eine gültige E-Mail-Adresse ein",
-      invalidPhone: "Bitte geben Sie eine gültige Telefonnummer ein",
-      fillAllFields: "Bitte füllen Sie alle erforderlichen Felder aus",
-      fillAllContactFields: "Bitte füllen Sie alle Kontaktformularfelder aus",
-      acceptPrivacy: "Sie müssen die Datenschutzerklärung akzeptieren, um fortzufahren",
-      bookingSuccess: "Buchungsanfrage gesendet! Sie erhalten innerhalb von 24 Stunden eine Bestätigungs-E-Mail.",
-      contactSuccess: "Nachricht erfolgreich gesendet! Wir werden Sie bald kontaktieren.",
-      ourVilla: "Unsere Villa",
-      unforgettableExp: "Ein Unvergessliches Erlebnis",
-      photoGallery: "Fotogalerie",
-      servicesIncluded: "Enthaltene Dienstleistungen",
-      bookYourVacation: "Buchen Sie Ihren Urlaub",
-      lowSeason: "Nebensaison",
-      highSeason: "Hauptsaison",
-      perWeek: "/Woche",
-      previous: "← Zurück",
-      next: "Weiter →",
-      checkIn: "Check-in",
-      checkOut: "Check-out",
-      total: "Gesamt",
-      selectedDate: "Ausgewähltes Datum",
-      selectEndDate: "Enddatum auswählen",
-      completeBooking: "Buchung Abschließen",
-      fullName: "Vollständiger Name",
-      email: "E-Mail",
-      phone: "Telefon",
-      guests: "Gäste",
-      cancel: "Abbrechen",
-      confirm: "Bestätigen",
-      sending: "Senden...",
-      contactUs: "Kontaktieren Sie Uns",
-      information: "Informationen",
-      address: "Adresse",
-      hours: "Öffnungszeiten",
-      sendMessage: "Nachricht Senden",
-      name: "Name und Nachname",
-      message: "Nachricht",
-      sendRequest: "Anfrage Senden",
-      privacyPolicy: "Datenschutzerklärung",
-      cookiePolicy: "Cookie-Richtlinie",
-      readAccept: "Ich habe die",
-      privacyInfo: "Datenschutzerklärung",
-      gdprConsent: "gelesen und akzeptiert und autorisiere die Verarbeitung meiner personenbezogenen Daten gemäß DSGVO (EU-Verordnung 2016/679)",
-      forBooking: "zur Buchungsabwicklung",
-      required: "*",
-      close: "Schließen",
-      allRightsReserved: "Alle Rechte vorbehalten"
-    },
-    fr: {
-      heroTitle: "Votre Refuge en Bord de Mer",
-      heroSubtitle: "Où le luxe rencontre l'horizon infini de la Méditerranée",
-      bookNow: "Réserver Maintenant",
-      home: "accueil",
-      property: "propriété",
-      gallery: "galerie",
-      services: "services",
-      booking: "réserver",
-      contacts: "contacts",
-      invalidEmail: "Veuillez saisir une adresse e-mail valide",
-      invalidPhone: "Veuillez saisir un numéro de téléphone valide",
-      fillAllFields: "Veuillez remplir tous les champs obligatoires",
-      fillAllContactFields: "Veuillez remplir tous les champs du formulaire de contact",
-      acceptPrivacy: "Vous devez accepter la politique de confidentialité pour continuer",
-      bookingSuccess: "Demande de réservation envoyée! Vous recevrez un e-mail de confirmation dans les 24 heures.",
-      contactSuccess: "Message envoyé avec succès! Nous vous contacterons bientôt.",
-      ourVilla: "Notre Villa",
-      unforgettableExp: "Une Expérience Inoubliable",
-      photoGallery: "Galerie de Photos",
-      servicesIncluded: "Services Inclus",
-      bookYourVacation: "Réservez Vos Vacances",
-      lowSeason: "Basse Saison",
-      highSeason: "Haute Saison",
-      perWeek: "/semaine",
-      previous: "← Précédent",
-      next: "Suivant →",
-      checkIn: "Arrivée",
-      checkOut: "Départ",
-      total: "Total",
-      selectedDate: "Date sélectionnée",
-      selectEndDate: "Sélectionnez la date de fin",
-      completeBooking: "Finaliser la Réservation",
-      fullName: "Nom Complet",
-      email: "E-mail",
-      phone: "Téléphone",
-      guests: "Invités",
-      cancel: "Annuler",
-      confirm: "Confirmer",
-      sending: "Envoi...",
-      contactUs: "Contactez-nous",
-      information: "Informations",
-      address: "Adresse",
-      hours: "Horaires",
-      sendMessage: "Envoyer un Message",
-      name: "Nom et Prénom",
-      message: "Message",
-      sendRequest: "Envoyer la Demande",
-      privacyPolicy: "Politique de Confidentialité",
-      cookiePolicy: "Politique des Cookies",
-      readAccept: "J'ai lu et j'accepte la",
-      privacyInfo: "politique de confidentialité",
-      gdprConsent: "et j'autorise le traitement de mes données personnelles conformément au RGPD (Règlement UE 2016/679)",
-      forBooking: "pour le traitement de la réservation",
-      required: "*",
-      close: "Fermer",
-      allRightsReserved: "Tous droits réservés"
-    }
-  };
+  it: {
+    heroTitle: "Il Tuo Rifugio Sul Mare",
+    heroSubtitle: "Dove il lusso incontra l'orizzonte infinito del Mediterraneo",
+    bookNow: "Prenota Ora",
+    home: "home",
+    property: "proprietà",
+    gallery: "galleria",
+    services: "servizi",
+    booking: "prenota",
+    contacts: "contatti",
+    invalidEmail: "Inserisci un indirizzo email valido",
+    invalidPhone: "Inserisci un numero di telefono valido",
+    fillAllFields: "Compila tutti i campi obbligatori",
+    fillAllContactFields: "Compila tutti i campi del modulo contatti",
+    acceptPrivacy: "Devi accettare l'informativa privacy per procedere",
+    bookingSuccess: "Richiesta di prenotazione inviata! Riceverai una conferma via email entro 24 ore.",
+    contactSuccess: "Messaggio inviato con successo! Ti ricontatteremo presto.",
+    ourVilla: "La Nostra Villa",
+    unforgettableExp: "Un'Esperienza Indimenticabile",
+    photoGallery: "Galleria Fotografica",
+    servicesIncluded: "Servizi Inclusi",
+    bookYourVacation: "Prenota la Tua Vacanza",
+    lowSeason: "Bassa Stagione",
+    highSeason: "Alta Stagione",
+    perWeek: "/settimana",
+    previous: "← Precedente",
+    next: "Successivo →",
+    checkIn: "Check-in",
+    checkOut: "Check-out",
+    total: "Totale",
+    selectedDate: "Data selezionata",
+    selectEndDate: "Seleziona data di fine",
+    completeBooking: "Completa la Prenotazione",
+    fullName: "Nome Completo",
+    email: "Email",
+    phone: "Telefono",
+    guests: "Ospiti",
+    cancel: "Annulla",
+    confirm: "Conferma",
+    sending: "Invio...",
+    contactUs: "Contattaci",
+    information: "Informazioni",
+    address: "Indirizzo",
+    hours: "Orari",
+    sendMessage: "Invia un Messaggio",
+    name: "Nome e Cognome",
+    message: "Messaggio",
+    sendRequest: "Invia Richiesta",
+    privacyPolicy: "Privacy Policy",
+    cookiePolicy: "Cookie Policy",
+    readAccept: "Ho letto e accetto l'",
+    privacyInfo: "informativa privacy",
+    gdprConsent: "e autorizzo il trattamento dei miei dati personali ai sensi del GDPR (Regolamento UE 2016/679)",
+    forBooking: "per l'elaborazione della prenotazione",
+    required: "*",
+    close: "Chiudi",
+    allRightsReserved: "Tutti i diritti riservati",
+    villaDescription1: "Casa Marè è una splendida proprietà di lusso situata direttamente sulla costa, con accesso privato alla spiaggia. Questa residenza esclusiva offre un rifugio perfetto per chi cerca tranquillità e comfort in un ambiente mozzafiato.",
+    villaDescription2: "Con i suoi ampi spazi interni ed esterni, la villa può ospitare comodamente fino a 8 persone, rendendola ideale per famiglie o gruppi di amici desiderosi di vivere un'esperienza unica.",
+    bedrooms: "Camere",
+    spaciousDecorated: "Spaziose e arredate",
+    bathrooms: "Bagni",
+    modernEquipped: "Moderni e attrezzati",
+    squareMeters: "m²",
+    pureComfort: "Di puro comfort",
+    pool: "Piscina",
+    seaView: "Vista mare panoramica",
+    cinCir: "CIN e CIR",
+    cinCirDesc: "CIN IT053006C2RQZ6FHWS CIR 053006LTN2665",
+    airConditioning: "Aria Condizionata",
+    inAllRooms: "In tutte le stanze",
+    equippedKitchen: "Cucina Attrezzata",
+    completeAppliances: "Completa di elettrodomestici",
+    privateParking: "Parcheggio Privato",
+    safeForCar: "Sicuro per 1 auto",
+    cleanHouse: "Casa Pulita",
+    alwaysInOrder: "Sempre in Ordine",
+    seaViewLiving: "Vista Mare",
+    fromLivingGarden: "Dal Soggiorno, Giardino o dalla Terrazza",
+    externalView: "Vista Esterna",
+    livingRoom: "Soggiorno",
+    masterBedroom: "Camera Matrimoniale",
+    kitchen: "Cucina",
+    panorama: "Panorama",
+    terrace: "Terrazza",
+    octoberMay: "Ottobre - Maggio",
+    juneSeptember: "Giugno - Settembre",
+    addressDetails: "Via del Mare 123\n00100 Località Marina",
+    telephone: "Telefono",
+    hoursDetails: "Lun-Ven: 9:00 - 18:00\nSab: 9:00 - 13:00",
+    copyright: "© 2024 Casa Marè. Tutti i diritti riservati.",
+    vat: "P.IVA: 12345678901",
+    notes: "Note",
+    additionalNotes: "Note aggiuntive (opzionale)",
+    cookieBannerTitle: "Utilizzo dei Cookie",
+    cookieBannerText: "Utilizziamo cookie tecnici necessari per il funzionamento del sito. Non utilizziamo cookie di profilazione o tracciamento. Continuando la navigazione accetti l'utilizzo dei cookie tecnici.",
+    moreInfo: "Maggiori Info",
+    decline: "Rifiuta",
+    accept: "Accetta",
+    privacyTitle: "Informativa Privacy",
+    dataController: "1. Titolare del Trattamento",
+    dataControllerText: "Casa Marè S.r.l., con sede in Via del Mare 123, 00100 Località Marina",
+    dataControllerContact: "Email: privacy@casamare.it | Tel: +39 123 456 7890",
+    dataCollected: "2. Dati Raccolti",
+    dataCollectedText: "Raccogliamo i seguenti dati personali:",
+    dataCollectedList: ["Nome e cognome", "Indirizzo email", "Numero di telefono", "Date di prenotazione e numero ospiti", "Eventuali note o richieste specifiche"],
+    processingPurpose: "3. Finalità del Trattamento",
+    processingPurposeText: "I dati vengono trattati per:",
+    processingPurposeList: ["Gestione delle prenotazioni e richieste di informazioni", "Comunicazioni relative al servizio richiesto", "Adempimenti di obblighi contrattuali e fiscali"],
+    legalBasis: "4. Base Giuridica",
+    legalBasisText: "Il trattamento è basato su:",
+    legalBasisList: ["Esecuzione di un contratto (prenotazione)", "Consenso dell'interessato (richieste informazioni)", "Obblighi di legge (fiscali, contabili)"],
+    dataRetention: "5. Conservazione dei Dati",
+    dataRetentionText: "I dati saranno conservati per:",
+    dataRetentionList: ["Durata del rapporto contrattuale", "10 anni per adempimenti fiscali", "Fino a revoca del consenso per richieste informazioni"],
+    userRights: "6. Diritti dell'Interessato",
+    userRightsText: "Hai diritto di:",
+    userRightsList: ["Accedere ai tuoi dati personali", "Richiedere la rettifica o cancellazione", "Limitare il trattamento", "Opporti al trattamento", "Richiedere la portabilità dei dati", "Revocare il consenso in qualsiasi momento", "Proporre reclamo al Garante Privacy"],
+    exerciseRights: "Per esercitare i tuoi diritti, contattaci a: privacy@casamare.it",
+    dataCommunication: "7. Comunicazione dei Dati",
+    dataCommunicationText: "I dati potranno essere comunicati a:",
+    dataCommunicationList: ["Fornitori di servizi IT per la gestione del sistema", "Consulenti legali, fiscali e amministrativi", "Autorità pubbliche per obblighi di legge"],
+    dataTransfer: "8. Trasferimento Dati Extra-UE",
+    dataTransferText: "I dati non vengono trasferiti al di fuori dell'Unione Europea.",
+    security: "9. Sicurezza",
+    securityText: "Adottiamo misure tecniche e organizzative adeguate per proteggere i tuoi dati da accessi non autorizzati, perdita o divulgazione.",
+    cookiePolicyTitle: "Cookie Policy",
+    whatAreCookies: "Cosa sono i Cookie",
+    whatAreCookiesText: "I cookie sono piccoli file di testo che vengono memorizzati sul tuo dispositivo quando visiti un sito web. Vengono utilizzati per migliorare l'esperienza di navigazione.",
+    cookiesUsed: "Cookie Utilizzati",
+    technicalCookies: "Cookie Tecnici (Necessari)",
+    technicalCookiesDesc: "Sono essenziali per il funzionamento del sito e non possono essere disabilitati.",
+    cookieName: "casa-mare-cookie-consent",
+    cookieNameDesc: "memorizza la tua preferenza sui cookie",
+    duration: "Durata",
+    durationValue: "12 mesi",
+    purpose: "Finalità",
+    purposeValue: "ricordare la tua scelta sui cookie",
+    cookiesNotUsed: "Cookie NON Utilizzati",
+    cookiesNotUsedText: "Il nostro sito NON utilizza:",
+    cookiesNotUsedList: ["Cookie di profilazione", "Cookie di tracciamento", "Cookie di terze parti per pubblicità", "Cookie di analisi (Google Analytics o simili)"],
+    manageCookies: "Gestione dei Cookie",
+    manageCookiesText: "Puoi gestire o disabilitare i cookie attraverso le impostazioni del tuo browser:",
+    browserList: ["Chrome: Impostazioni → Privacy e sicurezza → Cookie", "Firefox: Opzioni → Privacy e sicurezza → Cookie", "Safari: Preferenze → Privacy → Cookie", "Edge: Impostazioni → Cookie e autorizzazioni sito"],
+    disableNote: "Nota: disabilitare i cookie tecnici potrebbe compromettere alcune funzionalità del sito.",
+    updates: "Aggiornamenti",
+    updatesText: "Questa Cookie Policy può essere aggiornata periodicamente. Ti invitiamo a consultarla regolarmente.",
+    lastUpdate: "Ultimo aggiornamento: Gennaio 2026",
+    monthNames: ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"],
+    dayNames: ["Dom", "Lun", "Mar", "Mer", "Gio", "Ven", "Sab"],
+    exclusiveRentals: "Affitti Esclusivi sul Mare",
+    backToHome: "Torna alla Home"
+  },
+  en: {
+    heroTitle: "Your Seaside Retreat",
+    heroSubtitle: "Where luxury meets the endless Mediterranean horizon",
+    bookNow: "Book Now",
+    home: "home",
+    property: "property",
+    gallery: "gallery",
+    services: "services",
+    booking: "book",
+    contacts: "contacts",
+    invalidEmail: "Please enter a valid email address",
+    invalidPhone: "Please enter a valid phone number",
+    fillAllFields: "Please fill in all required fields",
+    fillAllContactFields: "Please fill in all contact form fields",
+    acceptPrivacy: "You must accept the privacy policy to proceed",
+    bookingSuccess: "Booking request sent! You will receive a confirmation email within 24 hours.",
+    contactSuccess: "Message sent successfully! We will contact you soon.",
+    ourVilla: "Our Villa",
+    unforgettableExp: "An Unforgettable Experience",
+    photoGallery: "Photo Gallery",
+    servicesIncluded: "Services Included",
+    bookYourVacation: "Book Your Vacation",
+    lowSeason: "Low Season",
+    highSeason: "High Season",
+    perWeek: "/week",
+    previous: "← Previous",
+    next: "Next →",
+    checkIn: "Check-in",
+    checkOut: "Check-out",
+    total: "Total",
+    selectedDate: "Selected date",
+    selectEndDate: "Select end date",
+    completeBooking: "Complete Booking",
+    fullName: "Full Name",
+    email: "Email",
+    phone: "Phone",
+    guests: "Guests",
+    cancel: "Cancel",
+    confirm: "Confirm",
+    sending: "Sending...",
+    contactUs: "Contact Us",
+    information: "Information",
+    address: "Address",
+    hours: "Hours",
+    sendMessage: "Send a Message",
+    name: "Name and Surname",
+    message: "Message",
+    sendRequest: "Send Request",
+    privacyPolicy: "Privacy Policy",
+    cookiePolicy: "Cookie Policy",
+    readAccept: "I have read and accept the",
+    privacyInfo: "privacy policy",
+    gdprConsent: "and authorize the processing of my personal data in accordance with GDPR (EU Regulation 2016/679)",
+    forBooking: "for booking processing",
+    required: "*",
+    close: "Close",
+    allRightsReserved: "All rights reserved",
+    villaDescription1: "Casa Marè is a stunning luxury property located directly on the coast, with private beach access. This exclusive residence offers a perfect retreat for those seeking tranquility and comfort in a breathtaking environment.",
+    villaDescription2: "With its spacious indoor and outdoor areas, the villa can comfortably accommodate up to 8 people, making it ideal for families or groups of friends eager to experience something unique.",
+    bedrooms: "Bedrooms",
+    spaciousDecorated: "Spacious and decorated",
+    bathrooms: "Bathrooms",
+    modernEquipped: "Modern and equipped",
+    squareMeters: "sqm",
+    pureComfort: "Of pure comfort",
+    pool: "Pool",
+    seaView: "Panoramic sea view",
+    cinCir: "CIN and CIR",
+    cinCirDesc: "CIN IT053006C2RQZ6FHWS CIR 053006LTN2665",
+    airConditioning: "Air Conditioning",
+    inAllRooms: "In all rooms",
+    equippedKitchen: "Equipped Kitchen",
+    completeAppliances: "Complete with appliances",
+    privateParking: "Private Parking",
+    safeForCar: "Safe for 1 car",
+    cleanHouse: "Clean House",
+    alwaysInOrder: "Always in Order",
+    seaViewLiving: "Sea View",
+    fromLivingGarden: "From Living Room, Garden or Terrace",
+    externalView: "External View",
+    livingRoom: "Living Room",
+    masterBedroom: "Master Bedroom",
+    kitchen: "Kitchen",
+    panorama: "Panorama",
+    terrace: "Terrace",
+    octoberMay: "October - May",
+    juneSeptember: "June - September",
+    addressDetails: "Via del Mare 123\n00100 Località Marina",
+    telephone: "Phone",
+    hoursDetails: "Mon-Fri: 9:00 - 18:00\nSat: 9:00 - 13:00",
+    copyright: "© 2024 Casa Marè. All rights reserved.",
+    vat: "VAT: 12345678901",
+    notes: "Notes",
+    additionalNotes: "Additional notes (optional)",
+    cookieBannerTitle: "Cookie Usage",
+    cookieBannerText: "We use technical cookies necessary for the site to function. We do not use profiling or tracking cookies. By continuing to browse, you accept the use of technical cookies.",
+    moreInfo: "More Info",
+    decline: "Decline",
+    accept: "Accept",
+    privacyTitle: "Privacy Policy",
+    dataController: "1. Data Controller",
+    dataControllerText: "Casa Marè S.r.l., located at Via del Mare 123, 00100 Località Marina",
+    dataControllerContact: "Email: privacy@casamare.it | Tel: +39 123 456 7890",
+    dataCollected: "2. Data Collected",
+    dataCollectedText: "We collect the following personal data:",
+    dataCollectedList: ["Name and surname", "Email address", "Phone number", "Booking dates and number of guests", "Any notes or specific requests"],
+    processingPurpose: "3. Processing Purpose",
+    processingPurposeText: "Data is processed for:",
+    processingPurposeList: ["Management of bookings and information requests", "Communications related to the requested service", "Fulfillment of contractual and tax obligations"],
+    legalBasis: "4. Legal Basis",
+    legalBasisText: "Processing is based on:",
+    legalBasisList: ["Contract execution (booking)", "Data subject's consent (information requests)", "Legal obligations (tax, accounting)"],
+    dataRetention: "5. Data Retention",
+    dataRetentionText: "Data will be retained for:",
+    dataRetentionList: ["Duration of the contractual relationship", "10 years for tax compliance", "Until consent withdrawal for information requests"],
+    userRights: "6. Data Subject Rights",
+    userRightsText: "You have the right to:",
+    userRightsList: ["Access your personal data", "Request rectification or deletion", "Limit processing", "Object to processing", "Request data portability", "Withdraw consent at any time", "Lodge a complaint with the Privacy Authority"],
+    exerciseRights: "To exercise your rights, contact us at: privacy@casamare.it",
+    dataCommunication: "7. Data Communication",
+    dataCommunicationText: "Data may be communicated to:",
+    dataCommunicationList: ["IT service providers for system management", "Legal, tax and administrative consultants", "Public authorities for legal obligations"],
+    dataTransfer: "8. Extra-EU Data Transfer",
+    dataTransferText: "Data is not transferred outside the European Union.",
+    security: "9. Security",
+    securityText: "We adopt adequate technical and organizational measures to protect your data from unauthorized access, loss or disclosure.",
+    cookiePolicyTitle: "Cookie Policy",
+    whatAreCookies: "What are Cookies",
+    whatAreCookiesText: "Cookies are small text files that are stored on your device when you visit a website. They are used to improve the browsing experience.",
+    cookiesUsed: "Cookies Used",
+    technicalCookies: "Technical Cookies (Necessary)",
+    technicalCookiesDesc: "They are essential for the site to function and cannot be disabled.",
+    cookieName: "casa-mare-cookie-consent",
+    cookieNameDesc: "stores your cookie preference",
+    duration: "Duration",
+    durationValue: "12 months",
+    purpose: "Purpose",
+    purposeValue: "remember your cookie choice",
+    cookiesNotUsed: "Cookies NOT Used",
+    cookiesNotUsedText: "Our site does NOT use:",
+    cookiesNotUsedList: ["Profiling cookies", "Tracking cookies", "Third-party cookies for advertising", "Analytics cookies (Google Analytics or similar)"],
+    manageCookies: "Cookie Management",
+    manageCookiesText: "You can manage or disable cookies through your browser settings:",
+    browserList: ["Chrome: Settings → Privacy and security → Cookies", "Firefox: Options → Privacy and security → Cookies", "Safari: Preferences → Privacy → Cookies", "Edge: Settings → Cookies and site permissions"],
+    disableNote: "Note: disabling technical cookies may compromise some site features.",
+    updates: "Updates",
+    updatesText: "This Cookie Policy may be updated periodically. We invite you to consult it regularly.",
+    lastUpdate: "Last update: January 2026",
+    monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    dayNames: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+    exclusiveRentals: "Exclusive Seaside Rentals",
+    backToHome: "Back to Home"
+  },
+  de: {
+    heroTitle: "Ihr Refugium am Meer",
+    heroSubtitle: "Wo Luxus auf den endlosen mediterranen Horizont trifft",
+    bookNow: "Jetzt Buchen",
+    home: "startseite",
+    property: "objekt",
+    gallery: "galerie",
+    services: "dienstleistungen",
+    booking: "buchen",
+    contacts: "kontakte",
+    invalidEmail: "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+    invalidPhone: "Bitte geben Sie eine gültige Telefonnummer ein",
+    fillAllFields: "Bitte füllen Sie alle erforderlichen Felder aus",
+    fillAllContactFields: "Bitte füllen Sie alle Kontaktformularfelder aus",
+    acceptPrivacy: "Sie müssen die Datenschutzerklärung akzeptieren, um fortzufahren",
+    bookingSuccess: "Buchungsanfrage gesendet! Sie erhalten innerhalb von 24 Stunden eine Bestätigungs-E-Mail.",
+    contactSuccess: "Nachricht erfolgreich gesendet! Wir werden Sie bald kontaktieren.",
+    ourVilla: "Unsere Villa",
+    unforgettableExp: "Ein Unvergessliches Erlebnis",
+    photoGallery: "Fotogalerie",
+    servicesIncluded: "Enthaltene Dienstleistungen",
+    bookYourVacation: "Buchen Sie Ihren Urlaub",
+    lowSeason: "Nebensaison",
+    highSeason: "Hauptsaison",
+    perWeek: "/Woche",
+    previous: "← Zurück",
+    next: "Weiter →",
+    checkIn: "Check-in",
+    checkOut: "Check-out",
+    total: "Gesamt",
+    selectedDate: "Ausgewähltes Datum",
+    selectEndDate: "Enddatum auswählen",
+    completeBooking: "Buchung Abschließen",
+    fullName: "Vollständiger Name",
+    email: "E-Mail",
+    phone: "Telefon",
+    guests: "Gäste",
+    cancel: "Abbrechen",
+    confirm: "Bestätigen",
+    sending: "Senden...",
+    contactUs: "Kontaktieren Sie Uns",
+    information: "Informationen",
+    address: "Adresse",
+    hours: "Öffnungszeiten",
+    sendMessage: "Nachricht Senden",
+    name: "Name und Nachname",
+    message: "Nachricht",
+    sendRequest: "Anfrage Senden",
+    privacyPolicy: "Datenschutzerklärung",
+    cookiePolicy: "Cookie-Richtlinie",
+    readAccept: "Ich habe die",
+    privacyInfo: "Datenschutzerklärung",
+    gdprConsent: "gelesen und akzeptiert und autorisiere die Verarbeitung meiner personenbezogenen Daten gemäß DSGVO (EU-Verordnung 2016/679)",
+    forBooking: "zur Buchungsabwicklung",
+    required: "*",
+    close: "Schließen",
+    allRightsReserved: "Alle Rechte vorbehalten",
+    villaDescription1: "Casa Marè ist eine atemberaubende Luxusimmobilie direkt an der Küste mit privatem Strandzugang. Diese exklusive Residenz bietet einen perfekten Rückzugsort für alle, die Ruhe und Komfort in einer atemberaubenden Umgebung suchen.",
+    villaDescription2: "Mit ihren großzügigen Innen- und Außenbereichen bietet die Villa bequem Platz für bis zu 8 Personen und ist somit ideal für Familien oder Freundesgruppen, die etwas Einzigartiges erleben möchten.",
+    bedrooms: "Schlafzimmer",
+    spaciousDecorated: "Geräumig und eingerichtet",
+    bathrooms: "Badezimmer",
+    modernEquipped: "Modern und ausgestattet",
+    squareMeters: "qm",
+    pureComfort: "Purer Komfort",
+    pool: "Pool",
+    seaView: "Panorama-Meerblick",
+    cinCir: "CIN und CIR",
+    cinCirDesc: "CIN IT053006C2RQZ6FHWS CIR 053006LTN2665",
+    airConditioning: "Klimaanlage",
+    inAllRooms: "In allen Räumen",
+    equippedKitchen: "Ausgestattete Küche",
+    completeAppliances: "Komplett mit Geräten",
+    privateParking: "Privatparkplatz",
+    safeForCar: "Sicher für 1 Auto",
+    cleanHouse: "Sauberes Haus",
+    alwaysInOrder: "Immer in Ordnung",
+    seaViewLiving: "Meerblick",
+    fromLivingGarden: "Vom Wohnzimmer, Garten oder Terrasse",
+    externalView: "Außenansicht",
+    livingRoom: "Wohnzimmer",
+    masterBedroom: "Hauptschlafzimmer",
+    kitchen: "Küche",
+    panorama: "Panorama",
+    terrace: "Terrasse",
+    octoberMay: "Oktober - Mai",
+    juneSeptember: "Juni - September",
+    addressDetails: "Via del Mare 123\n00100 Località Marina",
+    telephone: "Telefon",
+    hoursDetails: "Mo-Fr: 9:00 - 18:00\nSa: 9:00 - 13:00",
+    copyright: "© 2024 Casa Marè. Alle Rechte vorbehalten.",
+    vat: "USt-IdNr.: 12345678901",
+    notes: "Notizen",
+    additionalNotes: "Zusätzliche Notizen (optional)",
+    cookieBannerTitle: "Cookie-Nutzung",
+    cookieBannerText: "Wir verwenden technische Cookies, die für die Funktion der Website erforderlich sind. Wir verwenden keine Profiling- oder Tracking-Cookies. Wenn Sie weiter surfen, akzeptieren Sie die Verwendung technischer Cookies.",
+    moreInfo: "Mehr Infos",
+    decline: "Ablehnen",
+    accept: "Akzeptieren",
+    privacyTitle: "Datenschutzerklärung",
+    dataController: "1. Verantwortlicher für die Datenverarbeitung",
+    dataControllerText: "Casa Marè S.r.l., mit Sitz in Via del Mare 123, 00100 Località Marina",
+    dataControllerContact: "E-Mail: privacy@casamare.it | Tel: +39 123 456 7890",
+    dataCollected: "2. Erhobene Daten",
+    dataCollectedText: "Wir erheben folgende personenbezogene Daten:",
+    dataCollectedList: ["Name und Nachname", "E-Mail-Adresse", "Telefonnummer", "Buchungsdaten und Anzahl der Gäste", "Eventuelle Notizen oder spezielle Anfragen"],
+    processingPurpose: "3. Zweck der Verarbeitung",
+    processingPurposeText: "Die Daten werden verarbeitet für:",
+    processingPurposeList: ["Verwaltung von Buchungen und Informationsanfragen", "Kommunikation im Zusammenhang mit dem angeforderten Service", "Erfüllung vertraglicher und steuerlicher Verpflichtungen"],
+    legalBasis: "4. Rechtsgrundlage",
+    legalBasisText: "Die Verarbeitung basiert auf:",
+    legalBasisList: ["Vertragserfüllung (Buchung)", "Einwilligung der betroffenen Person (Informationsanfragen)", "Gesetzliche Verpflichtungen (steuerlich, buchhalterisch)"],
+    dataRetention: "5. Datenspeicherung",
+    dataRetentionText: "Die Daten werden gespeichert für:",
+    dataRetentionList: ["Dauer der Vertragsbeziehung", "10 Jahre für steuerliche Zwecke", "Bis zum Widerruf der Einwilligung für Informationsanfragen"],
+    userRights: "6. Rechte der betroffenen Person",
+    userRightsText: "Sie haben das Recht:",
+    userRightsList: ["Auf Ihre personenbezogenen Daten zuzugreifen", "Berichtigung oder Löschung zu verlangen", "Die Verarbeitung einzuschränken", "Der Verarbeitung zu widersprechen", "Datenübertragbarkeit zu verlangen", "Die Einwilligung jederzeit zu widerrufen", "Beschwerde bei der Datenschutzbehörde einzureichen"],
+    exerciseRights: "Um Ihre Rechte auszuüben, kontaktieren Sie uns unter: privacy@casamare.it",
+    dataCommunication: "7. Datenweitergabe",
+    dataCommunicationText: "Die Daten können weitergegeben werden an:",
+    dataCommunicationList: ["IT-Dienstleister für die Systemverwaltung", "Rechts-, Steuer- und Verwaltungsberater", "Öffentliche Behörden aufgrund gesetzlicher Verpflichtungen"],
+    dataTransfer: "8. Datenübermittlung außerhalb der EU",
+    dataTransferText: "Die Daten werden nicht außerhalb der Europäischen Union übermittelt.",
+    security: "9. Sicherheit",
+    securityText: "Wir ergreifen angemessene technische und organisatorische Maßnahmen, um Ihre Daten vor unbefugtem Zugriff, Verlust oder Offenlegung zu schützen.",
+    cookiePolicyTitle: "Cookie-Richtlinie",
+    whatAreCookies: "Was sind Cookies",
+    whatAreCookiesText: "Cookies sind kleine Textdateien, die auf Ihrem Gerät gespeichert werden, wenn Sie eine Website besuchen. Sie werden verwendet, um das Surferlebnis zu verbessern.",
+    cookiesUsed: "Verwendete Cookies",
+    technicalCookies: "Technische Cookies (Notwendig)",
+    technicalCookiesDesc: "Sie sind für die Funktion der Website unerlässlich und können nicht deaktiviert werden.",
+    cookieName: "casa-mare-cookie-consent",
+    cookieNameDesc: "speichert Ihre Cookie-Präferenz",
+duration: "Dauer",
+durationValue: "12 Monate",
+purpose: "Zweck",
+purposeValue: "Ihre Cookie-Wahl zu merken",
+cookiesNotUsed: "NICHT verwendete Cookies",
+cookiesNotUsedText: "Unsere Website verwendet NICHT:",
+cookiesNotUsedList: ["Profiling-Cookies", "Tracking-Cookies", "Drittanbieter-Cookies für Werbung", "Analyse-Cookies (Google Analytics oder ähnliche)"],
+manageCookies: "Cookie-Verwaltung",
+manageCookiesText: "Sie können Cookies über Ihre Browser-Einstellungen verwalten oder deaktivieren:",
+browserList: ["Chrome: Einstellungen → Datenschutz und Sicherheit → Cookies", "Firefox: Optionen → Datenschutz und Sicherheit → Cookies", "Safari: Einstellungen → Datenschutz → Cookies", "Edge: Einstellungen → Cookies und Websiteberechtigungen"],
+disableNote: "Hinweis: Das Deaktivieren technischer Cookies kann einige Website-Funktionen beeinträchtigen.",
+updates: "Aktualisierungen",
+updatesText: "Diese Cookie-Richtlinie kann regelmäßig aktualisiert werden. Wir laden Sie ein, sie regelmäßig zu konsultieren.",
+lastUpdate: "Letzte Aktualisierung: Januar 2026",
+monthNames: ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"],
+dayNames: ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"],
+exclusiveRentals: "Exklusive Vermietungen am Meer",
+backToHome: "Zurück zur Startseite"
+},
+fr: {
+heroTitle: "Votre Refuge en Bord de Mer",
+heroSubtitle: "Où le luxe rencontre l'horizon infini de la Méditerranée",
+bookNow: "Réserver Maintenant",
+home: "accueil",
+property: "propriété",
+gallery: "galerie",
+services: "services",
+booking: "réserver",
+contacts: "contacts",
+invalidEmail: "Veuillez saisir une adresse e-mail valide",
+invalidPhone: "Veuillez saisir un numéro de téléphone valide",
+fillAllFields: "Veuillez remplir tous les champs obligatoires",
+fillAllContactFields: "Veuillez remplir tous les champs du formulaire de contact",
+acceptPrivacy: "Vous devez accepter la politique de confidentialité pour continuer",
+bookingSuccess: "Demande de réservation envoyée! Vous recevrez un e-mail de confirmation dans les 24 heures.",
+contactSuccess: "Message envoyé avec succès! Nous vous contacterons bientôt.",
+ourVilla: "Notre Villa",
+unforgettableExp: "Une Expérience Inoubliable",
+photoGallery: "Galerie de Photos",
+servicesIncluded: "Services Inclus",
+bookYourVacation: "Réservez Vos Vacances",
+lowSeason: "Basse Saison",
+highSeason: "Haute Saison",
+perWeek: "/semaine",
+previous: "← Précédent",
+next: "Suivant →",
+checkIn: "Arrivée",
+checkOut: "Départ",
+total: "Total",
+selectedDate: "Date sélectionnée",
+selectEndDate: "Sélectionnez la date de fin",
+completeBooking: "Finaliser la Réservation",
+fullName: "Nom Complet",
+email: "E-mail",
+phone: "Téléphone",
+guests: "Invités",
+cancel: "Annuler",
+confirm: "Confirmer",
+sending: "Envoi...",
+contactUs: "Contactez-nous",
+information: "Informations",
+address: "Adresse",
+hours: "Horaires",
+sendMessage: "Envoyer un Message",
+name: "Nom et Prénom",
+message: "Message",
+sendRequest: "Envoyer la Demande",
+privacyPolicy: "Politique de Confidentialité",
+cookiePolicy: "Politique des Cookies",
+readAccept: "J'ai lu et j'accepte la",
+privacyInfo: "politique de confidentialité",
+gdprConsent: "et j'autorise le traitement de mes données personnelles conformément au RGPD (Règlement UE 2016/679)",
+forBooking: "pour le traitement de la réservation",
+required: "*",
+close: "Fermer",
+allRightsReserved: "Tous droits réservés",
+villaDescription1: "Casa Marè est une superbe propriété de luxe située directement sur la côte, avec accès privé à la plage. Cette résidence exclusive offre un refuge parfait pour ceux qui recherchent tranquillité et confort dans un environnement à couper le souffle.",
+villaDescription2: "Avec ses espaces intérieurs et extérieurs spacieux, la villa peut accueillir confortablement jusqu'à 8 personnes, ce qui la rend idéale pour les familles ou les groupes d'amis désireux de vivre une expérience unique.",
+bedrooms: "Chambres",
+spaciousDecorated: "Spacieuses et décorées",
+bathrooms: "Salles de bain",
+modernEquipped: "Modernes et équipées",
+squareMeters: "m²",
+pureComfort: "De pur confort",
+pool: "Piscine",
+seaView: "Vue panoramique sur la mer",
+cinCir: "CIN et CIR",
+cinCirDesc: "CIN IT053006C2RQZ6FHWS CIR 053006LTN2665",
+airConditioning: "Climatisation",
+inAllRooms: "Dans toutes les pièces",
+equippedKitchen: "Cuisine Équipée",
+completeAppliances: "Complète avec appareils",
+privateParking: "Parking Privé",
+safeForCar: "Sûr pour 1 voiture",
+cleanHouse: "Maison Propre",
+alwaysInOrder: "Toujours en Ordre",
+seaViewLiving: "Vue sur la Mer",
+fromLivingGarden: "Du Salon, Jardin ou Terrasse",
+externalView: "Vue Extérieure",
+livingRoom: "Salon",
+masterBedroom: "Chambre Principale",
+kitchen: "Cuisine",
+panorama: "Panorama",
+terrace: "Terrasse",
+octoberMay: "Octobre - Mai",
+juneSeptember: "Juin - Septembre",
+addressDetails: "Via del Mare 123\n00100 Località Marina",
+telephone: "Téléphone",
+hoursDetails: "Lun-Ven: 9:00 - 18:00\nSam: 9:00 - 13:00",
+copyright: "© 2024 Casa Marè. Tous droits réservés.",
+vat: "TVA: 12345678901",
+notes: "Notes",
+additionalNotes: "Notes supplémentaires (optionnel)",
+cookieBannerTitle: "Utilisation des Cookies",
+cookieBannerText: "Nous utilisons des cookies techniques nécessaires au fonctionnement du site. Nous n'utilisons pas de cookies de profilage ou de suivi. En continuant à naviguer, vous acceptez l'utilisation de cookies techniques.",
+moreInfo: "Plus d'Infos",
+decline: "Refuser",
+accept: "Accepter",
+privacyTitle: "Politique de Confidentialité",
+dataController: "1. Responsable du Traitement",
+dataControllerText: "Casa Marè S.r.l., située à Via del Mare 123, 00100 Località Marina",
+dataControllerContact: "E-mail: privacy@casamare.it | Tél: +39 123 456 7890",
+dataCollected: "2. Données Collectées",
+dataCollectedText: "Nous collectons les données personnelles suivantes:",
+dataCollectedList: ["Nom et prénom", "Adresse e-mail", "Numéro de téléphone", "Dates de réservation et nombre d'invités", "Éventuelles notes ou demandes spécifiques"],
+processingPurpose: "3. Finalité du Traitement",
+processingPurposeText: "Les données sont traitées pour:",
+processingPurposeList: ["Gestion des réservations et des demandes d'informations", "Communications relatives au service demandé", "Respect des obligations contractuelles et fiscales"],
+legalBasis: "4. Base Juridique",
+legalBasisText: "Le traitement est basé sur:",
+legalBasisList: ["Exécution d'un contrat (réservation)", "Consentement de la personne concernée (demandes d'informations)", "Obligations légales (fiscales, comptables)"],
+dataRetention: "5. Conservation des Données",
+dataRetentionText: "Les données seront conservées pendant:",
+dataRetentionList: ["Durée de la relation contractuelle", "10 ans pour les obligations fiscales", "Jusqu'au retrait du consentement pour les demandes d'informations"],
+userRights: "6. Droits de la Personne Concernée",
+userRightsText: "Vous avez le droit de:",
+userRightsList: ["Accéder à vos données personnelles", "Demander la rectification ou la suppression", "Limiter le traitement", "Vous opposer au traitement", "Demander la portabilité des données", "Retirer votre consentement à tout moment", "Déposer une plainte auprès de l'autorité de protection des données"],
+exerciseRights: "Pour exercer vos droits, contactez-nous à: privacy@casamare.it",
+dataCommunication: "7. Communication des Données",
+dataCommunicationText: "Les données peuvent être communiquées à:",
+dataCommunicationList: ["Prestataires de services informatiques pour la gestion du système", "Conseillers juridiques, fiscaux et administratifs", "Autorités publiques pour obligations légales"],
+dataTransfer: "8. Transfert de Données Extra-UE",
+dataTransferText: "Les données ne sont pas transférées en dehors de l'Union Européenne.",
+security: "9. Sécurité",
+securityText: "Nous adoptons des mesures techniques et organisationnelles appropriées pour protéger vos données contre tout accès non autorisé, perte ou divulgation.",
+cookiePolicyTitle: "Politique des Cookies",
+whatAreCookies: "Que sont les Cookies",
+whatAreCookiesText: "Les cookies sont de petits fichiers texte qui sont stockés sur votre appareil lorsque vous visitez un site web. Ils sont utilisés pour améliorer l'expérience de navigation.",
+cookiesUsed: "Cookies Utilisés",
+technicalCookies: "Cookies Techniques (Nécessaires)",
+technicalCookiesDesc: "Ils sont essentiels au fonctionnement du site et ne peuvent pas être désactivés.",
+cookieName: "casa-mare-cookie-consent",
+cookieNameDesc: "stocke votre préférence en matière de cookies",
+duration: "Durée",
+durationValue: "12 mois",
+purpose: "Finalité",
+purposeValue: "se souvenir de votre choix de cookies",
+cookiesNotUsed: "Cookies NON Utilisés",
+cookiesNotUsedText: "Notre site n'utilise PAS:",
+cookiesNotUsedList: ["Cookies de profilage", "Cookies de suivi", "Cookies tiers pour la publicité", "Cookies d'analyse (Google Analytics ou similaires)"],
+manageCookies: "Gestion des Cookies",
+manageCookiesText: "Vous pouvez gérer ou désactiver les cookies via les paramètres de votre navigateur:",
+browserList: ["Chrome: Paramètres → Confidentialité et sécurité → Cookies", "Firefox: Options → Confidentialité et sécurité → Cookies", "Safari: Préférences → Confidentialité → Cookies", "Edge: Paramètres → Cookies et autorisations de site"],
+disableNote: "Note: la désactivation des cookies techniques peut compromettre certaines fonctionnalités du site.",
+updates: "Mises à Jour",
+updatesText: "Cette Politique des Cookies peut être mise à jour périodiquement. Nous vous invitons à la consulter régulièrement.",
+lastUpdate: "Dernière mise à jour: Janvier 2026",
+monthNames: ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"],
+dayNames: ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"],
+exclusiveRentals: "Locations Exclusives en Bord de Mer",
+backToHome: "Retour à l'Accueil"
+}
+};
 
   const t = translations[language];
-
+// ora usa t
+const galleryImages = [
+  { url: 'https://raw.githubusercontent.com/andre199372/images/de1b6c5b9e6db80f7d364ba0c991d53182f326d9/Vistaest.jpeg', title: t.externalView },
+  { url: 'https://raw.githubusercontent.com/andre199372/images/de1b6c5b9e6db80f7d364ba0c991d53182f326d9/sogg.jpeg', title: t.livingRoom },
+  { url: 'https://raw.githubusercontent.com/andre199372/images/de1b6c5b9e6db80f7d364ba0c991d53182f326d9/matr.jpeg', title: t.masterBedroom },
+  { url: 'https://raw.githubusercontent.com/andre199372/images/de1b6c5b9e6db80f7d364ba0c991d53182f326d9/cuc1.jpeg', title: t.kitchen },
+  { url: 'https://raw.githubusercontent.com/andre199372/images/de1b6c5b9e6db80f7d364ba0c991d53182f326d9/panorama.jpeg', title: t.panorama },
+  { url: 'https://raw.githubusercontent.com/andre199372/images/58f9c74e9a08ccedd1b47e43d21aff701ca34b7f/terr.jpeg', title: t.terrace }
+];
   useEffect(() => {
     if (activeSection === 'prenota') {
       loadBookings();
@@ -537,11 +915,10 @@ if (!validatePhone(formData.phone)) {
   };
 
   const renderCalendar = () => {
-    const { daysInMonth, startingDayOfWeek, year, month } = getDaysInMonth(currentMonth);
-    const days = [];
-    const dayNames = ['Dom', 'Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab'];
+  const { daysInMonth, startingDayOfWeek, year, month } = getDaysInMonth(currentMonth);
+  const days = [];
 
-    dayNames.forEach(day => {
+  t.dayNames.forEach(day => {
       days.push(
         <div key={`header-${day}`} className="text-center font-semibold text-gray-600 py-2">
           {day}
@@ -591,7 +968,7 @@ if (!validatePhone(formData.phone)) {
           <div className="flex justify-between items-center">
             <div>
               <h1 className="text-3xl font-bold">Casa Marè</h1>
-              <p className="text-blue-200 text-sm italic">Affitti Esclusivi sul Mare</p>
+              <p className="text-blue-200 text-sm italic">{t.exclusiveRentals}</p>
             </div>
             
             {/* Desktop Menu */}
@@ -644,10 +1021,10 @@ if (!validatePhone(formData.phone)) {
       {/* Floating Home Button (visible on non-home sections) */}
       {activeSection !== 'home' && (
         <button
-          onClick={() => scrollToSection('home')}
-          className="fixed bottom-8 right-8 z-40 bg-blue-600 text-white p-4 rounded-full shadow-2xl hover:bg-blue-700 transition transform hover:scale-110"
-          title="Torna alla Home"
-        >
+  onClick={() => scrollToSection('home')}
+  className="fixed bottom-8 right-8 z-40 bg-blue-600 text-white p-4 rounded-full shadow-2xl hover:bg-blue-700 transition transform hover:scale-110"
+  title={t.backToHome}
+>
           <Home size={24} />
         </button>
       )}
@@ -659,33 +1036,32 @@ if (!validatePhone(formData.phone)) {
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
               <div className="flex-1">
                 <h3 className="text-lg font-bold text-blue-900 mb-2 flex items-center gap-2">
-                  <Shield size={24} />
-                  Utilizzo dei Cookie
-                </h3>
-                <p className="text-gray-700 text-sm">
-                  Utilizziamo cookie tecnici necessari per il funzionamento del sito. Non utilizziamo cookie di profilazione o tracciamento.
-                  Continuando la navigazione accetti l'utilizzo dei cookie tecnici.
-                </p>
+  <Shield size={24} />
+  {t.cookieBannerTitle}
+</h3>
+<p className="text-gray-700 text-sm">
+  {t.cookieBannerText}
+</p>
               </div>
               <div className="flex gap-3 flex-shrink-0">
                 <button
-                  onClick={() => setShowCookieModal(true)}
-                  className="px-4 py-2 text-blue-600 hover:text-blue-800 font-semibold transition"
-                >
-                  Maggiori Info
-                </button>
-                <button
-                  onClick={declineCookies}
-                  className="px-6 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition font-semibold"
-                >
-                  Rifiuta
-                </button>
-                <button
-                  onClick={acceptCookies}
-                  className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-semibold"
-                >
-                  Accetta
-                </button>
+  onClick={() => setShowCookieModal(true)}
+  className="px-4 py-2 text-blue-600 hover:text-blue-800 font-semibold transition"
+>
+  {t.moreInfo}
+</button>
+<button
+  onClick={declineCookies}
+  className="px-6 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition font-semibold"
+>
+  {t.decline}
+</button>
+<button
+  onClick={acceptCookies}
+  className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-semibold"
+>
+  {t.accept}
+</button>
               </div>
             </div>
           </div>
@@ -697,102 +1073,84 @@ if (!validatePhone(formData.phone)) {
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
           <div className="bg-white rounded-2xl shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
             <div className="sticky top-0 bg-white border-b-2 border-blue-200 p-6 flex justify-between items-center">
-              <h2 className="text-2xl font-bold text-blue-900">Informativa Privacy</h2>
+              <h2 className="text-2xl font-bold text-blue-900">{t.privacyTitle}</h2>
               <button onClick={() => setShowPrivacyModal(false)} className="text-gray-500 hover:text-gray-700">
                 <X size={24} />
               </button>
             </div>
             <div className="p-6 space-y-4 text-gray-700">
-              <section>
-                <h3 className="text-xl font-bold text-blue-900 mb-3">1. Titolare del Trattamento</h3>
-                <p>Casa Marè S.r.l., con sede in Via del Mare 123, 00100 Località Marina</p>
-                <p>Email: privacy@casamare.it | Tel: +39 123 456 7890</p>
-              </section>
+  <section>
+    <h3 className="text-xl font-bold text-blue-900 mb-3">{t.dataController}</h3>
+    <p>{t.dataControllerText}</p>
+    <p>{t.dataControllerContact}</p>
+  </section>
 
-              <section>
-                <h3 className="text-xl font-bold text-blue-900 mb-3">2. Dati Raccolti</h3>
-                <p>Raccogliamo i seguenti dati personali:</p>
-                <ul className="list-disc list-inside ml-4 space-y-1">
-                  <li>Nome e cognome</li>
-                  <li>Indirizzo email</li>
-                  <li>Numero di telefono</li>
-                  <li>Date di prenotazione e numero ospiti</li>
-                  <li>Eventuali note o richieste specifiche</li>
-                </ul>
-              </section>
+  <section>
+    <h3 className="text-xl font-bold text-blue-900 mb-3">{t.dataCollected}</h3>
+    <p>{t.dataCollectedText}</p>
+    <ul className="list-disc list-inside ml-4 space-y-1">
+      {t.dataCollectedList.map((item, idx) => <li key={idx}>{item}</li>)}
+    </ul>
+  </section>
 
-              <section>
-                <h3 className="text-xl font-bold text-blue-900 mb-3">3. Finalità del Trattamento</h3>
-                <p>I dati vengono trattati per:</p>
-                <ul className="list-disc list-inside ml-4 space-y-1">
-                  <li>Gestione delle prenotazioni e richieste di informazioni</li>
-                  <li>Comunicazioni relative al servizio richiesto</li>
-                  <li>Adempimenti di obblighi contrattuali e fiscali</li>
-                </ul>
-              </section>
+  <section>
+    <h3 className="text-xl font-bold text-blue-900 mb-3">{t.processingPurpose}</h3>
+    <p>{t.processingPurposeText}</p>
+    <ul className="list-disc list-inside ml-4 space-y-1">
+      {t.processingPurposeList.map((item, idx) => <li key={idx}>{item}</li>)}
+    </ul>
+  </section>
 
-              <section>
-                <h3 className="text-xl font-bold text-blue-900 mb-3">4. Base Giuridica</h3>
-                <p>Il trattamento è basato su:</p>
-                <ul className="list-disc list-inside ml-4 space-y-1">
-                  <li>Esecuzione di un contratto (prenotazione)</li>
-                  <li>Consenso dell'interessato (richieste informazioni)</li>
-                  <li>Obblighi di legge (fiscali, contabili)</li>
-                </ul>
-              </section>
+  <section>
+    <h3 className="text-xl font-bold text-blue-900 mb-3">{t.legalBasis}</h3>
+    <p>{t.legalBasisText}</p>
+    <ul className="list-disc list-inside ml-4 space-y-1">
+      {t.legalBasisList.map((item, idx) => <li key={idx}>{item}</li>)}
+    </ul>
+  </section>
 
-              <section>
-                <h3 className="text-xl font-bold text-blue-900 mb-3">5. Conservazione dei Dati</h3>
-                <p>I dati saranno conservati per:</p>
-                <ul className="list-disc list-inside ml-4 space-y-1">
-                  <li>Durata del rapporto contrattuale</li>
-                  <li>10 anni per adempimenti fiscali</li>
-                  <li>Fino a revoca del consenso per richieste informazioni</li>
-                </ul>
-              </section>
+  <section>
+    <h3 className="text-xl font-bold text-blue-900 mb-3">{t.dataRetention}</h3>
+    <p>{t.dataRetentionText}</p>
+    <ul className="list-disc list-inside ml-4 space-y-1">
+      {t.dataRetentionList.map((item, idx) => <li key={idx}>{item}</li>)}
+    </ul>
+  </section>
 
-              <section>
-                <h3 className="text-xl font-bold text-blue-900 mb-3">6. Diritti dell'Interessato</h3>
-                <p>Hai diritto di:</p>
-                <ul className="list-disc list-inside ml-4 space-y-1">
-                  <li>Accedere ai tuoi dati personali</li>
-                  <li>Richiedere la rettifica o cancellazione</li>
-                  <li>Limitare il trattamento</li>
-                  <li>Opporti al trattamento</li>
-                  <li>Richiedere la portabilità dei dati</li>
-                  <li>Revocare il consenso in qualsiasi momento</li>
-                  <li>Proporre reclamo al Garante Privacy</li>
-                </ul>
-                <p className="mt-2">Per esercitare i tuoi diritti, contattaci a: privacy@casamare.it</p>
-              </section>
+  <section>
+    <h3 className="text-xl font-bold text-blue-900 mb-3">{t.userRights}</h3>
+    <p>{t.userRightsText}</p>
+    <ul className="list-disc list-inside ml-4 space-y-1">
+      {t.userRightsList.map((item, idx) => <li key={idx}>{item}</li>)}
+    </ul>
+    <p className="mt-2">{t.exerciseRights}</p>
+  </section>
 
-              <section>
-                <h3 className="text-xl font-bold text-blue-900 mb-3">7. Comunicazione dei Dati</h3>
-                <p>I dati potranno essere comunicati a:</p>
-                <ul className="list-disc list-inside ml-4 space-y-1">
-                  <li>Fornitori di servizi IT per la gestione del sistema</li>
-                  <li>Consulenti legali, fiscali e amministrativi</li>
-                  <li>Autorità pubbliche per obblighi di legge</li>
-                </ul>
-              </section>
+  <section>
+    <h3 className="text-xl font-bold text-blue-900 mb-3">{t.dataCommunication}</h3>
+    <p>{t.dataCommunicationText}</p>
+    <ul className="list-disc list-inside ml-4 space-y-1">
+      {t.dataCommunicationList.map((item, idx) => <li key={idx}>{item}</li>)}
+    </ul>
+  </section>
 
-              <section>
-                <h3 className="text-xl font-bold text-blue-900 mb-3">8. Trasferimento Dati Extra-UE</h3>
-                <p>I dati non vengono trasferiti al di fuori dell'Unione Europea.</p>
-              </section>
+  <section>
+    <h3 className="text-xl font-bold text-blue-900 mb-3">{t.dataTransfer}</h3>
+    <p>{t.dataTransferText}</p>
+  </section>
 
-              <section>
-                <h3 className="text-xl font-bold text-blue-900 mb-3">9. Sicurezza</h3>
-                <p>Adottiamo misure tecniche e organizzative adeguate per proteggere i tuoi dati da accessi non autorizzati, perdita o divulgazione.</p>
-              </section>
+  <section>
+    <h3 className="text-xl font-bold text-blue-900 mb-3">{t.security}</h3>
+    <p>{t.securityText}</p>
+  </section>
             </div>
             <div className="sticky bottom-0 bg-gray-50 border-t-2 border-blue-200 p-6">
               <button
-                onClick={() => setShowPrivacyModal(false)}
-                className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition"
-              >
-                Chiudi
-              </button>
+  onClick={() => setShowPrivacyModal(false)}
+  className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition"
+>
+  {t.close}
+</button>
             </div>
           </div>
         </div>
@@ -803,68 +1161,65 @@ if (!validatePhone(formData.phone)) {
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
           <div className="bg-white rounded-2xl shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
             <div className="sticky top-0 bg-white border-b-2 border-blue-200 p-6 flex justify-between items-center">
-              <h2 className="text-2xl font-bold text-blue-900">Cookie Policy</h2>
+              <h2 className="text-2xl font-bold text-blue-900">{t.cookiePolicyTitle}</h2>
               <button onClick={() => setShowCookieModal(false)} className="text-gray-500 hover:text-gray-700">
                 <X size={24} />
               </button>
             </div>
             <div className="p-6 space-y-4 text-gray-700">
-              <section>
-                <h3 className="text-xl font-bold text-blue-900 mb-3">Cosa sono i Cookie</h3>
-                <p>I cookie sono piccoli file di testo che vengono memorizzati sul tuo dispositivo quando visiti un sito web. Vengono utilizzati per migliorare l'esperienza di navigazione.</p>
-              </section>
+  <section>
+    <h3 className="text-xl font-bold text-blue-900 mb-3">{t.whatAreCookies}</h3>
+    <p>{t.whatAreCookiesText}</p>
+  </section>
 
-              <section>
-                <h3 className="text-xl font-bold text-blue-900 mb-3">Cookie Utilizzati</h3>
-                <div className="space-y-3">
-                  <div className="bg-blue-50 p-4 rounded-lg">
-                    <h4 className="font-bold text-blue-900 mb-2">Cookie Tecnici (Necessari)</h4>
-                    <p className="text-sm mb-2">Sono essenziali per il funzionamento del sito e non possono essere disabilitati.</p>
-                    <ul className="list-disc list-inside ml-4 space-y-1 text-sm">
-                      <li><strong>casa-mare-cookie-consent</strong>: memorizza la tua preferenza sui cookie</li>
-                      <li>Durata: 12 mesi</li>
-                      <li>Finalità: ricordare la tua scelta sui cookie</li>
-                    </ul>
-                  </div>
-                </div>
-              </section>
+  <section>
+    <h3 className="text-xl font-bold text-blue-900 mb-3">{t.cookiesUsed}</h3>
+    <div className="space-y-3">
+      <div className="bg-blue-50 p-4 rounded-lg">
+        <h4 className="font-bold text-blue-900 mb-2">{t.technicalCookies}</h4>
+        <p className="text-sm mb-2">{t.technicalCookiesDesc}</p>
+        <ul className="list-disc list-inside ml-4 space-y-1 text-sm">
+          <li><strong>{t.cookieName}</strong>: {t.cookieNameDesc}</li>
+          <li>{t.duration}: {t.durationValue}</li>
+          <li>{t.purpose}: {t.purposeValue}</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-              <section>
-                <h3 className="text-xl font-bold text-blue-900 mb-3">Cookie NON Utilizzati</h3>
-                <p>Il nostro sito NON utilizza:</p>
-                <ul className="list-disc list-inside ml-4 space-y-1">
-                  <li>Cookie di profilazione</li>
-                  <li>Cookie di tracciamento</li>
-                  <li>Cookie di terze parti per pubblicità</li>
-                  <li>Cookie di analisi (Google Analytics o simili)</li>
-                </ul>
-              </section>
+  <section>
+    <h3 className="text-xl font-bold text-blue-900 mb-3">{t.cookiesNotUsed}</h3>
+    <p>{t.cookiesNotUsedText}</p>
+    <ul className="list-disc list-inside ml-4 space-y-1">
+      {t.cookiesNotUsedList.map((item, idx) => <li key={idx}>{item}</li>)}
+    </ul>
+  </section>
 
-              <section>
-                <h3 className="text-xl font-bold text-blue-900 mb-3">Gestione dei Cookie</h3>
-                <p>Puoi gestire o disabilitare i cookie attraverso le impostazioni del tuo browser:</p>
-                <ul className="list-disc list-inside ml-4 space-y-1 text-sm">
-                  <li><strong>Chrome</strong>: Impostazioni → Privacy e sicurezza → Cookie</li>
-                  <li><strong>Firefox</strong>: Opzioni → Privacy e sicurezza → Cookie</li>
-                  <li><strong>Safari</strong>: Preferenze → Privacy → Cookie</li>
-                  <li><strong>Edge</strong>: Impostazioni → Cookie e autorizzazioni sito</li>
-                </ul>
-                <p className="mt-3 text-sm text-gray-600">Nota: disabilitare i cookie tecnici potrebbe compromettere alcune funzionalità del sito.</p>
-              </section>
+  <section>
+    <h3 className="text-xl font-bold text-blue-900 mb-3">{t.manageCookies}</h3>
+    <p>{t.manageCookiesText}</p>
+    <ul className="list-disc list-inside ml-4 space-y-1 text-sm">
+      {t.browserList.map((item, idx) => {
+        const parts = item.split(':');
+        return <li key={idx}><strong>{parts[0]}</strong>:{parts.slice(1).join(':')}</li>;
+      })}
+    </ul>
+    <p className="mt-3 text-sm text-gray-600">{t.disableNote}</p>
+  </section>
 
-              <section>
-                <h3 className="text-xl font-bold text-blue-900 mb-3">Aggiornamenti</h3>
-                <p>Questa Cookie Policy può essere aggiornata periodicamente. Ti invitiamo a consultarla regolarmente.</p>
-                <p className="mt-2 text-sm">Ultimo aggiornamento: Gennaio 2026</p>
-              </section>
-            </div>
+  <section>
+    <h3 className="text-xl font-bold text-blue-900 mb-3">{t.updates}</h3>
+    <p>{t.updatesText}</p>
+    <p className="mt-2 text-sm">{t.lastUpdate}</p>
+  </section>
+</div>
             <div className="sticky bottom-0 bg-gray-50 border-t-2 border-blue-200 p-6">
               <button
-                onClick={() => setShowCookieModal(false)}
-                className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition"
-              >
-                Chiudi
-              </button>
+  onClick={() => setShowCookieModal(false)}
+  className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition"
+>
+  {t.close}
+</button>
             </div>
           </div>
         </div>
@@ -931,21 +1286,19 @@ if (!validatePhone(formData.phone)) {
               <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
                 <h3 className="text-3xl font-bold text-blue-800 mb-6">Un'Esperienza Indimenticabile</h3>
                 <p className="text-lg text-gray-700 mb-4 leading-relaxed">
-                  Casa Marè è una splendida proprietà di lusso situata direttamente sulla costa, con accesso privato alla spiaggia. 
-                  Questa residenza esclusiva offre un rifugio perfetto per chi cerca tranquillità e comfort in un ambiente mozzafiato.
-                </p>
-                <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-                  Con i suoi ampi spazi interni ed esterni, la villa può ospitare comodamente fino a 8 persone, 
-                  rendendola ideale per famiglie o gruppi di amici desiderosi di vivere un'esperienza unica.
-                </p>
+  {t.villaDescription1}
+</p>
+<p className="text-lg text-gray-700 mb-8 leading-relaxed">
+  {t.villaDescription2}
+</p>
 
                 <div className="grid md:grid-cols-4 gap-6 mt-8">
-                  {[
-                    { title: '6 Camere', desc: 'Spaziose e arredate', icon: '🛏️' },
-                    { title: '4 Bagni', desc: 'Moderni e attrezzati', icon: '🚿' },
-                    { title: '350 m²', desc: 'Di puro comfort', icon: '📏' },
-                    { title: 'Piscina', desc: 'Vista mare panoramica', icon: '🏊' }
-                  ].map((feature, idx) => (
+  {[
+    { title: `6 ${t.bedrooms}`, desc: t.spaciousDecorated, icon: '🛏️' },
+    { title: `4 ${t.bathrooms}`, desc: t.modernEquipped, icon: '🚿' },
+    { title: `350 ${t.squareMeters}`, desc: t.pureComfort, icon: '📏' },
+    { title: t.pool, desc: t.seaView, icon: '🏊' }
+  ].map((feature, idx) => (
                     <div key={idx} className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-xl border-2 border-blue-200 text-center hover:shadow-lg transition">
                       <div className="text-4xl mb-3">{feature.icon}</div>
                       <h4 className="text-xl font-bold text-blue-900 mb-2">{feature.title}</h4>
@@ -988,13 +1341,13 @@ if (!validatePhone(formData.phone)) {
               <h2 className="text-5xl font-bold text-center text-blue-900 mb-12">Servizi Inclusi</h2>
               <div className="grid md:grid-cols-3 gap-8">
                 {[
-                  { icon: Wifi, title: 'CIN e CIR', desc: 'CIN IT053006C2RQZ6FHWS CIR 053006LTN2665' },
-                  { icon: Wind, title: 'Aria Condizionata', desc: 'In tutte le stanze' },
-                  { icon: UtensilsCrossed, title: 'Cucina Attrezzata', desc: 'Completa di elettrodomestici' },
-                  { icon: Car, title: 'Parcheggio Privato', desc: 'Sicuro per 1 auto' },
-                  { icon: Sparkles, title: 'Casa Pulita', desc: 'Sempre in Ordine' },
-                  { icon: Waves, title: 'Vista Mare', desc: 'Dal Soggiorno, Giardino o dalla Terrazza' }
-                ].map((service, idx) => (
+  { icon: Wifi, title: t.cinCir, desc: t.cinCirDesc },
+  { icon: Wind, title: t.airConditioning, desc: t.inAllRooms },
+  { icon: UtensilsCrossed, title: t.equippedKitchen, desc: t.completeAppliances },
+  { icon: Car, title: t.privateParking, desc: t.safeForCar },
+  { icon: Sparkles, title: t.cleanHouse, desc: t.alwaysInOrder },
+  { icon: Waves, title: t.seaViewLiving, desc: t.fromLivingGarden }
+].map((service, idx) => (
                   <div key={idx} className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition border-t-4 border-blue-500">
                     <service.icon className="text-blue-600 mb-4" size={48} />
                     <h3 className="text-2xl font-bold text-blue-900 mb-3">{service.title}</h3>
@@ -1032,7 +1385,7 @@ if (!validatePhone(formData.phone)) {
                     <Euro className="text-blue-600" size={28} />
                     <h3 className="text-2xl font-bold text-blue-900">Bassa Stagione</h3>
                   </div>
-                  <p className="text-gray-600 mb-2">Ottobre - Maggio</p>
+                  <p className="text-gray-600 mb-2">{t.octoberMay}</p>
                   <p className="text-4xl font-bold text-blue-600">€1.500<span className="text-xl text-gray-500">/settimana</span></p>
                 </div>
 
@@ -1041,7 +1394,7 @@ if (!validatePhone(formData.phone)) {
                     <Euro size={28} />
                     <h3 className="text-2xl font-bold">Alta Stagione</h3>
                   </div>
-                  <p className="mb-2 opacity-90">Giugno - Settembre</p>
+                  <p className="mb-2 opacity-90">{t.juneSeptember}</p>
                   <p className="text-4xl font-bold">€2.800<span className="text-xl opacity-75">/settimana</span></p>
                 </div>
               </div>
@@ -1055,8 +1408,8 @@ if (!validatePhone(formData.phone)) {
                     ← Precedente
                   </button>
                   <h3 className="text-2xl font-bold text-blue-900">
-                    {currentMonth.toLocaleDateString('it-IT', { month: 'long', year: 'numeric' })}
-                  </h3>
+  {t.monthNames[currentMonth.getMonth()]} {currentMonth.getFullYear()}
+</h3>
                   <button
                     onClick={() => setCurrentMonth(new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1, 1))}
                     className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
