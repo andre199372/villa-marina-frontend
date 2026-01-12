@@ -629,7 +629,7 @@ const CasaMareSite = () => {
             <div 
               className="absolute inset-0 bg-cover bg-center bg-no-repeat"
               style={{
-                backgroundImage: `url('https://raw.githubusercontent.com/andre199372/images/d520dba1c6c738b963288e79ede30e7bc562c1b3/back2')`,
+                backgroundImage: `url('https://raw.githubusercontent.com/andre199372/images/74614d79731cefad3e60d8496181ff05be494ced/back3.jpeg')`,
               }}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 via-blue-800/60 to-cyan-700/70"></div>
