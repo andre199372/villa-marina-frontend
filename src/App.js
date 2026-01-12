@@ -11,6 +11,7 @@ const CasaMareSite = () => {
   const [currentMonth, setCurrentMonth] = useState(new Date());
   const [showBookingForm, setShowBookingForm] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [language, setLanguage] = useState('it');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -36,6 +37,253 @@ const CasaMareSite = () => {
     booking: false,
     contact: false
   });
+  // Gallery images URLs - SOSTITUISCI QUESTI URL CON I TUOI
+  const galleryImages = [
+    { url: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=500', title: 'Vista Esterna' },
+    { url: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=500', title: 'Soggiorno' },
+    { url: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=500', title: 'Camera Matrimoniale' },
+    { url: 'https://images.unsplash.com/photo-1556912173-46c336c7fd55?w=500', title: 'Cucina' },
+    { url: 'https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=500', title: 'Piscina' },
+    { url: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=500', title: 'Terrazza' }
+  ];
+
+  // Translations
+  const translations = {
+    it: {
+      heroTitle: "Il Tuo Rifugio Sul Mare",
+      heroSubtitle: "Dove il lusso incontra l'orizzonte infinito del Mediterraneo",
+      bookNow: "Prenota Ora",
+      home: "home",
+      property: "proprietà",
+      gallery: "galleria",
+      services: "servizi",
+      booking: "prenota",
+      contacts: "contatti",
+      invalidEmail: "Inserisci un indirizzo email valido",
+      invalidPhone: "Inserisci un numero di telefono valido",
+      fillAllFields: "Compila tutti i campi obbligatori",
+      fillAllContactFields: "Compila tutti i campi del modulo contatti",
+      acceptPrivacy: "Devi accettare l'informativa privacy per procedere",
+      bookingSuccess: "Richiesta di prenotazione inviata! Riceverai una conferma via email entro 24 ore.",
+      contactSuccess: "Messaggio inviato con successo! Ti ricontatteremo presto.",
+      ourVilla: "La Nostra Villa",
+      unforgettableExp: "Un'Esperienza Indimenticabile",
+      photoGallery: "Galleria Fotografica",
+      servicesIncluded: "Servizi Inclusi",
+      bookYourVacation: "Prenota la Tua Vacanza",
+      lowSeason: "Bassa Stagione",
+      highSeason: "Alta Stagione",
+      perWeek: "/settimana",
+      previous: "← Precedente",
+      next: "Successivo →",
+      checkIn: "Check-in",
+      checkOut: "Check-out",
+      total: "Totale",
+      selectedDate: "Data selezionata",
+      selectEndDate: "Seleziona data di fine",
+      completeBooking: "Completa la Prenotazione",
+      fullName: "Nome Completo",
+      email: "Email",
+      phone: "Telefono",
+      guests: "Ospiti",
+      cancel: "Annulla",
+      confirm: "Conferma",
+      sending: "Invio...",
+      contactUs: "Contattaci",
+      information: "Informazioni",
+      address: "Indirizzo",
+      hours: "Orari",
+      sendMessage: "Invia un Messaggio",
+      name: "Nome e Cognome",
+      message: "Messaggio",
+      sendRequest: "Invia Richiesta",
+      privacyPolicy: "Privacy Policy",
+      cookiePolicy: "Cookie Policy",
+      readAccept: "Ho letto e accetto l'",
+      privacyInfo: "informativa privacy",
+      gdprConsent: "e autorizzo il trattamento dei miei dati personali ai sensi del GDPR (Regolamento UE 2016/679)",
+      forBooking: "per l'elaborazione della prenotazione",
+      required: "*",
+      close: "Chiudi",
+      allRightsReserved: "Tutti i diritti riservati"
+    },
+    en: {
+      heroTitle: "Your Seaside Retreat",
+      heroSubtitle: "Where luxury meets the endless Mediterranean horizon",
+      bookNow: "Book Now",
+      home: "home",
+      property: "property",
+      gallery: "gallery",
+      services: "services",
+      booking: "book",
+      contacts: "contacts",
+      invalidEmail: "Please enter a valid email address",
+      invalidPhone: "Please enter a valid phone number",
+      fillAllFields: "Please fill in all required fields",
+      fillAllContactFields: "Please fill in all contact form fields",
+      acceptPrivacy: "You must accept the privacy policy to proceed",
+      bookingSuccess: "Booking request sent! You will receive a confirmation email within 24 hours.",
+      contactSuccess: "Message sent successfully! We will contact you soon.",
+      ourVilla: "Our Villa",
+      unforgettableExp: "An Unforgettable Experience",
+      photoGallery: "Photo Gallery",
+      servicesIncluded: "Services Included",
+      bookYourVacation: "Book Your Vacation",
+      lowSeason: "Low Season",
+      highSeason: "High Season",
+      perWeek: "/week",
+      previous: "← Previous",
+      next: "Next →",
+      checkIn: "Check-in",
+      checkOut: "Check-out",
+      total: "Total",
+      selectedDate: "Selected date",
+      selectEndDate: "Select end date",
+      completeBooking: "Complete Booking",
+      fullName: "Full Name",
+      email: "Email",
+      phone: "Phone",
+      guests: "Guests",
+      cancel: "Cancel",
+      confirm: "Confirm",
+      sending: "Sending...",
+      contactUs: "Contact Us",
+      information: "Information",
+      address: "Address",
+      hours: "Hours",
+      sendMessage: "Send a Message",
+      name: "Name and Surname",
+      message: "Message",
+      sendRequest: "Send Request",
+      privacyPolicy: "Privacy Policy",
+      cookiePolicy: "Cookie Policy",
+      readAccept: "I have read and accept the",
+      privacyInfo: "privacy policy",
+      gdprConsent: "and authorize the processing of my personal data in accordance with GDPR (EU Regulation 2016/679)",
+      forBooking: "for booking processing",
+      required: "*",
+      close: "Close",
+      allRightsReserved: "All rights reserved"
+    },
+    de: {
+      heroTitle: "Ihr Refugium am Meer",
+      heroSubtitle: "Wo Luxus auf den endlosen mediterranen Horizont trifft",
+      bookNow: "Jetzt Buchen",
+      home: "startseite",
+      property: "objekt",
+      gallery: "galerie",
+      services: "dienstleistungen",
+      booking: "buchen",
+      contacts: "kontakte",
+      invalidEmail: "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+      invalidPhone: "Bitte geben Sie eine gültige Telefonnummer ein",
+      fillAllFields: "Bitte füllen Sie alle erforderlichen Felder aus",
+      fillAllContactFields: "Bitte füllen Sie alle Kontaktformularfelder aus",
+      acceptPrivacy: "Sie müssen die Datenschutzerklärung akzeptieren, um fortzufahren",
+      bookingSuccess: "Buchungsanfrage gesendet! Sie erhalten innerhalb von 24 Stunden eine Bestätigungs-E-Mail.",
+      contactSuccess: "Nachricht erfolgreich gesendet! Wir werden Sie bald kontaktieren.",
+      ourVilla: "Unsere Villa",
+      unforgettableExp: "Ein Unvergessliches Erlebnis",
+      photoGallery: "Fotogalerie",
+      servicesIncluded: "Enthaltene Dienstleistungen",
+      bookYourVacation: "Buchen Sie Ihren Urlaub",
+      lowSeason: "Nebensaison",
+      highSeason: "Hauptsaison",
+      perWeek: "/Woche",
+      previous: "← Zurück",
+      next: "Weiter →",
+      checkIn: "Check-in",
+      checkOut: "Check-out",
+      total: "Gesamt",
+      selectedDate: "Ausgewähltes Datum",
+      selectEndDate: "Enddatum auswählen",
+      completeBooking: "Buchung Abschließen",
+      fullName: "Vollständiger Name",
+      email: "E-Mail",
+      phone: "Telefon",
+      guests: "Gäste",
+      cancel: "Abbrechen",
+      confirm: "Bestätigen",
+      sending: "Senden...",
+      contactUs: "Kontaktieren Sie Uns",
+      information: "Informationen",
+      address: "Adresse",
+      hours: "Öffnungszeiten",
+      sendMessage: "Nachricht Senden",
+      name: "Name und Nachname",
+      message: "Nachricht",
+      sendRequest: "Anfrage Senden",
+      privacyPolicy: "Datenschutzerklärung",
+      cookiePolicy: "Cookie-Richtlinie",
+      readAccept: "Ich habe die",
+      privacyInfo: "Datenschutzerklärung",
+      gdprConsent: "gelesen und akzeptiert und autorisiere die Verarbeitung meiner personenbezogenen Daten gemäß DSGVO (EU-Verordnung 2016/679)",
+      forBooking: "zur Buchungsabwicklung",
+      required: "*",
+      close: "Schließen",
+      allRightsReserved: "Alle Rechte vorbehalten"
+    },
+    fr: {
+      heroTitle: "Votre Refuge en Bord de Mer",
+      heroSubtitle: "Où le luxe rencontre l'horizon infini de la Méditerranée",
+      bookNow: "Réserver Maintenant",
+      home: "accueil",
+      property: "propriété",
+      gallery: "galerie",
+      services: "services",
+      booking: "réserver",
+      contacts: "contacts",
+      invalidEmail: "Veuillez saisir une adresse e-mail valide",
+      invalidPhone: "Veuillez saisir un numéro de téléphone valide",
+      fillAllFields: "Veuillez remplir tous les champs obligatoires",
+      fillAllContactFields: "Veuillez remplir tous les champs du formulaire de contact",
+      acceptPrivacy: "Vous devez accepter la politique de confidentialité pour continuer",
+      bookingSuccess: "Demande de réservation envoyée! Vous recevrez un e-mail de confirmation dans les 24 heures.",
+      contactSuccess: "Message envoyé avec succès! Nous vous contacterons bientôt.",
+      ourVilla: "Notre Villa",
+      unforgettableExp: "Une Expérience Inoubliable",
+      photoGallery: "Galerie de Photos",
+      servicesIncluded: "Services Inclus",
+      bookYourVacation: "Réservez Vos Vacances",
+      lowSeason: "Basse Saison",
+      highSeason: "Haute Saison",
+      perWeek: "/semaine",
+      previous: "← Précédent",
+      next: "Suivant →",
+      checkIn: "Arrivée",
+      checkOut: "Départ",
+      total: "Total",
+      selectedDate: "Date sélectionnée",
+      selectEndDate: "Sélectionnez la date de fin",
+      completeBooking: "Finaliser la Réservation",
+      fullName: "Nom Complet",
+      email: "E-mail",
+      phone: "Téléphone",
+      guests: "Invités",
+      cancel: "Annuler",
+      confirm: "Confirmer",
+      sending: "Envoi...",
+      contactUs: "Contactez-nous",
+      information: "Informations",
+      address: "Adresse",
+      hours: "Horaires",
+      sendMessage: "Envoyer un Message",
+      name: "Nom et Prénom",
+      message: "Message",
+      sendRequest: "Envoyer la Demande",
+      privacyPolicy: "Politique de Confidentialité",
+      cookiePolicy: "Politique des Cookies",
+      readAccept: "J'ai lu et j'accepte la",
+      privacyInfo: "politique de confidentialité",
+      gdprConsent: "et j'autorise le traitement de mes données personnelles conformément au RGPD (Règlement UE 2016/679)",
+      forBooking: "pour le traitement de la réservation",
+      required: "*",
+      close: "Fermer",
+      allRightsReserved: "Tous droits réservés"
+    }
+  };
+
+  const t = translations[language];
 
   useEffect(() => {
     if (activeSection === 'prenota') {
@@ -167,9 +415,9 @@ const CasaMareSite = () => {
     }
 
     if (!validateEmail(contactForm.email)) {
-      setError('Inserisci un indirizzo email valido');
-      return;
-    }
+  setError(t.invalidEmail);
+  return;
+}
 
     if (!privacyConsent.contact) {
       setError('Devi accettare l\'informativa privacy per procedere');
@@ -208,15 +456,15 @@ const CasaMareSite = () => {
       return;
     }
 
-    if (!validateEmail(formData.email)) {
-      setError('Inserisci un indirizzo email valido');
-      return;
-    }
+   if (!validateEmail(formData.email)) {
+  setError(t.invalidEmail);
+  return;
+}
 
-    if (!validatePhone(formData.phone)) {
-      setError('Inserisci un numero di telefono valido');
-      return;
-    }
+if (!validatePhone(formData.phone)) {
+  setError(t.invalidPhone);
+  return;
+}
 
     if (!privacyConsent.booking) {
       setError('Devi accettare l\'informativa privacy per procedere');
@@ -347,20 +595,20 @@ const CasaMareSite = () => {
             
             {/* Desktop Menu */}
             <nav className="hidden md:flex gap-6">
-              {['home', 'proprieta', 'galleria', 'servizi', 'prenota', 'contatti'].map(section => (
-                <button
-                  key={section}
-                  onClick={() => scrollToSection(section)}
-                  className={`px-4 py-2 rounded-lg transition capitalize ${
-                    activeSection === section 
-                      ? 'bg-blue-600 text-white' 
-                      : 'hover:bg-blue-700/50'
-                  }`}
-                >
-                  {section}
-                </button>
-              ))}
-            </nav>
+  {['home', 'property', 'gallery', 'services', 'booking', 'contacts'].map(section => (
+    <button
+      key={section}
+      onClick={() => scrollToSection(section === 'property' ? 'proprieta' : section === 'gallery' ? 'galleria' : section === 'services' ? 'servizi' : section === 'booking' ? 'prenota' : section === 'contacts' ? 'contatti' : section)}
+      className={`px-4 py-2 rounded-lg transition capitalize ${
+        activeSection === (section === 'property' ? 'proprieta' : section === 'gallery' ? 'galleria' : section === 'services' ? 'servizi' : section === 'booking' ? 'prenota' : section === 'contacts' ? 'contatti' : section)
+          ? 'bg-blue-600 text-white' 
+          : 'hover:bg-blue-700/50'
+      }`}
+    >
+      {t[section]}
+    </button>
+  ))}
+</nav>
 
             {/* Mobile Menu Button */}
             <button 
@@ -373,19 +621,19 @@ const CasaMareSite = () => {
 
           {/* Mobile Menu Dropdown */}
           {showMobileMenu && (
-            <nav className="md:hidden mt-4 pb-4 flex flex-col gap-2">
-              {['home', 'proprieta', 'galleria', 'servizi', 'prenota', 'contatti'].map(section => (
-                <button
-                  key={section}
-                  onClick={() => scrollToSection(section)}
-                  className={`px-4 py-3 rounded-lg transition capitalize text-left ${
-                    activeSection === section 
-                      ? 'bg-blue-600 text-white' 
-                      : 'bg-blue-700/30 hover:bg-blue-700/50'
-                  }`}
-                >
-                  {section}
-                </button>
+  <nav className="md:hidden mt-4 pb-4 flex flex-col gap-2">
+    {['home', 'property', 'gallery', 'services', 'booking', 'contacts'].map(section => (
+      <button
+        key={section}
+        onClick={() => scrollToSection(section === 'property' ? 'proprieta' : section === 'gallery' ? 'galleria' : section === 'services' ? 'servizi' : section === 'booking' ? 'prenota' : section === 'contacts' ? 'contatti' : section)}
+        className={`px-4 py-3 rounded-lg transition capitalize text-left ${
+          activeSection === (section === 'property' ? 'proprieta' : section === 'gallery' ? 'galleria' : section === 'services' ? 'servizi' : section === 'booking' ? 'prenota' : section === 'contacts' ? 'contatti' : section)
+            ? 'bg-blue-600 text-white' 
+            : 'bg-blue-700/30 hover:bg-blue-700/50'
+        }`}
+      >
+        {t[section]}
+      </button>
               ))}
             </nav>
           )}
@@ -635,10 +883,41 @@ const CasaMareSite = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 via-blue-800/60 to-cyan-700/70"></div>
             </div>
             
-            <div className="relative z-10 text-center text-white px-4">
-              <h2 className="text-6xl md:text-7xl font-bold mb-6 drop-shadow-2xl">
-                Benvenuti in Paradiso
-              </h2>
+            {/* Language Selector */}
+<div className="absolute top-28 right-8 z-20 flex gap-3">
+  {[
+    { code: 'it', flag: '🇮🇹', name: 'Italiano' },
+    { code: 'en', flag: '🇬🇧', name: 'English' },
+    { code: 'de', flag: '🇩🇪', name: 'Deutsch' },
+    { code: 'fr', flag: '🇫🇷', name: 'Français' }
+  ].map(lang => (
+    <button
+      key={lang.code}
+      onClick={() => setLanguage(lang.code)}
+      className={`text-4xl transition transform hover:scale-110 ${
+        language === lang.code ? 'ring-4 ring-white rounded-full' : 'opacity-70 hover:opacity-100'
+      }`}
+      title={lang.name}
+    >
+      {lang.flag}
+    </button>
+  ))}
+</div>
+
+<div className="relative z-10 text-center text-white px-4">
+  <h2 className="text-6xl md:text-7xl font-bold mb-6 drop-shadow-2xl">
+    {t.heroTitle}
+  </h2>
+  <p className="text-2xl md:text-3xl mb-8 text-blue-100 drop-shadow-lg">
+    {t.heroSubtitle}
+  </p>
+  <button
+    onClick={() => scrollToSection('prenota')}
+    className="bg-cyan-400 text-blue-900 px-8 py-4 rounded-full text-xl font-bold hover:bg-cyan-300 transform hover:scale-105 transition shadow-2xl"
+  >
+    {t.bookNow}
+  </button>
+</div>
               <p className="text-2xl md:text-3xl mb-8 text-blue-100 drop-shadow-lg">
                 Una villa esclusiva affacciata sul mare cristallino
               </p>
@@ -694,14 +973,19 @@ const CasaMareSite = () => {
             <div className="max-w-6xl mx-auto">
               <h2 className="text-5xl font-bold text-center text-blue-900 mb-12">Galleria Fotografica</h2>
               <div className="grid md:grid-cols-3 gap-6">
-                {['Vista Esterna', 'Soggiorno', 'Camera Matrimoniale', 'Cucina', 'Piscina', 'Terrazza'].map((title, idx) => (
-                  <div key={idx} className="group relative h-64 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition transform hover:scale-105">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="text-white text-2xl font-bold drop-shadow-lg">{title}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
+  {galleryImages.map((image, idx) => (
+    <div key={idx} className="group relative h-64 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition transform hover:scale-105">
+      <img 
+        src={image.url} 
+        alt={image.title}
+        className="w-full h-full object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end">
+        <span className="text-white text-2xl font-bold p-4 drop-shadow-lg">{image.title}</span>
+      </div>
+    </div>
+  ))}
+</div>
             </div>
           </section>
         )}
