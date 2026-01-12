@@ -1242,20 +1242,24 @@ if (!validatePhone(formData.phone)) {
             {/* Language Selector */}
 <div className="absolute top-28 right-8 z-20 flex gap-3">
   {[
-    { code: 'it', flag: '🇮🇹', name: 'Italiano' },
-    { code: 'en', flag: '🇬🇧', name: 'English' },
-    { code: 'de', flag: '🇩🇪', name: 'Deutsch' },
-    { code: 'fr', flag: '🇫🇷', name: 'Français' }
+    { code: 'it', flag: 'https://flagcdn.com/w40/it.png', name: 'Italiano' },
+    { code: 'en', flag: 'https://flagcdn.com/w40/gb.png', name: 'English' },
+    { code: 'de', flag: 'https://flagcdn.com/w40/de.png', name: 'Deutsch' },
+    { code: 'fr', flag: 'https://flagcdn.com/w40/fr.png', name: 'Français' }
   ].map(lang => (
     <button
       key={lang.code}
       onClick={() => setLanguage(lang.code)}
-      className={`text-4xl transition transform hover:scale-110 ${
-        language === lang.code ? 'ring-4 ring-white rounded-full' : 'opacity-70 hover:opacity-100'
+      className={`w-12 h-12 rounded-full overflow-hidden transition transform hover:scale-110 ${
+        language === lang.code ? 'ring-4 ring-white shadow-lg' : 'opacity-70 hover:opacity-100'
       }`}
       title={lang.name}
     >
-      {lang.flag}
+      <img 
+        src={lang.flag} 
+        alt={lang.name}
+        className="w-full h-full object-cover"
+      />
     </button>
   ))}
 </div>
