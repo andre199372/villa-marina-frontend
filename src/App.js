@@ -1560,9 +1560,9 @@ className={`px-4 py-2 rounded-lg transition capitalize ${
                     <ul className="space-y-2 text-gray-700">
                       <li className="flex items-start gap-2">
                         <span className="text-blue-600 mt-1">✓</span>
-                        <span>{language === 'it' ? 'Aria condizionata in tutte le stanze' : 
-                               language === 'en' ? 'Air conditioning in all rooms' : 
-                               language === 'de' ? 'Klimaanlage in allen Räumen' : 
+                        <span>{language === 'it' ? 'Aria condizionata' : 
+                               language === 'en' ? 'Air conditioning' : 
+                               language === 'de' ? 'Klimaanlage' : 
                                'Climatisation dans toutes les pièces'}</span>
                       </li>
                       <li className="flex items-start gap-2">
