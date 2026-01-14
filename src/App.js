@@ -1443,7 +1443,7 @@ className={`px-4 py-2 rounded-lg transition capitalize ${
     { title: `2 ${t.bedrooms}`, desc: t.spaciousDecorated, icon: '🛏️' },
     { title: `1 ${t.bathrooms}`, desc: t.modernEquipped, icon: '🚿' },
     { title: `${t.squareMeters}`, desc: t.pureComfort, icon: '☀️' },
-    { title: t.pool, desc: t.seaView, icon: '🏊' }
+    { title: t.pool, desc: t.seaView, icon: '🌳' }
   ].map((feature, idx) => (
                     <div key={idx} className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-xl border-2 border-blue-200 text-center hover:shadow-lg transition">
                       <div className="text-4xl mb-3">{feature.icon}</div>
