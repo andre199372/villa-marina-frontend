@@ -1360,107 +1360,72 @@ className={`px-4 py-2 rounded-lg transition capitalize ${
           </section>
         )}
          {/* CHI SIAMO */}
-        {activeSection === 'chi-siamo' && (
-          <section className="py-20 px-4 bg-gradient-to-br from-blue-50 via-white to-cyan-50">
-            <div className="max-w-6xl mx-auto">
-              <h2 className="text-5xl font-bold text-center text-blue-900 mb-12">{t.aboutUs}</h2>
-              
-              <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
-                {/* Immagine Header */}
-                <div className="relative h-96 overflow-hidden">
-                  <img 
-                    src="https://raw.githubusercontent.com/andre199372/images/de1b6c5b9e6db80f7d364ba0c991d53182f326d9/panorama.jpeg"
-                    alt="Villa Maria Panorama"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent flex items-end">
-                    <div className="p-8">
-                      <h3 className="text-4xl font-bold text-white mb-2">{t.ourHistory}</h3>
-                      <p className="text-2xl text-blue-200">Villa Maria - Dal 1978</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Contenuto Storia */}
-                <div className="p-8 md:p-12 space-y-8">
-                  {/* 1978 - Gli Inizi */}
-                  <div className="flex gap-6 items-start">
-                    <div className="flex-shrink-0 w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg">
-                      1978
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="text-2xl font-bold text-blue-900 mb-3">Gli Inizi</h4>
-                      <p className="text-lg text-gray-700 leading-relaxed">
-                        È il 1978 quando Sireno Costruttore edile in una Castiglione ancora quasi sconosciuta ha un'intuizione realizzare una quadrifamigliare a Poggio Le Trincee, una dolce collina in posizione dominante vista mare.
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* La Crescita */}
-                  <div className="flex gap-6 items-start bg-blue-50 p-6 rounded-2xl">
-                    <div className="flex-shrink-0 w-20 h-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-full flex items-center justify-center shadow-lg">
-                      <Home className="text-white" size={32} />
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="text-2xl font-bold text-blue-900 mb-3">La Crescita</h4>
-                      <p className="text-lg text-gray-700 leading-relaxed">
-                        Realizza presto di aver fatto la scelta giusta. Numerose altre villette sorgono una dietro l'altra sulle pendici delle colline castiglionesi oggi in una località diventata tra le più richieste della Costa Toscana.
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Oggi - La Tradizione Continua */}
-                  <div className="flex gap-6 items-start">
-                    <div className="flex-shrink-0 w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg">
-                      <Calendar size={32} />
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="text-2xl font-bold text-blue-900 mb-3">Oggi - La Tradizione Continua</h4>
-                      <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                        Maria, moglie e madre, rende casa questo angolo di paradiso che vede crescere tra gerani e ortensie, figli e nipoti.
-                      </p>
-                      <p className="text-lg text-gray-700 leading-relaxed">
-                        <strong className="text-blue-900">Genny e Giusy</strong> custodiscono questo luogo mantenendo intatta la visione di quasi cinquanta anni fa.
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Quote decorativa */}
-                  <div className="bg-gradient-to-r from-blue-500 to-cyan-500 p-8 rounded-2xl text-white text-center shadow-xl">
-                    <p className="text-2xl md:text-3xl font-bold italic">
-                      "Un angolo di paradiso tra cielo e mare, custodito con amore da quasi 50 anni"
-                    </p>
-                  </div>
-
-                  {/* Immagini Famiglia (opzionale) */}
-                  <div className="grid md:grid-cols-3 gap-6 mt-8">
-                    <div className="rounded-xl overflow-hidden shadow-lg">
-                      <img 
-                        src="https://raw.githubusercontent.com/andre199372/images/de1b6c5b9e6db80f7d364ba0c991d53182f326d9/Vistaest.jpeg"
-                        alt="Villa Esterna"
-                        className="w-full h-64 object-cover"
-                      />
-                    </div>
-                    <div className="rounded-xl overflow-hidden shadow-lg">
-                      <img 
-                        src="https://raw.githubusercontent.com/andre199372/images/de1b6c5b9e6db80f7d364ba0c991d53182f326d9/sogg.jpeg"
-                        alt="Interno Villa"
-                        className="w-full h-64 object-cover"
-                      />
-                    </div>
-                    <div className="rounded-xl overflow-hidden shadow-lg">
-                      <img 
-                        src="https://raw.githubusercontent.com/andre199372/images/58f9c74e9a08ccedd1b47e43d21aff701ca34b7f/terr.jpeg"
-                        alt="Terrazza Vista Mare"
-                        className="w-full h-64 object-cover"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
+{activeSection === 'chi-siamo' && (
+  <section className="py-20 px-4 bg-gradient-to-br from-blue-50 via-white to-cyan-50">
+    <div className="max-w-6xl mx-auto">
+      <h2 className="text-5xl font-bold text-center text-blue-900 mb-12">{t.aboutUs}</h2>
+      
+      <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
+        {/* Immagine Header */}
+        <div className="relative h-96 overflow-hidden">
+          <img 
+            src="https://raw.githubusercontent.com/andre199372/images/de1b6c5b9e6db80f7d364ba0c991d53182f326d9/panorama.jpeg"
+            alt="Villa Maria Panorama"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent flex items-end">
+            <div className="p-8">
+              <h3 className="text-4xl font-bold text-white mb-2">{t.ourHistory}</h3>
+              <p className="text-2xl text-blue-200">Villa Maria - Dal 1978</p>
             </div>
-          </section>
-        )}
+          </div>
+        </div>
+        <div className="p-8 md:p-12">
+          <div className="prose prose-lg max-w-none">
+            <p className="text-lg text-gray-700 leading-relaxed mb-6">
+              È il 1978 quando Sireno Costruttore edile in una Castiglione ancora quasi sconosciuta ha un'intuizione realizzare una quadrifamigliare a Poggio Le Trincee, una dolce collina in posizione dominante vista mare. Abitando con la famiglia uno dei 4 appartamenti costruiti, realizza presto di aver fatto la scelta giusta, numerose altre villette sorgono una dietro l'altra sulle pendici delle colline castiglionesi, in una località diventata tra le più richieste della Costa Toscana.
+            </p>
+            <p className="text-lg text-gray-700 leading-relaxed mb-6">
+              Maria, moglie e madre, rende casa questo angolo di paradiso che vede crescere tra gerani e ortensie, figli e nipoti. Genny e Giusy custodiscono questo luogo mantenendo intatta la visione di quasi cinquanta anni fa.
+            </p>
+          </div>
+
+          {/* Quote decorativa */}
+          <div className="bg-gradient-to-r from-blue-500 to-cyan-500 p-8 rounded-2xl text-white text-center shadow-xl mt-8">
+            <p className="text-2xl md:text-3xl font-bold italic">
+              "Un angolo di paradiso tra cielo e mare, custodito con amore da quasi 50 anni"
+            </p>
+          </div>
+
+          {/* Immagini Famiglia */}
+          <div className="grid md:grid-cols-3 gap-6 mt-8">
+            <div className="rounded-xl overflow-hidden shadow-lg">
+              <img 
+                src="https://raw.githubusercontent.com/andre199372/images/de1b6c5b9e6db80f7d364ba0c991d53182f326d9/Vistaest.jpeg"
+                alt="Villa Esterna"
+                className="w-full h-64 object-cover"
+              />
+            </div>
+            <div className="rounded-xl overflow-hidden shadow-lg">
+              <img 
+                src="https://raw.githubusercontent.com/andre199372/images/de1b6c5b9e6db80f7d364ba0c991d53182f326d9/sogg.jpeg"
+                alt="Interno Villa"
+                className="w-full h-64 object-cover"
+              />
+            </div>
+            <div className="rounded-xl overflow-hidden shadow-lg">
+              <img 
+                src="https://raw.githubusercontent.com/andre199372/images/58f9c74e9a08ccedd1b47e43d21aff701ca34b7f/terr.jpeg"
+                alt="Terrazza Vista Mare"
+                className="w-full h-64 object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+)}
 
         {/* PROPRIETÀ */}
         {activeSection === 'proprieta' && (
