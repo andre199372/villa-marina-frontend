@@ -40,12 +40,10 @@ const CasaMareSite = () => {
   // Translations
   const translations = {
   it: {
-    about: "chi siamo",
     aboutUs: "Chi Siamo",
     ourHistory: "La Nostra Storia",
-    story1978: "È il 1978 quando Sireno Costruttore edile in una Castiglione ancora quasi sconosciuta ha un'intuizione realizzare una quadrifamigliare a Poggio Le Trincee, una dolce collina in posizione dominante vista mare.",
-    storyFamily: "Realizza presto di aver fatto la scelta giusta. Numerose altre villette sorgono una dietro l'altra sulle pendici delle colline castiglionesi oggi in una località diventata tra le più richieste della Costa Toscana.",
-    storyMaria: "Maria moglie e madre rende casa questo angolo di paradiso che vede crescere tra gerani e ortensie, figli e nipoti. Genny e Giusy custodiscono questo luogo mantenendo intatta la visione di quasi cinquanta anni fa.",
+    story1978: "È il 1978 quando Sireno Costruttore edile in una Castiglione ancora quasi sconosciuta ha un'intuizione realizzare una quadrifamigliare a Poggio Le Trincee, una dolce collina in posizione dominante vista mare. Abitando con la famiglia uno dei 4 appartamenti costruiti, realizza presto di aver fatto la scelta giusta, numerose altre villette sorgono una dietro l'altra sulle pendici delle colline castiglionesi, in una località diventata tra le più richieste della Costa Toscana.",
+    storyFamily: "Maria, moglie e madre, rende casa questo angolo di paradiso che vede crescere tra gerani e ortensie, figli e nipoti. Genny e Giusy custodiscono questo luogo mantenendo intatta la visione di quasi cinquanta anni fa.",
     heroTitle: "Il Tuo Rifugio Sul Mare",
     heroSubtitle: "Dove il lusso incontra l'orizzonte infinito del Mediterraneo",
     bookNow: "Prenota Ora",
@@ -205,12 +203,10 @@ const CasaMareSite = () => {
     backToHome: "Torna alla Home"
   },
   en: {
-    about: "about us",
     aboutUs: "About Us",
     ourHistory: "Our History",
-    story1978: "It was 1978 when Sireno, a builder in a still almost unknown Castiglione, had the intuition to build a four-family house in Poggio Le Trincee, a gentle hill in a dominant position overlooking the sea.",
-    storyFamily: "He soon realized he'd made the right choice. Numerous other villas now rise one after another on the slopes of the Castiglione hills, a location that has become one of the most sought-after on the Tuscan coast.",
-    storyMaria: "Maria, wife and mother, made this corner of paradise home, watching it grow among geraniums and hydrangeas, children and grandchildren. Genny and Giusy preserve this place, keeping intact the vision of almost fifty years ago.",
+    story1978: "It was 1978 when Sireno, a builder in a still almost unknown Castiglione, had the intuition to build a four-family house in Poggio Le Trincee, a gentle hill in a dominant position overlooking the sea. Living with his family in one of the 4 apartments built, he soon realized he had made the right choice. Numerous other villas now rise one after another on the slopes of the Castiglione hills, a location that has become one of the most sought-after on the Tuscan coast.",
+    storyFamily: "Maria, wife and mother, made this corner of paradise home, watching it grow among geraniums and hydrangeas, children and grandchildren. Genny and Giusy preserve this place, keeping intact the vision of almost fifty years ago.",
     heroTitle: "Your Seaside Retreat",
     heroSubtitle: "Where luxury meets the endless Mediterranean horizon",
     bookNow: "Book Now",
@@ -371,12 +367,10 @@ const CasaMareSite = () => {
     backToHome: "Back to Home"
   },
   de: {
-    about: "über uns",
     aboutUs: "Über Uns",
     ourHistory: "Unsere Geschichte",
-    story1978: "Im Jahr 1978 hatte Sireno, ein Bauunternehmer im damals noch fast unbekannten Castiglione, die Eingebung, ein Vierfamilienhaus in Poggio Le Trincee zu bauen, einem sanften Hügel in dominanter Lage mit Blick auf das Meer.",
-    storyFamily: "Er merkte bald, dass er die richtige Entscheidung getroffen hatte. Zahlreiche weitere Villen erheben sich nun an den Hängen der Hügel von Castiglione, einem Ort, der zu den begehrtesten an der toskanischen Küste zählt.",
-    storyMaria: "Maria, Ehefrau und Mutter, machte diese Ecke des Paradieses zum Zuhause und sah zu, wie sie zwischen Geranien und Hortensien, Kindern und Enkelkindern wuchs. Genny und Giusy bewahren diesen Ort und halten die Vision von vor fast fünfzig Jahren intakt.",
+    story1978: "Im Jahr 1978 hatte Sireno, ein Bauunternehmer im damals noch fast unbekannten Castiglione, die Eingebung, ein Vierfamilienhaus in Poggio Le Trincee zu bauen, einem sanften Hügel in dominanter Lage mit Blick auf das Meer. Als er mit seiner Familie in einer der 4 gebauten Wohnungen lebte, merkte er bald, dass er die richtige Entscheidung getroffen hatte. Zahlreiche weitere Villen erheben sich nun nacheinander an den Hängen der Hügel von Castiglione, einem Ort, der zu den begehrtesten an der toskanischen Küste zählt.",
+    storyFamily: "Maria, Ehefrau und Mutter, machte diese Ecke des Paradieses zum Zuhause und sah zu, wie sie zwischen Geranien und Hortensien, Kindern und Enkelkindern wuchs. Genny und Giusy bewahren diesen Ort und halten die Vision von vor fast fünfzig Jahren intakt.",
     heroTitle: "Ihr Refugium am Meer",
     heroSubtitle: "Wo Luxus auf den endlosen mediterranen Horizont trifft",
     bookNow: "Jetzt Buchen",
@@ -537,12 +531,10 @@ exclusiveRentals: "Exklusive Vermietungen am Meer",
 backToHome: "Zurück zur Startseite"
 },
 fr: {
-about: "qui sommes-nous",
 aboutUs: "Qui Sommes-Nous",
-ourHistory: "Notre Histoire",
-story1978: "C’est en 1978 que Sireno, un constructeur de Castiglione alors presque inconnu, eut l’intuition de construire une maison de quatre familles à Poggio Le Trincee, une colline douce en position dominante surplombant la mer.",
-storyFamily: "Il comprit rapidement qu'il avait fait le bon choix. De nombreuses autres villas s'élèvent désormais les unes après les autres sur les flancs des collines de Castiglione, un lieu devenu l'un des plus prisés de la côte toscane.",
-storyMaria: "Maria, épouse et mère, a fait de ce coin de paradis une maison, le regardant grandir parmi les géraniums et les hortensias, les enfants et les petits-enfants. Genny et Giusy préservent ce lieu, gardant intacte la vision d'il y a presque cinquante ans.",
+    ourHistory: "Notre Histoire",
+    story1978: "C'est en 1978 que Sireno, un constructeur de Castiglione alors presque inconnu, eut l'intuition de construire une maison de quatre familles à Poggio Le Trincee, une colline douce en position dominante surplombant la mer. Vivant avec sa famille dans l'un des 4 appartements construits, il comprit rapidement qu'il avait fait le bon choix. De nombreuses autres villas s'élèvent désormais les unes après les autres sur les flancs des collines de Castiglione, un lieu devenu l'un des plus prisés de la côte toscane.",
+    storyFamily: "Maria, épouse et mère, a fait de ce coin de paradis une maison, le regardant grandir parmi les géraniums et les hortensias, les enfants et les petits-enfants. Genny et Giusy préservent ce lieu, gardant intacte la vision d'il y a presque cinquante ans.",
 heroTitle: "Votre Refuge en Bord de Mer",
 heroSubtitle: "Où le luxe rencontre l'horizon infini de la Méditerranée",
 bookNow: "Réserver Maintenant",
@@ -1383,10 +1375,10 @@ className={`px-4 py-2 rounded-lg transition capitalize ${
         <div className="p-8 md:p-12">
           <div className="prose prose-lg max-w-none">
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              È il 1978 quando Sireno Costruttore edile in una Castiglione ancora quasi sconosciuta ha un'intuizione realizzare una quadrifamigliare a Poggio Le Trincee, una dolce collina in posizione dominante vista mare. Abitando con la famiglia uno dei 4 appartamenti costruiti, realizza presto di aver fatto la scelta giusta, numerose altre villette sorgono una dietro l'altra sulle pendici delle colline castiglionesi, in una località diventata tra le più richieste della Costa Toscana.
+             {t.story1978}
             </p>
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              Maria, moglie e madre, rende casa questo angolo di paradiso che vede crescere tra gerani e ortensie, figli e nipoti. Genny e Giusy custodiscono questo luogo mantenendo intatta la visione di quasi cinquanta anni fa.
+              {t.storyFamily}
             </p>
           </div>
 
