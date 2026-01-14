@@ -40,6 +40,12 @@ const CasaMareSite = () => {
   // Translations
   const translations = {
   it: {
+    about: "chi siamo",
+    aboutUs: "Chi Siamo",
+    ourHistory: "La Nostra Storia",
+    story1978: "È il 1978 quando Silvana Costruttore Figlia in una Castiglione antica scoprì per quasi sconosciuta ma una vivissima realizzare una quadri famiglia re e Roberto le Principessa delle collina in posizione dominante vista mare.",
+    storyFamily: "Ristruttura la famiglia abitando con la famiglia uno dei 4 appartamenti costruiti. Realizza presto di aver patio la scelta giusta numerose altro villette sorgono una dietro l'altra sulle pendici delle colline castiglionesi oggi in una località diventata tra le più richieste della Costa Toscana.",
+    storyMaria: "Maria moglie e madre rende casa questo angolo di paradiso che vede crescere tra gerani e ortensie, figli e nipoti. Genny e Giusy custodiscono questo luogo mantenendo intatta la visione di quasi cinquanta anni fa.",
     heroTitle: "Il Tuo Rifugio Sul Mare",
     heroSubtitle: "Dove il lusso incontra l'orizzonte infinito del Mediterraneo",
     bookNow: "Prenota Ora",
@@ -193,6 +199,12 @@ const CasaMareSite = () => {
     backToHome: "Torna alla Home"
   },
   en: {
+    about: "about us",
+    aboutUs: "About Us",
+    ourHistory: "Our History",
+    story1978: "It was 1978 when Silvana discovered in an ancient Castiglione, almost unknown but very lively, the dream of creating a family property on the hills in a dominant position with sea view.",
+    storyFamily: "The family renovated and lived in one of the 4 apartments built. They soon realized they had made the right choice as numerous other villas arose one after another on the slopes of the Castiglione hills, now one of the most sought-after locations on the Tuscan Coast.",
+    storyMaria: "Maria, wife and mother, made this corner of paradise home, watching it grow among geraniums and hydrangeas, children and grandchildren. Genny and Giusy preserve this place, keeping intact the vision of almost fifty years ago.",
     heroTitle: "Your Seaside Retreat",
     heroSubtitle: "Where luxury meets the endless Mediterranean horizon",
     bookNow: "Book Now",
@@ -346,6 +358,12 @@ const CasaMareSite = () => {
     backToHome: "Back to Home"
   },
   de: {
+    about: "über uns",
+    aboutUs: "Über Uns",
+    ourHistory: "Unsere Geschichte",
+    story1978: "Es war 1978, als Silvana in einem alten Castiglione, fast unbekannt aber sehr lebendig, den Traum entdeckte, ein Familienanwesen auf den Hügeln in dominanter Lage mit Meerblick zu schaffen.",
+    storyFamily: "Die Familie renovierte und lebte in einer der 4 gebauten Wohnungen. Sie erkannten bald, dass sie die richtige Wahl getroffen hatten, als zahlreiche andere Villen eine nach der anderen an den Hängen der Castiglione-Hügel entstanden, heute eine der begehrtesten Lagen an der toskanischen Küste.",
+    storyMaria: "Maria, Ehefrau und Mutter, machte diese Ecke des Paradieses zum Zuhause und sah zu, wie sie zwischen Geranien und Hortensien, Kindern und Enkelkindern wuchs. Genny und Giusy bewahren diesen Ort und halten die Vision von vor fast fünfzig Jahren intakt.",
     heroTitle: "Ihr Refugium am Meer",
     heroSubtitle: "Wo Luxus auf den endlosen mediterranen Horizont trifft",
     bookNow: "Jetzt Buchen",
@@ -499,6 +517,12 @@ exclusiveRentals: "Exklusive Vermietungen am Meer",
 backToHome: "Zurück zur Startseite"
 },
 fr: {
+about: "qui sommes-nous",
+aboutUs: "Qui Sommes-Nous",
+ourHistory: "Notre Histoire",
+story1978: "C'était en 1978 quand Silvana a découvert dans un ancien Castiglione, presque inconnu mais très vivant, le rêve de créer une propriété familiale sur les collines en position dominante avec vue sur la mer.",
+storyFamily: "La famille a rénové et vécu dans l'un des 4 appartements construits. Ils ont vite réalisé qu'ils avaient fait le bon choix alors que de nombreuses autres villas surgissaient l'une après l'autre sur les pentes des collines de Castiglione, aujourd'hui l'un des endroits les plus recherchés de la Côte Toscane.",
+storyMaria: "Maria, épouse et mère, a fait de ce coin de paradis une maison, le regardant grandir parmi les géraniums et les hortensias, les enfants et les petits-enfants. Genny et Giusy préservent ce lieu, gardant intacte la vision d'il y a presque cinquante ans.",
 heroTitle: "Votre Refuge en Bord de Mer",
 heroSubtitle: "Où le luxe rencontre l'horizon infini de la Méditerranée",
 bookNow: "Réserver Maintenant",
@@ -973,15 +997,31 @@ if (!validatePhone(formData.phone)) {
             
             {/* Desktop Menu */}
             <nav className="hidden md:flex gap-6">
-  {['home', 'property', 'gallery', 'services', 'booking', 'contacts'].map(section => (
+  {['home', 'about', 'property', 'gallery', 'services', 'booking', 'contacts'].map(section => (
     <button
       key={section}
-      onClick={() => scrollToSection(section === 'property' ? 'proprieta' : section === 'gallery' ? 'galleria' : section === 'services' ? 'servizi' : section === 'booking' ? 'prenota' : section === 'contacts' ? 'contatti' : section)}
-      className={`px-4 py-2 rounded-lg transition capitalize ${
-        activeSection === (section === 'property' ? 'proprieta' : section === 'gallery' ? 'galleria' : section === 'services' ? 'servizi' : section === 'booking' ? 'prenota' : section === 'contacts' ? 'contatti' : section)
-          ? 'bg-blue-600 text-white' 
-          : 'hover:bg-blue-700/50'
-      }`}
+      onClick={() => scrollToSection(
+  section === 'about' ? 'chi-siamo' :
+  section === 'property' ? 'proprieta' : 
+  section === 'gallery' ? 'galleria' : 
+  section === 'services' ? 'servizi' : 
+  section === 'booking' ? 'prenota' : 
+  section === 'contacts' ? 'contatti' : 
+  section
+)}
+className={`px-4 py-2 rounded-lg transition capitalize ${
+  activeSection === (
+    section === 'about' ? 'chi-siamo' :
+    section === 'property' ? 'proprieta' : 
+    section === 'gallery' ? 'galleria' : 
+    section === 'services' ? 'servizi' : 
+    section === 'booking' ? 'prenota' : 
+    section === 'contacts' ? 'contatti' : 
+    section
+  )
+    ? 'bg-blue-600 text-white' 
+    : 'hover:bg-blue-700/50'
+}`}
     >
       {t[section]}
     </button>
@@ -1000,7 +1040,7 @@ if (!validatePhone(formData.phone)) {
           {/* Mobile Menu Dropdown */}
           {showMobileMenu && (
   <nav className="md:hidden mt-4 pb-4 flex flex-col gap-2">
-    {['home', 'property', 'gallery', 'services', 'booking', 'contacts'].map(section => (
+    {['home', 'about', 'property', 'gallery', 'services', 'booking', 'contacts'].map(section => (
       <button
         key={section}
         onClick={() => scrollToSection(section === 'property' ? 'proprieta' : section === 'gallery' ? 'galleria' : section === 'services' ? 'servizi' : section === 'booking' ? 'prenota' : section === 'contacts' ? 'contatti' : section)}
@@ -1278,6 +1318,108 @@ if (!validatePhone(formData.phone)) {
     {t.bookNow}
   </button>
       </div>
+          </section>
+        )}
+         {/* CHI SIAMO */}
+        {activeSection === 'chi-siamo' && (
+          <section className="py-20 px-4 bg-gradient-to-br from-blue-50 via-white to-cyan-50">
+            <div className="max-w-6xl mx-auto">
+              <h2 className="text-5xl font-bold text-center text-blue-900 mb-12">{t.aboutUs}</h2>
+              
+              <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
+                {/* Immagine Header */}
+                <div className="relative h-96 overflow-hidden">
+                  <img 
+                    src="https://raw.githubusercontent.com/andre199372/images/de1b6c5b9e6db80f7d364ba0c991d53182f326d9/panorama.jpeg"
+                    alt="Villa Maria Panorama"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent flex items-end">
+                    <div className="p-8">
+                      <h3 className="text-4xl font-bold text-white mb-2">{t.ourHistory}</h3>
+                      <p className="text-2xl text-blue-200">Villa Maria - Dal 1978</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Contenuto Storia */}
+                <div className="p-8 md:p-12 space-y-8">
+                  {/* 1978 - Gli Inizi */}
+                  <div className="flex gap-6 items-start">
+                    <div className="flex-shrink-0 w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg">
+                      1978
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="text-2xl font-bold text-blue-900 mb-3">Gli Inizi</h4>
+                      <p className="text-lg text-gray-700 leading-relaxed">
+                        È il 1978 quando Silvana costruttore, figlia in una Castiglione antica, scoprì per quasi sconosciuta ma una vivissima realizzare una quadri famiglia re e Roberto le Principessa delle collina in posizione dominante vista mare. Ristrutturò la famiglia abitando con la famiglia uno dei 4 appartamenti costruiti.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* La Crescita */}
+                  <div className="flex gap-6 items-start bg-blue-50 p-6 rounded-2xl">
+                    <div className="flex-shrink-0 w-20 h-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-full flex items-center justify-center shadow-lg">
+                      <Home className="text-white" size={32} />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="text-2xl font-bold text-blue-900 mb-3">La Crescita</h4>
+                      <p className="text-lg text-gray-700 leading-relaxed">
+                        Realizza presto di aver patio la scelta giusta: numerose altre villette sorgono una dietro l'altra sulle pendici delle colline castiglionesi, oggi in una località diventata tra le più richieste della Costa Toscana.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Oggi - La Tradizione Continua */}
+                  <div className="flex gap-6 items-start">
+                    <div className="flex-shrink-0 w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg">
+                      <Calendar size={32} />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="text-2xl font-bold text-blue-900 mb-3">Oggi - La Tradizione Continua</h4>
+                      <p className="text-lg text-gray-700 leading-relaxed mb-4">
+                        Maria, moglie e madre, rende casa questo angolo di paradiso che vede crescere tra gerani e ortensie, figli e nipoti.
+                      </p>
+                      <p className="text-lg text-gray-700 leading-relaxed">
+                        <strong className="text-blue-900">Genny e Giusy</strong> custodiscono questo luogo mantenendo intatta la visione di quasi cinquanta anni fa.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Quote decorativa */}
+                  <div className="bg-gradient-to-r from-blue-500 to-cyan-500 p-8 rounded-2xl text-white text-center shadow-xl">
+                    <p className="text-2xl md:text-3xl font-bold italic">
+                      "Un angolo di paradiso tra cielo e mare, custodito con amore da quasi 50 anni"
+                    </p>
+                  </div>
+
+                  {/* Immagini Famiglia (opzionale) */}
+                  <div className="grid md:grid-cols-3 gap-6 mt-8">
+                    <div className="rounded-xl overflow-hidden shadow-lg">
+                      <img 
+                        src="https://raw.githubusercontent.com/andre199372/images/de1b6c5b9e6db80f7d364ba0c991d53182f326d9/Vistaest.jpeg"
+                        alt="Villa Esterna"
+                        className="w-full h-64 object-cover"
+                      />
+                    </div>
+                    <div className="rounded-xl overflow-hidden shadow-lg">
+                      <img 
+                        src="https://raw.githubusercontent.com/andre199372/images/de1b6c5b9e6db80f7d364ba0c991d53182f326d9/sogg.jpeg"
+                        alt="Interno Villa"
+                        className="w-full h-64 object-cover"
+                      />
+                    </div>
+                    <div className="rounded-xl overflow-hidden shadow-lg">
+                      <img 
+                        src="https://raw.githubusercontent.com/andre199372/images/58f9c74e9a08ccedd1b47e43d21aff701ca34b7f/terr.jpeg"
+                        alt="Terrazza Vista Mare"
+                        className="w-full h-64 object-cover"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </section>
         )}
 
