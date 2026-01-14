@@ -1065,23 +1065,35 @@ className={`px-4 py-2 rounded-lg transition capitalize ${
           </div>
 
           {/* Mobile Menu Dropdown */}
-          {showMobileMenu && (
+{showMobileMenu && (
   <nav className="md:hidden mt-4 pb-4 flex flex-col gap-2">
-    {['home', 'about', 'property', 'gallery', 'services', 'booking', 'contacts'].map(section => (
-      <button
-        key={section}
-        onClick={() => scrollToSection(section === 'property' ? 'proprieta' : section === 'gallery' ? 'galleria' : section === 'services' ? 'servizi' : section === 'booking' ? 'prenota' : section === 'contacts' ? 'contatti' : section)}
-        className={`px-4 py-3 rounded-lg transition capitalize text-left ${
-          activeSection === (section === 'property' ? 'proprieta' : section === 'gallery' ? 'galleria' : section === 'services' ? 'servizi' : section === 'booking' ? 'prenota' : section === 'contacts' ? 'contatti' : section)
-            ? 'bg-blue-600 text-white' 
-            : 'bg-blue-700/30 hover:bg-blue-700/50'
-        }`}
-      >
-        {t[section]}
-      </button>
-              ))}
-            </nav>
-          )}
+    {['home', 'about', 'property', 'gallery', 'services', 'booking', 'contacts'].map(section => {
+      const sectionMap = {
+        'about': 'chi-siamo',
+        'property': 'proprieta',
+        'gallery': 'galleria',
+        'services': 'servizi',
+        'booking': 'prenota',
+        'contacts': 'contatti'
+      };
+      const mappedSection = sectionMap[section] || section;
+      
+      return (
+        <button
+          key={section}
+          onClick={() => scrollToSection(mappedSection)}
+          className={`px-4 py-3 rounded-lg transition capitalize text-left ${
+            activeSection === mappedSection
+              ? 'bg-blue-600 text-white' 
+              : 'bg-blue-700/30 hover:bg-blue-700/50'
+          }`}
+        >
+          {t[section]}
+        </button>
+      );
+    })}
+  </nav>
+)}
         </div>
       </header>
 
