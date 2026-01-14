@@ -40,6 +40,7 @@ const CasaMareSite = () => {
   // Translations
   const translations = {
   it: {
+    about: "chi siamo",
     aboutUs: "Chi Siamo",
     ourHistory: "La Nostra Storia",
     story1978: "È il 1978 quando Sireno Costruttore edile in una Castiglione ancora quasi sconosciuta ha un'intuizione realizzare una quadrifamigliare a Poggio Le Trincee, una dolce collina in posizione dominante vista mare. Abitando con la famiglia uno dei 4 appartamenti costruiti, realizza presto di aver fatto la scelta giusta, numerose altre villette sorgono una dietro l'altra sulle pendici delle colline castiglionesi, in una località diventata tra le più richieste della Costa Toscana.",
@@ -203,6 +204,7 @@ const CasaMareSite = () => {
     backToHome: "Torna alla Home"
   },
   en: {
+    about: "about us",
     aboutUs: "About Us",
     ourHistory: "Our History",
     story1978: "It was 1978 when Sireno, a builder in a still almost unknown Castiglione, had the intuition to build a four-family house in Poggio Le Trincee, a gentle hill in a dominant position overlooking the sea. Living with his family in one of the 4 apartments built, he soon realized he had made the right choice. Numerous other villas now rise one after another on the slopes of the Castiglione hills, a location that has become one of the most sought-after on the Tuscan coast.",
@@ -367,6 +369,7 @@ const CasaMareSite = () => {
     backToHome: "Back to Home"
   },
   de: {
+    about: "über uns",
     aboutUs: "Über Uns",
     ourHistory: "Unsere Geschichte",
     story1978: "Im Jahr 1978 hatte Sireno, ein Bauunternehmer im damals noch fast unbekannten Castiglione, die Eingebung, ein Vierfamilienhaus in Poggio Le Trincee zu bauen, einem sanften Hügel in dominanter Lage mit Blick auf das Meer. Als er mit seiner Familie in einer der 4 gebauten Wohnungen lebte, merkte er bald, dass er die richtige Entscheidung getroffen hatte. Zahlreiche weitere Villen erheben sich nun nacheinander an den Hängen der Hügel von Castiglione, einem Ort, der zu den begehrtesten an der toskanischen Küste zählt.",
@@ -531,6 +534,7 @@ exclusiveRentals: "Exklusive Vermietungen am Meer",
 backToHome: "Zurück zur Startseite"
 },
 fr: {
+  about: "qui sommes-nous",
 aboutUs: "Qui Sommes-Nous",
     ourHistory: "Notre Histoire",
     story1978: "C'est en 1978 que Sireno, un constructeur de Castiglione alors presque inconnu, eut l'intuition de construire une maison de quatre familles à Poggio Le Trincee, une colline douce en position dominante surplombant la mer. Vivant avec sa famille dans l'un des 4 appartements construits, il comprit rapidement qu'il avait fait le bon choix. De nombreuses autres villas s'élèvent désormais les unes après les autres sur les flancs des collines de Castiglione, un lieu devenu l'un des plus prisés de la côte toscane.",
