@@ -116,10 +116,16 @@ const CasaMareSite = () => {
     cinCirDesc: "CIN IT053006C2RQZ6FHWS CIR 053006LTN2665",
     airConditioning: "Aria Condizionata",
     inAllRooms: "In tutte le stanze",
-    equippedKitchen: "Cucina Attrezzata",
-    completeAppliances: "Completa di elettrodomestici",
+    ceilingFans: "Ventole a Soffitto",
+    andStandingFans: "e Ventilatori",
+    equippedKitchen: "Cucina Completamente Attrezzata",
+    completeAppliances: "Con tutti gli elettrodomestici",
+    outdoorCooking: "BBQ e Forno Pizza",
+    outdoorArea: "Nell'area esterna",
     privateParking: "Parcheggio Privato",
-    safeForCar: "Sicuro per 1 auto",
+    safeForCar: "Protetto per 1 auto",
+    equippedSolarium: "Solarium Attrezzato",
+    seaViewRelax: "Vista mare panoramica",
     cleanHouse: "Casa Pulita",
     alwaysInOrder: "Sempre in Ordine",
     seaViewLiving: "Vista Mare",
@@ -273,12 +279,19 @@ const CasaMareSite = () => {
     seaView: "Panoramic sea view",
     cinCir: "CIN and CIR",
     cinCirDesc: "CIN IT053006C2RQZ6FHWS CIR 053006LTN2665",
+    servicesIncluded: "Services Included",
     airConditioning: "Air Conditioning",
     inAllRooms: "In all rooms",
-    equippedKitchen: "Equipped Kitchen",
-    completeAppliances: "Complete with appliances",
+    ceilingFans: "Ceiling Fans",
+    andStandingFans: "and Standing Fans",
+    equippedKitchen: "Fully Equipped Kitchen",
+    completeAppliances: "With all appliances",
+    outdoorCooking: "BBQ & Pizza Oven",
+    outdoorArea: "In outdoor area",
     privateParking: "Private Parking",
-    safeForCar: "Safe for 1 car",
+    safeForCar: "Protected for 1 car",
+    equippedSolarium: "Equipped Solarium",
+    seaViewRelax: "Panoramic sea view",
     cleanHouse: "Clean House",
     alwaysInOrder: "Always in Order",
     seaViewLiving: "Sea View",
@@ -432,12 +445,19 @@ const CasaMareSite = () => {
     seaView: "Panorama-Meerblick",
     cinCir: "CIN und CIR",
     cinCirDesc: "CIN IT053006C2RQZ6FHWS CIR 053006LTN2665",
+    servicesIncluded: "Enthaltene Dienstleistungen",
     airConditioning: "Klimaanlage",
     inAllRooms: "In allen Räumen",
-    equippedKitchen: "Ausgestattete Küche",
-    completeAppliances: "Komplett mit Geräten",
+    ceilingFans: "Deckenventilatoren",
+    andStandingFans: "und Standventilatoren",
+    equippedKitchen: "Voll Ausgestattete Küche",
+    completeAppliances: "Mit allen Geräten",
+    outdoorCooking: "Grill & Pizzaofen",
+    outdoorArea: "Im Außenbereich",
     privateParking: "Privatparkplatz",
-    safeForCar: "Sicher für 1 Auto",
+    safeForCar: "Geschützt für 1 Auto",
+    equippedSolarium: "Ausgestattetes Solarium",
+    seaViewRelax: "Panorama-Meerblick",
     cleanHouse: "Sauberes Haus",
     alwaysInOrder: "Immer in Ordnung",
     seaViewLiving: "Meerblick",
@@ -591,12 +611,19 @@ pool: "Piscine",
 seaView: "Vue panoramique sur la mer",
 cinCir: "CIN et CIR",
 cinCirDesc: "CIN IT053006C2RQZ6FHWS CIR 053006LTN2665",
-airConditioning: "Climatisation",
-inAllRooms: "Dans toutes les pièces",
-equippedKitchen: "Cuisine Équipée",
-completeAppliances: "Complète avec appareils",
-privateParking: "Parking Privé",
-safeForCar: "Sûr pour 1 voiture",
+servicesIncluded: "Services Inclus",
+    airConditioning: "Climatisation",
+    inAllRooms: "Dans toutes les pièces",
+    ceilingFans: "Ventilateurs de Plafond",
+    andStandingFans: "et Ventilateurs sur Pied",
+    equippedKitchen: "Cuisine Entièrement Équipée",
+    completeAppliances: "Avec tous les appareils",
+    outdoorCooking: "BBQ et Four à Pizza",
+    outdoorArea: "Dans l'espace extérieur",
+    privateParking: "Parking Privé",
+    safeForCar: "Protégé pour 1 voiture",
+    equippedSolarium: "Solarium Équipé",
+    seaViewRelax: "Vue panoramique sur la mer",
 cleanHouse: "Maison Propre",
 alwaysInOrder: "Toujours en Ordre",
 seaViewLiving: "Vue sur la Mer",
@@ -1485,21 +1512,202 @@ className={`px-4 py-2 rounded-lg transition capitalize ${
           <section className="py-20 px-4">
             <div className="max-w-6xl mx-auto">
               <h2 className="text-5xl font-bold text-center text-blue-900 mb-12">{t.servicesIncluded}</h2>
-              <div className="grid md:grid-cols-3 gap-8">
-                {[
-  { icon: Wifi, title: t.cinCir, desc: t.cinCirDesc },
-  { icon: Wind, title: t.airConditioning, desc: t.inAllRooms },
-  { icon: UtensilsCrossed, title: t.equippedKitchen, desc: t.completeAppliances },
-  { icon: Car, title: t.privateParking, desc: t.safeForCar },
-  { icon: Sparkles, title: t.cleanHouse, desc: t.alwaysInOrder },
-  { icon: Waves, title: t.seaViewLiving, desc: t.fromLivingGarden }
-].map((service, idx) => (
-                  <div key={idx} className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition border-t-4 border-blue-500">
-                    <service.icon className="text-blue-600 mb-4" size={48} />
-                    <h3 className="text-2xl font-bold text-blue-900 mb-3">{service.title}</h3>
-                    <p className="text-gray-600">{service.desc}</p>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {/* Aria Condizionata */}
+                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition border-t-4 border-blue-500">
+                  <Wind className="text-blue-600 mb-4" size={48} />
+                  <h3 className="text-2xl font-bold text-blue-900 mb-3">{t.airConditioning}</h3>
+                  <p className="text-gray-600">{t.inAllRooms}</p>
+                </div>
+
+                {/* Ventole e Ventilatori */}
+                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition border-t-4 border-cyan-500">
+                  <Wind className="text-cyan-600 mb-4" size={48} />
+                  <h3 className="text-2xl font-bold text-blue-900 mb-3">{t.ceilingFans}</h3>
+                  <p className="text-gray-600">{t.andStandingFans}</p>
+                </div>
+
+                {/* Cucina Attrezzata */}
+                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition border-t-4 border-blue-500">
+                  <UtensilsCrossed className="text-blue-600 mb-4" size={48} />
+                  <h3 className="text-2xl font-bold text-blue-900 mb-3">{t.equippedKitchen}</h3>
+                  <p className="text-gray-600">{t.completeAppliances}</p>
+                </div>
+
+                {/* BBQ e Forno Pizza */}
+                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition border-t-4 border-orange-500">
+                  <div className="text-orange-600 mb-4 text-5xl">🍕</div>
+                  <h3 className="text-2xl font-bold text-blue-900 mb-3">{t.outdoorCooking}</h3>
+                  <p className="text-gray-600">{t.outdoorArea}</p>
+                </div>
+
+                {/* Parcheggio Privato */}
+                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition border-t-4 border-blue-500">
+                  <Car className="text-blue-600 mb-4" size={48} />
+                  <h3 className="text-2xl font-bold text-blue-900 mb-3">{t.privateParking}</h3>
+                  <p className="text-gray-600">{t.safeForCar}</p>
+                </div>
+
+                {/* Solarium Attrezzato */}
+                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition border-t-4 border-yellow-500">
+                  <div className="text-yellow-600 mb-4 text-5xl">☀️</div>
+                  <h3 className="text-2xl font-bold text-blue-900 mb-3">{t.equippedSolarium}</h3>
+                  <p className="text-gray-600">{t.seaViewRelax}</p>
+                </div>
+
+                {/* CIN e CIR - manteniamo questo */}
+                <div className="bg-gradient-to-br from-blue-500 to-cyan-500 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition text-white md:col-span-2 lg:col-span-3">
+                  <div className="flex items-start gap-4">
+                    <Shield className="flex-shrink-0 mt-1" size={48} />
+                    <div>
+                      <h3 className="text-2xl font-bold mb-3">{t.cinCir}</h3>
+                      <p className="text-blue-100 text-lg">{t.cinCirDesc}</p>
+                    </div>
                   </div>
-                ))}
+                </div>
+              </div>
+
+              {/* Sezione Extra: Lista Dettagliata */}
+              <div className="mt-16 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-8 md:p-12">
+                <h3 className="text-3xl font-bold text-blue-900 mb-8 text-center">
+                  {language === 'it' ? 'Dettagli Completi' : 
+                   language === 'en' ? 'Complete Details' : 
+                   language === 'de' ? 'Vollständige Details' : 
+                   'Détails Complets'}
+                </h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="bg-white p-6 rounded-xl shadow">
+                    <h4 className="font-bold text-blue-900 mb-3 flex items-center gap-2">
+                      <Wind size={24} className="text-blue-600" />
+                      {language === 'it' ? 'Climatizzazione' : 
+                       language === 'en' ? 'Climate Control' : 
+                       language === 'de' ? 'Klimatisierung' : 
+                       'Climatisation'}
+                    </h4>
+                    <ul className="space-y-2 text-gray-700">
+                      <li className="flex items-start gap-2">
+                        <span className="text-blue-600 mt-1">✓</span>
+                        <span>{language === 'it' ? 'Aria condizionata in tutte le stanze' : 
+                               language === 'en' ? 'Air conditioning in all rooms' : 
+                               language === 'de' ? 'Klimaanlage in allen Räumen' : 
+                               'Climatisation dans toutes les pièces'}</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-blue-600 mt-1">✓</span>
+                        <span>{language === 'it' ? 'Ventole a soffitto' : 
+                               language === 'en' ? 'Ceiling fans' : 
+                               language === 'de' ? 'Deckenventilatoren' : 
+                               'Ventilateurs de plafond'}</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-blue-600 mt-1">✓</span>
+                        <span>{language === 'it' ? 'Ventilatori supplementari' : 
+                               language === 'en' ? 'Additional standing fans' : 
+                               language === 'de' ? 'Zusätzliche Standventilatoren' : 
+                               'Ventilateurs sur pied supplémentaires'}</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-white p-6 rounded-xl shadow">
+                    <h4 className="font-bold text-blue-900 mb-3 flex items-center gap-2">
+                      <UtensilsCrossed size={24} className="text-blue-600" />
+                      {language === 'it' ? 'Cucina' : 
+                       language === 'en' ? 'Kitchen' : 
+                       language === 'de' ? 'Küche' : 
+                       'Cuisine'}
+                    </h4>
+                    <ul className="space-y-2 text-gray-700">
+                      <li className="flex items-start gap-2">
+                        <span className="text-blue-600 mt-1">✓</span>
+                        <span>{language === 'it' ? 'Completamente attrezzata' : 
+                               language === 'en' ? 'Fully equipped' : 
+                               language === 'de' ? 'Komplett ausgestattet' : 
+                               'Entièrement équipée'}</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-blue-600 mt-1">✓</span>
+                        <span>{language === 'it' ? 'Tutti gli elettrodomestici' : 
+                               language === 'en' ? 'All appliances included' : 
+                               language === 'de' ? 'Alle Geräte inklusive' : 
+                               'Tous les appareils inclus'}</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-blue-600 mt-1">✓</span>
+                        <span>{language === 'it' ? 'Stoviglie complete' : 
+                               language === 'en' ? 'Complete dishware' : 
+                               language === 'de' ? 'Komplettes Geschirr' : 
+                               'Vaisselle complète'}</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-white p-6 rounded-xl shadow">
+                    <h4 className="font-bold text-blue-900 mb-3 flex items-center gap-2">
+                      <span className="text-2xl">🍕</span>
+                      {language === 'it' ? 'Area Esterna' : 
+                       language === 'en' ? 'Outdoor Area' : 
+                       language === 'de' ? 'Außenbereich' : 
+                       'Espace Extérieur'}
+                    </h4>
+                    <ul className="space-y-2 text-gray-700">
+                      <li className="flex items-start gap-2">
+                        <span className="text-blue-600 mt-1">✓</span>
+                        <span>{language === 'it' ? 'Barbecue' : 
+                               language === 'en' ? 'Barbecue' : 
+                               language === 'de' ? 'Grill' : 
+                               'Barbecue'}</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-blue-600 mt-1">✓</span>
+                        <span>{language === 'it' ? 'Forno per pizza' : 
+                               language === 'en' ? 'Pizza oven' : 
+                               language === 'de' ? 'Pizzaofen' : 
+                               'Four à pizza'}</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-blue-600 mt-1">✓</span>
+                        <span>{language === 'it' ? 'Area pranzo esterna' : 
+                               language === 'en' ? 'Outdoor dining area' : 
+                               language === 'de' ? 'Essbereich im Freien' : 
+                               'Espace repas extérieur'}</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-white p-6 rounded-xl shadow">
+                    <h4 className="font-bold text-blue-900 mb-3 flex items-center gap-2">
+                      <Car size={24} className="text-blue-600" />
+                      {language === 'it' ? 'Parcheggio & Relax' : 
+                       language === 'en' ? 'Parking & Relax' : 
+                       language === 'de' ? 'Parkplatz & Entspannung' : 
+                       'Parking & Détente'}
+                    </h4>
+                    <ul className="space-y-2 text-gray-700">
+                      <li className="flex items-start gap-2">
+                        <span className="text-blue-600 mt-1">✓</span>
+                        <span>{language === 'it' ? 'Parcheggio privato protetto per 1 auto' : 
+                               language === 'en' ? 'Protected private parking for 1 car' : 
+                               language === 'de' ? 'Geschützter Privatparkplatz für 1 Auto' : 
+                               'Parking privé protégé pour 1 voiture'}</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-blue-600 mt-1">✓</span>
+                        <span>{language === 'it' ? 'Solarium attrezzato' : 
+                               language === 'en' ? 'Equipped solarium' : 
+                               language === 'de' ? 'Ausgestattetes Solarium' : 
+                               'Solarium équipé'}</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-blue-600 mt-1">✓</span>
+                        <span>{language === 'it' ? 'Vista mare panoramica' : 
+                               language === 'en' ? 'Panoramic sea view' : 
+                               language === 'de' ? 'Panorama-Meerblick' : 
+                               'Vue panoramique sur la mer'}</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
