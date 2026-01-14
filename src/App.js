@@ -1472,8 +1472,6 @@ className={`px-4 py-2 rounded-lg transition capitalize ${
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end">
         <span className="text-white text-2xl font-bold p-4 drop-shadow-lg">{image.title}</span>
-           <span className="text-white text-2xl font-bold p-4 drop-shadow-lg">{image.title}</span>
-           <span className="text-white text-2xl font-bold p-4 drop-shadow-lg">{image.title}</span>
       </div>
     </div>
   ))}
