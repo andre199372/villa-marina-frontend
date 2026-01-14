@@ -202,8 +202,8 @@ const CasaMareSite = () => {
     about: "about us",
     aboutUs: "About Us",
     ourHistory: "Our History",
-    story1978: "It was 1978 when Silvana discovered in an ancient Castiglione, almost unknown but very lively, the dream of creating a family property on the hills in a dominant position with sea view.",
-    storyFamily: "The family renovated and lived in one of the 4 apartments built. They soon realized they had made the right choice as numerous other villas arose one after another on the slopes of the Castiglione hills, now one of the most sought-after locations on the Tuscan Coast.",
+    story1978: "It was 1978 when Sireno, a builder in a still almost unknown Castiglione, had the intuition to build a four-family house in Poggio Le Trincee, a gentle hill in a dominant position overlooking the sea.",
+    storyFamily: "He soon realized he'd made the right choice. Numerous other villas now rise one after another on the slopes of the Castiglione hills, a location that has become one of the most sought-after on the Tuscan coast.",
     storyMaria: "Maria, wife and mother, made this corner of paradise home, watching it grow among geraniums and hydrangeas, children and grandchildren. Genny and Giusy preserve this place, keeping intact the vision of almost fifty years ago.",
     heroTitle: "Your Seaside Retreat",
     heroSubtitle: "Where luxury meets the endless Mediterranean horizon",
@@ -361,8 +361,8 @@ const CasaMareSite = () => {
     about: "über uns",
     aboutUs: "Über Uns",
     ourHistory: "Unsere Geschichte",
-    story1978: "Es war 1978, als Silvana in einem alten Castiglione, fast unbekannt aber sehr lebendig, den Traum entdeckte, ein Familienanwesen auf den Hügeln in dominanter Lage mit Meerblick zu schaffen.",
-    storyFamily: "Die Familie renovierte und lebte in einer der 4 gebauten Wohnungen. Sie erkannten bald, dass sie die richtige Wahl getroffen hatten, als zahlreiche andere Villen eine nach der anderen an den Hängen der Castiglione-Hügel entstanden, heute eine der begehrtesten Lagen an der toskanischen Küste.",
+    story1978: "Im Jahr 1978 hatte Sireno, ein Bauunternehmer im damals noch fast unbekannten Castiglione, die Eingebung, ein Vierfamilienhaus in Poggio Le Trincee zu bauen, einem sanften Hügel in dominanter Lage mit Blick auf das Meer.",
+    storyFamily: "Er merkte bald, dass er die richtige Entscheidung getroffen hatte. Zahlreiche weitere Villen erheben sich nun an den Hängen der Hügel von Castiglione, einem Ort, der zu den begehrtesten an der toskanischen Küste zählt.",
     storyMaria: "Maria, Ehefrau und Mutter, machte diese Ecke des Paradieses zum Zuhause und sah zu, wie sie zwischen Geranien und Hortensien, Kindern und Enkelkindern wuchs. Genny und Giusy bewahren diesen Ort und halten die Vision von vor fast fünfzig Jahren intakt.",
     heroTitle: "Ihr Refugium am Meer",
     heroSubtitle: "Wo Luxus auf den endlosen mediterranen Horizont trifft",
@@ -520,8 +520,8 @@ fr: {
 about: "qui sommes-nous",
 aboutUs: "Qui Sommes-Nous",
 ourHistory: "Notre Histoire",
-story1978: "C'était en 1978 quand Silvana a découvert dans un ancien Castiglione, presque inconnu mais très vivant, le rêve de créer une propriété familiale sur les collines en position dominante avec vue sur la mer.",
-storyFamily: "La famille a rénové et vécu dans l'un des 4 appartements construits. Ils ont vite réalisé qu'ils avaient fait le bon choix alors que de nombreuses autres villas surgissaient l'une après l'autre sur les pentes des collines de Castiglione, aujourd'hui l'un des endroits les plus recherchés de la Côte Toscane.",
+story1978: "C’est en 1978 que Sireno, un constructeur de Castiglione alors presque inconnu, eut l’intuition de construire une maison de quatre familles à Poggio Le Trincee, une colline douce en position dominante surplombant la mer.",
+storyFamily: "Il comprit rapidement qu'il avait fait le bon choix. De nombreuses autres villas s'élèvent désormais les unes après les autres sur les flancs des collines de Castiglione, un lieu devenu l'un des plus prisés de la côte toscane.",
 storyMaria: "Maria, épouse et mère, a fait de ce coin de paradis une maison, le regardant grandir parmi les géraniums et les hortensias, les enfants et les petits-enfants. Genny et Giusy préservent ce lieu, gardant intacte la vision d'il y a presque cinquante ans.",
 heroTitle: "Votre Refuge en Bord de Mer",
 heroSubtitle: "Où le luxe rencontre l'horizon infini de la Méditerranée",
@@ -1352,7 +1352,7 @@ className={`px-4 py-2 rounded-lg transition capitalize ${
                     <div className="flex-1">
                       <h4 className="text-2xl font-bold text-blue-900 mb-3">Gli Inizi</h4>
                       <p className="text-lg text-gray-700 leading-relaxed">
-                        È il 1978 quando Silvana costruttore, figlia in una Castiglione antica, scoprì per quasi sconosciuta ma una vivissima realizzare una quadri famiglia re e Roberto le Principessa delle collina in posizione dominante vista mare. Ristrutturò la famiglia abitando con la famiglia uno dei 4 appartamenti costruiti.
+                        È il 1978 quando Sireno Costruttore edile in una Castiglione ancora quasi sconosciuta ha un'intuizione realizzare una quadrifamigliare a Poggio Le Trincee, una dolce collina in posizione dominante vista mare.
                       </p>
                     </div>
                   </div>
@@ -1365,7 +1365,7 @@ className={`px-4 py-2 rounded-lg transition capitalize ${
                     <div className="flex-1">
                       <h4 className="text-2xl font-bold text-blue-900 mb-3">La Crescita</h4>
                       <p className="text-lg text-gray-700 leading-relaxed">
-                        Realizza presto di aver patio la scelta giusta: numerose altre villette sorgono una dietro l'altra sulle pendici delle colline castiglionesi, oggi in una località diventata tra le più richieste della Costa Toscana.
+                        Realizza presto di aver fatto la scelta giusta. Numerose altre villette sorgono una dietro l'altra sulle pendici delle colline castiglionesi oggi in una località diventata tra le più richieste della Costa Toscana.
                       </p>
                     </div>
                   </div>
