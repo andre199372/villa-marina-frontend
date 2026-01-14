@@ -107,9 +107,9 @@ const CasaMareSite = () => {
     spaciousDecorated: "Spaziose e arredate",
     bathrooms: "Bagni",
     modernEquipped: "Moderni e attrezzati",
-    squareMeters: "m²",
-    pureComfort: "Di puro comfort",
-    pool: "Piscina",
+    squareMeters: "Solarium",
+    pureComfort: "Attrezzato",
+    pool: "Giardino",
     seaView: "Vista mare panoramica",
     cinCir: "CIN e CIR",
     cinCirDesc: "CIN IT053006C2RQZ6FHWS CIR 053006LTN2665",
@@ -271,9 +271,9 @@ const CasaMareSite = () => {
     spaciousDecorated: "Spacious and decorated",
     bathrooms: "Bathrooms",
     modernEquipped: "Modern and equipped",
-    squareMeters: "sqm",
-    pureComfort: "Of pure comfort",
-    pool: "Pool",
+    squareMeters: "Solarium",
+    pureComfort: "equipped",
+    pool: "Garden",
     seaView: "Panoramic sea view",
     cinCir: "CIN and CIR",
     cinCirDesc: "CIN IT053006C2RQZ6FHWS CIR 053006LTN2665",
@@ -436,9 +436,9 @@ const CasaMareSite = () => {
     spaciousDecorated: "Geräumig und eingerichtet",
     bathrooms: "Badezimmer",
     modernEquipped: "Modern und ausgestattet",
-    squareMeters: "qm",
-    pureComfort: "Purer Komfort",
-    pool: "Pool",
+    squareMeters: "Solarium",
+    pureComfort: "Ausgestattet",
+    pool: "Garten",
     seaView: "Panorama-Meerblick",
     cinCir: "CIN und CIR",
     cinCirDesc: "CIN IT053006C2RQZ6FHWS CIR 053006LTN2665",
@@ -601,9 +601,9 @@ bedrooms: "Chambres",
 spaciousDecorated: "Spacieuses et décorées",
 bathrooms: "Salles de bain",
 modernEquipped: "Modernes et équipées",
-squareMeters: "m²",
-pureComfort: "De pur confort",
-pool: "Piscine",
+squareMeters: "Solarium",
+pureComfort: "équipé",
+pool: "jardin",
 seaView: "Vue panoramique sur la mer",
 cinCir: "CIN et CIR",
 cinCirDesc: "CIN IT053006C2RQZ6FHWS CIR 053006LTN2665",
@@ -1432,17 +1432,17 @@ className={`px-4 py-2 rounded-lg transition capitalize ${
 <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
   <h3 className="text-3xl font-bold text-blue-800 mb-6">{t.unforgettableExp}</h3>
                 <p className="text-lg text-gray-700 mb-4 leading-relaxed">
-  {t.villaDescription1}
+  
 </p>
 <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-  {t.villaDescription2}
+  
 </p>
 
                 <div className="grid md:grid-cols-4 gap-6 mt-8">
   {[
-    { title: `6 ${t.bedrooms}`, desc: t.spaciousDecorated, icon: '🛏️' },
-    { title: `4 ${t.bathrooms}`, desc: t.modernEquipped, icon: '🚿' },
-    { title: `350 ${t.squareMeters}`, desc: t.pureComfort, icon: '📏' },
+    { title: `2 ${t.bedrooms}`, desc: t.spaciousDecorated, icon: '🛏️' },
+    { title: `1 ${t.bathrooms}`, desc: t.modernEquipped, icon: '🚿' },
+    { title: `${t.squareMeters}`, desc: t.pureComfort, icon: '☀️' },
     { title: t.pool, desc: t.seaView, icon: '🏊' }
   ].map((feature, idx) => (
                     <div key={idx} className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-xl border-2 border-blue-200 text-center hover:shadow-lg transition">
