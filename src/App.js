@@ -137,10 +137,10 @@ const CasaMareSite = () => {
     terrace: "Terrazza",
     octoberMay: "Ottobre - Maggio",
     juneSeptember: "Giugno - Settembre",
-    addressDetails: "Via del Mare 123\n00100 Località Marina",
+    addressDetails: "Via Montebianco 4/64\n00100 Castiglione Della Pescaia(GR)",
     telephone: "Telefono",
     hoursDetails: "Lun-Ven: 9:00 - 18:00\nSab: 9:00 - 13:00",
-    copyright: "© 2024 Casa Marè. Tutti i diritti riservati.",
+    copyright: "© 2026 Casa Marè. Tutti i diritti riservati.",
     vat: "P.IVA: 12345678901",
     notes: "Note",
     additionalNotes: "Note aggiuntive (opzionale)",
@@ -302,10 +302,10 @@ const CasaMareSite = () => {
     terrace: "Terrace",
     octoberMay: "October - May",
     juneSeptember: "June - September",
-    addressDetails: "Via del Mare 123\n00100 Località Marina",
+    addressDetails: "Via Montebianco 4/64\n00100 Castiglione Della Pescaia(GR)",
     telephone: "Phone",
     hoursDetails: "Mon-Fri: 9:00 - 18:00\nSat: 9:00 - 13:00",
-    copyright: "© 2024 Casa Marè. All rights reserved.",
+    copyright: "© 2026 Casa Marè. All rights reserved.",
     vat: "VAT: 12345678901",
     notes: "Notes",
     additionalNotes: "Additional notes (optional)",
@@ -467,10 +467,10 @@ const CasaMareSite = () => {
     terrace: "Terrasse",
     octoberMay: "Oktober - Mai",
     juneSeptember: "Juni - September",
-    addressDetails: "Via del Mare 123\n00100 Località Marina",
+    addressDetails: "Via Montebianco 4/64\n00100 Castiglione Della Pescaia(GR)",
     telephone: "Telefon",
     hoursDetails: "Mo-Fr: 9:00 - 18:00\nSa: 9:00 - 13:00",
-    copyright: "© 2024 Casa Marè. Alle Rechte vorbehalten.",
+    copyright: "© 2026 Casa Marè. Alle Rechte vorbehalten.",
     vat: "USt-IdNr.: 12345678901",
     notes: "Notizen",
     additionalNotes: "Zusätzliche Notizen (optional)",
@@ -632,10 +632,10 @@ panorama: "Panorama",
 terrace: "Terrasse",
 octoberMay: "Octobre - Mai",
 juneSeptember: "Juin - Septembre",
-addressDetails: "Via del Mare 123\n00100 Località Marina",
+addressDetails: "Via Montebianco 4/64\n00100 Castiglione Della Pescaia(GR)",
 telephone: "Téléphone",
 hoursDetails: "Lun-Ven: 9:00 - 18:00\nSam: 9:00 - 13:00",
-copyright: "© 2024 Casa Marè. Tous droits réservés.",
+copyright: "© 2026 Casa Marè. Tous droits réservés.",
 vat: "TVA: 12345678901",
 notes: "Notes",
 additionalNotes: "Notes supplémentaires (optionnel)",
@@ -1901,8 +1901,8 @@ className={`px-4 py-2 rounded-lg transition capitalize ${
                     <h3 className="text-2xl font-bold text-blue-900 mb-6">{t.information}</h3>
 <div className="space-y-4 text-gray-700">
   <p><strong>{t.address}:</strong><br/>{t.addressDetails}</p>
-  <p><strong>{t.telephone}:</strong><br/>+39 123 456 7890</p>
-  <p><strong>Email:</strong><br/>info@casamare.it</p>
+  <p><strong>{t.telephone}:</strong><br/>+39 392 566 2758</p>
+  <p><strong>Email:</strong><br/>gennylucarelli@live.it</p>
   <p><strong>{t.hours}:</strong><br/>{t.hoursDetails}</p>
 </div>
                   </div>
