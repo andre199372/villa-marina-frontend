@@ -708,7 +708,19 @@ const galleryImages = [
   { url: 'https://raw.githubusercontent.com/andre199372/images/de1b6c5b9e6db80f7d364ba0c991d53182f326d9/matr.jpeg', title: t.masterBedroom },
   { url: 'https://raw.githubusercontent.com/andre199372/images/de1b6c5b9e6db80f7d364ba0c991d53182f326d9/cuc1.jpeg', title: t.kitchen },
   { url: 'https://raw.githubusercontent.com/andre199372/images/de1b6c5b9e6db80f7d364ba0c991d53182f326d9/panorama.jpeg', title: t.panorama },
-  { url: 'https://raw.githubusercontent.com/andre199372/images/58f9c74e9a08ccedd1b47e43d21aff701ca34b7f/terr.jpeg', title: t.terrace }
+  { url: 'https://raw.githubusercontent.com/andre199372/images/58f9c74e9a08ccedd1b47e43d21aff701ca34b7f/terr.jpeg', title: t.terrace },
+  { url: 'https://raw.githubusercontent.com/andre199372/images/ff59a1322d541d6a0c4e97a04d4783a9fe97faed/Sogg2.jpeg', title: t.livingRoom },
+  { url: 'https://raw.githubusercontent.com/andre199372/images/refs/heads/main/Sogg3.jpeg', title: t.livingRoom' },
+  { url: 'https://raw.githubusercontent.com/andre199372/images/refs/heads/main/camera2.jpeg', title: 'Foto 9' },
+  { url: 'https://raw.githubusercontent.com/andre199372/images/refs/heads/main/cam3.jpeg', title: 'Foto 10' },
+  { url: 'https://raw.githubusercontent.com/andre199372/images/refs/heads/main/cam4.jpeg', title: 'Foto 11' },
+  { url: 'https://raw.githubusercontent.com/andre199372/images/refs/heads/main/cuc2.jpeg', title: 'Foto 12' },
+  { url: 'https://raw.githubusercontent.com/andre199372/images/refs/heads/main/vista2.jpeg', title: 'Foto 12' },
+  { url: 'https://raw.githubusercontent.com/andre199372/images/refs/heads/main/vista3.jpeg', title: 'Foto 12' },
+  { url: 'https://raw.githubusercontent.com/andre199372/images/refs/heads/main/vista4.jpeg', title: 'Foto 12' },
+  { url: 'https://raw.githubusercontent.com/andre199372/images/refs/heads/main/vista5.jpeg', title: 'Foto 12' },
+  { url: 'https://raw.githubusercontent.com/andre199372/images/refs/heads/main/bag1.jpeg', title: 'Foto 12' },
+  { url: 'https://raw.githubusercontent.com/andre199372/images/refs/heads/main/bag2.jpeg', title: 'Foto 12' }
 ];
   useEffect(() => {
     if (activeSection === 'prenota') {
