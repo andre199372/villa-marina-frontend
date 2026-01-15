@@ -1919,6 +1919,7 @@ className={`px-4 py-2 rounded-lg transition capitalize ${
   <p><strong>{t.telephone}:</strong><br/>+39 392 566 2758</p>
   <p><strong>Email:</strong><br/>gennylucarelli@live.it</p>
   <p><strong>{t.hours}:</strong><br/>{t.hoursDetails}</p>
+  <p><strong>Facebook:</strong><br/>src="https://www.facebook.com/share/1AuCuk24Lh"</p>
 </div>
                   </div>
 
