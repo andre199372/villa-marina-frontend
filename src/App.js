@@ -40,6 +40,7 @@ const CasaMareSite = () => {
   // Translations
   const translations = {
   it: {
+    bathroom: "Bagno",
     about: "chi siamo",
     aboutUs: "Chi Siamo",
     ourHistory: "La Nostra Storia",
@@ -369,6 +370,7 @@ const CasaMareSite = () => {
     backToHome: "Back to Home"
   },
   de: {
+    bathroom: "Bad",
     about: "über uns",
     aboutUs: "Über Uns",
     ourHistory: "Unsere Geschichte",
@@ -534,6 +536,7 @@ exclusiveRentals: "Exklusive Vermietungen am Meer",
 backToHome: "Zurück zur Startseite"
 },
 fr: {
+  bathroom: "Bain",
   about: "qui sommes-nous",
 aboutUs: "Qui Sommes-Nous",
     ourHistory: "Notre Histoire",
@@ -719,8 +722,8 @@ const galleryImages = [
   { url: 'https://raw.githubusercontent.com/andre199372/images/refs/heads/main/vista3.jpeg', title: t.externalView },
   { url: 'https://raw.githubusercontent.com/andre199372/images/refs/heads/main/vista4.jpeg', title: t.externalView },
   { url: 'https://raw.githubusercontent.com/andre199372/images/refs/heads/main/vista5.jpeg', title: t.externalView },
-  { url: 'https://raw.githubusercontent.com/andre199372/images/refs/heads/main/bag1.jpeg', title: 'Foto 12' },
-  { url: 'https://raw.githubusercontent.com/andre199372/images/refs/heads/main/bag2.jpeg', title: 'Foto 12' }
+  { url: 'https://raw.githubusercontent.com/andre199372/images/refs/heads/main/bag1.jpeg', title: t.bathroom },
+  { url: 'https://raw.githubusercontent.com/andre199372/images/refs/heads/main/bag2.jpeg', title: t.bathroom }
 ];
   useEffect(() => {
     if (activeSection === 'prenota') {
