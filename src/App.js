@@ -1919,7 +1919,13 @@ className={`px-4 py-2 rounded-lg transition capitalize ${
   <p><strong>{t.telephone}:</strong><br/>+39 392 566 2758</p>
   <p><strong>Email:</strong><br/>gennylucarelli@live.it</p>
   <p><strong>{t.hours}:</strong><br/>{t.hoursDetails}</p>
-  <p><strong>Facebook:</strong><br/>src="https://www.facebook.com/share/1AuCuk24Lh"</p>
+  <a 
+      href="https://www.facebook.com/share/1AuCuk24Lh/" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="text-blue-300 hover:text-white transition transform hover:scale-110"
+      title="Seguici su Facebook"
+    >
 </div>
                   </div>
 
