@@ -1721,14 +1721,14 @@ className={`px-4 py-2 rounded-lg transition capitalize ${
                 </div>
               )}
 
-              {/* <div className="grid md:grid-cols-2 gap-6 mb-8 max-w-4xl mx-auto">
+               <div className="grid md:grid-cols-2 gap-6 mb-8 max-w-4xl mx-auto">
                 <div className="bg-white rounded-2xl shadow-lg p-6 border-t-4 border-blue-400">
                   <div className="flex items-center gap-3 mb-4">
                     <Euro className="text-blue-600" size={28} />
                     <h3 className="text-2xl font-bold text-blue-900">{t.lowSeason}</h3>
                   </div>
                   <p className="text-gray-600 mb-2">{t.octoberMay}</p>
-                  <p className="text-4xl font-bold text-blue-600">€1.500<span className="text-xl text-gray-500">{t.perWeek}</span></p>
+                  <p className="text-4xl font-bold text-blue-600"><span className="text-xl text-gray-500">{t.perWeek}</span></p>
                 </div>
 
                 <div className="bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl shadow-lg p-6 text-white transform scale-105">
@@ -1737,9 +1737,9 @@ className={`px-4 py-2 rounded-lg transition capitalize ${
                     <h3 className="text-2xl font-bold">{t.highSeason}</h3>
                   </div>
                   <p className="mb-2 opacity-90">{t.juneSeptember}</p>
-                  <p className="text-4xl font-bold">€2.800<span className="text-xl opacity-75">{t.perWeek}</span></p>
+                  <p className="text-4xl font-bold"><span className="text-xl opacity-75">{t.perWeek}</span></p>
                 </div>
-              </div> */}
+              </div> 
 
               <div className="bg-white rounded-2xl shadow-xl p-8 max-w-4xl mx-auto">
                 <div className="flex items-center justify-between mb-6">
