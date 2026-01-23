@@ -1728,7 +1728,7 @@ className={`px-4 py-2 rounded-lg transition capitalize ${
                     <h3 className="text-2xl font-bold text-blue-900">{t.lowSeason}</h3>
                   </div>
                   <p className="text-gray-600 mb-2">{t.octoberMay}</p>
-                  <p className="text-4xl font-bold text-blue-600"><span className="text-xl text-gray-500">{t.perWeek}</span></p>
+                  <p className="text-4xl font-bold text-blue-600">200<span className="text-xl text-gray-500">{t.perWeek}</span></p>
                 </div>
 
                 <div className="bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl shadow-lg p-6 text-white transform scale-105">
@@ -1737,7 +1737,7 @@ className={`px-4 py-2 rounded-lg transition capitalize ${
                     <h3 className="text-2xl font-bold">{t.highSeason}</h3>
                   </div>
                   <p className="mb-2 opacity-90">{t.juneSeptember}</p>
-                  <p className="text-4xl font-bold"><span className="text-xl opacity-75">{t.perWeek}</span></p>
+                  <p className="text-4xl font-bold">200<span className="text-xl opacity-75">{t.perWeek}</span></p>
                 </div>
               </div> 
 
