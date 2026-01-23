@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { User, Mail, Phone, Euro, AlertCircle, CheckCircle, Calendar, Wifi, Wind, UtensilsCrossed, Car, Sparkles, Waves, X, Shield, Home, Menu } from 'lucide-react';
+import { User, Mail, Phone, Euro, AlertCircle, CheckCircle, Wind, UtensilsCrossed, Car, X, Shield, Home, Menu } from 'lucide-react';
 import { notifyAdminNewBooking } from './emailService';
 /* eslint-disable no-restricted-globals */
 const API_URL = 'https://villa-marina-api.onrender.com/api';
@@ -278,7 +278,6 @@ const CasaMareSite = () => {
     seaView: "Panoramic sea view",
     cinCir: "CIN and CIR",
     cinCirDesc: "CIN IT053006C2RQZ6FHWS CIR 053006LTN2665",
-    servicesIncluded: "Services Included",
     airConditioning: "Air Conditioning",
     inAllRooms: "",
     ceilingFans: "Ceiling Fans",
@@ -444,7 +443,6 @@ const CasaMareSite = () => {
     seaView: "Panorama-Meerblick",
     cinCir: "CIN und CIR",
     cinCirDesc: "CIN IT053006C2RQZ6FHWS CIR 053006LTN2665",
-    servicesIncluded: "Enthaltene Dienstleistungen",
     airConditioning: "Klimaanlage",
     inAllRooms: "",
     ceilingFans: "Deckenventilatoren",
@@ -610,7 +608,6 @@ pool: "jardin",
 seaView: "Vue panoramique sur la mer",
 cinCir: "CIN et CIR",
 cinCirDesc: "CIN IT053006C2RQZ6FHWS CIR 053006LTN2665",
-servicesIncluded: "Services Inclus",
     airConditioning: "Climatisation",
     inAllRooms: "",
     ceilingFans: "Ventilateurs de Plafond",
@@ -782,7 +779,7 @@ const galleryImages = [
   };
 
   const validatePhone = (phone) => {
-    const re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+    const re = /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/;
     return re.test(phone.replace(/\s/g, ''));
   };
 
@@ -932,7 +929,7 @@ if (!validatePhone(formData.phone)) {
       });
 
       if (response.ok) {
-        const result = await response.json();
+        await response.json();
         
         await notifyAdminNewBooking({
           name: formData.name,
