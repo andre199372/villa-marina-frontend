@@ -1947,9 +1947,9 @@ className={`px-4 py-2 rounded-lg transition capitalize ${
                  'Centre Historique'}
               </h4>
               <p className="text-gray-600">
-                {language === 'it' ? '5 minuti in auto' : 
-                 language === 'en' ? '5 min by car' : 
-                 language === 'de' ? '5 Min. mit dem Auto' : 
+                {language === 'it' ? '2 minuti in auto' : 
+                 language === 'en' ? '2 min by car' : 
+                 language === 'de' ? '2 Min. mit dem Auto' : 
                  '10 min en voiture'}
               </p>
             </div>
