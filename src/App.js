@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { User, Mail, Phone, Euro, AlertCircle, CheckCircle, Wind, UtensilsCrossed, Car, X, Shield, Home, Menu } from 'lucide-react';
+import { User, Mail, Phone, AlertCircle, CheckCircle, Wind, UtensilsCrossed, Car, X, Shield, Home, Menu } from 'lucide-react';
 import { notifyAdminNewBooking } from './emailService';
 /* eslint-disable no-restricted-globals */
 const API_URL = 'https://villa-marina-api.onrender.com/api';
