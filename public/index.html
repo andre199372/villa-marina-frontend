@@ -2,62 +2,172 @@
 <html lang="it">
   <head>
     <meta charset="utf-8" />
-   <link rel="icon" type="image/svg+xml" href="%PUBLIC_URL%/favicon.svg" />
-<link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="%PUBLIC_URL%/favicon.svg" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#1e3a8a" />
-    <meta
-      name="description"
-      content="Villa Maria - Affitti esclusivi sul Mediterraneo. Prenota la tua vacanza da sogno."
-    />
-    <meta name="keywords" content="villa mare, casa vacanze mare, affitto settimanale" />
+    
+    <!-- SEO Meta Tags -->
+    <title>Villa Maria - Casa Mare Castiglione della Pescaia | Affitti Vacanze Toscana</title>
+    <meta name="description" content="Villa Maria, splendida casa vacanze a Castiglione della Pescaia. Vista mare panoramica, 2 camere, giardino attrezzato, BBQ e forno pizza. Prenota la tua vacanza da sogno in Toscana sul Mediterraneo." />
+    <meta name="keywords" content="villa castiglione pescaia, affitto vacanze toscana, casa mare grosseto, villa vista mare, affitto settimanale castiglione, casa vacanze maremma, villa con giardino toscana, vacanze mare toscana, poggio le trincee, CIN IT053006C2RQZ6FHWS, affitto casa mare toscana, villa mediterraneo" />
     <meta name="author" content="Villa Maria" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Canonical URL - SOSTITUISCI CON IL TUO DOMINIO QUANDO LO HAI -->
+    <link rel="canonical" href="https://villamaria-castiglione.netlify.app" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Villa Maria" />
-    <meta property="og:description" content=" Affitti esclusivi sul Mediterraneo." />
-    <meta property="og:image" content="%PUBLIC_URL%/og-image.jpg" />
+    <meta property="og:url" content="https://villamaria-castiglione.netlify.app" />
+    <meta property="og:title" content="Villa Maria - Casa Vacanze Castiglione della Pescaia" />
+    <meta property="og:description" content="Splendida villa con vista mare panoramica a Castiglione della Pescaia. 2 camere, giardino attrezzato, BBQ, forno pizza. La tua vacanza da sogno in Toscana." />
+    <meta property="og:image" content="https://raw.githubusercontent.com/andre199372/images/de1b6c5b9e6db80f7d364ba0c991d53182f326d9/panorama.jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="it_IT" />
+    <meta property="og:site_name" content="Villa Maria" />
     
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content="Villa Maria" />
-    <meta property="twitter:description" content="Affitti esclusivi sul Mediterraneo." />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Villa Maria - Casa Vacanze Castiglione della Pescaia" />
+    <meta name="twitter:description" content="Splendida villa con vista mare a Castiglione della Pescaia. Prenota la tua vacanza in Toscana." />
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/andre199372/images/de1b6c5b9e6db80f7d364ba0c991d53182f326d9/panorama.jpeg" />
     
+    <!-- Favicons -->
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png" />
     
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
+    <!-- Manifest -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
+    
+    <!-- Structured Data (Schema.org) per Google Rich Results -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VacationRental",
+      "name": "Villa Maria",
+      "alternateName": "Casa Mare Castiglione della Pescaia",
+      "description": "Splendida casa vacanze a Castiglione della Pescaia con vista mare panoramica, 2 camere da letto, giardino attrezzato, BBQ e forno pizza. Perfetta per famiglie e gruppi fino a 8 persone.",
+      "url": "https://villamaria-castiglione.netlify.app",
+      "telephone": "+39-392-566-2758",
+      "email": "gennylucarelli@live.it",
+      "image": [
+        "https://raw.githubusercontent.com/andre199372/images/de1b6c5b9e6db80f7d364ba0c991d53182f326d9/Vistaest.jpeg",
+        "https://raw.githubusercontent.com/andre199372/images/de1b6c5b9e6db80f7d364ba0c991d53182f326d9/panorama.jpeg",
+        "https://raw.githubusercontent.com/andre199372/images/de1b6c5b9e6db80f7d364ba0c991d53182f326d9/sogg.jpeg"
+      ],
+      "priceRange": "€€",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Via Montebianco 4/64",
+        "addressLocality": "Castiglione della Pescaia",
+        "addressRegion": "Toscana",
+        "postalCode": "58043",
+        "addressCountry": "IT"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "42.767416",
+        "longitude": "10.877399"
+      },
+      "amenityFeature": [
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Aria Condizionata",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Cucina Attrezzata",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "BBQ e Forno Pizza",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Parcheggio Privato",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Vista Mare",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Giardino",
+          "value": true
+        }
+      ],
+      "numberOfRooms": 2,
+      "occupancy": {
+        "@type": "QuantitativeValue",
+        "maxValue": 8
+      },
+      "checkinTime": "15:00",
+      "checkoutTime": "10:00"
+    }
+    </script>
+    
+    <!-- Local Business Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LodgingBusiness",
+      "name": "Villa Maria",
+      "image": "https://raw.githubusercontent.com/andre199372/images/de1b6c5b9e6db80f7d364ba0c991d53182f326d9/panorama.jpeg",
+      "@id": "https://villamaria-castiglione.netlify.app",
+      "url": "https://villamaria-castiglione.netlify.app",
+      "telephone": "+39-392-566-2758",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Via Montebianco 4/64",
+        "addressLocality": "Castiglione della Pescaia",
+        "postalCode": "58043",
+        "addressCountry": "IT"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 42.767416,
+        "longitude": 10.877399
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+        "https://www.facebook.com/share/1AuCuk24Lh/"
+      ]
+    }
+    </script>
+    
+    <!-- Google Analytics - AGGIUNGI QUI IL TUO CODICE GA4 QUANDO LO CREI -->
+    <!-- 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
     -->
-   <title>Villa Maria - Casa Mare Castiglione della Pescaia | Affitti Vacanze</title>
-<meta name="description" content="Villa Maria, splendida casa vacanze a Castiglione della Pescaia. Vista mare, 2 camere, giardino attrezzato. Prenota la tua vacanza in Toscana.">
-<meta name="keywords" content="villa castiglione pescaia, affitto vacanze toscana, casa mare grosseto, villa vista mare">
-<meta property="og:title" content="Villa Maria - Casa Vacanze Castiglione della Pescaia">
-<meta property="og:description" content="Splendida villa con vista mare a Castiglione della Pescaia">
-<meta property="og:image" content="https://raw.githubusercontent.com/andre199372/images/de1b6c5b9e6db80f7d364ba0c991d53182f326d9/panorama.jpeg">
+    
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>Per utilizzare Villa Maria è necessario abilitare JavaScript nel browser.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
 </html>
