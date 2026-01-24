@@ -1783,11 +1783,18 @@ className={`px-4 py-2 rounded-lg transition capitalize ${
               </div>
 
               {showBookingForm && (
-                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-                  <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full max-h-[90vh] overflow-y-auto">
-                    <h3 className="text-2xl font-bold text-blue-900 mb-6">{t.completeBooking}</h3>
-                    
-                    <div className="space-y-4">
+  <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+    <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full max-h-[90vh] overflow-y-auto">
+      <h3 className="text-2xl font-bold text-blue-900 mb-6">{t.completeBooking}</h3>
+      
+      {error && (
+        <div className="mb-4 bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg flex items-start gap-3">
+          <AlertCircle className="text-red-500 flex-shrink-0 mt-0.5" size={20} />
+          <p className="text-red-700 text-sm">{error}</p>
+        </div>
+      )}
+      
+      <div className="space-y-4">
                       <div>
                         <label className="block text-gray-700 font-semibold mb-2">
   <User className="inline mr-2" size={18} />
