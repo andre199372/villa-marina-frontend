@@ -1886,7 +1886,91 @@ className={`px-4 py-2 rounded-lg transition capitalize ${
             </div>
           </section>
         )}
-
+{/* MAPPA */}
+{activeSection === 'mappa' && (
+  <section className="py-20 px-4">
+    <div className="max-w-6xl mx-auto">
+      <h2 className="text-5xl font-bold text-center text-blue-900 mb-12">
+        {language === 'it' ? 'Dove Siamo' : 
+         language === 'en' ? 'Where We Are' : 
+         language === 'de' ? 'Wo Wir Sind' : 
+         'Où Nous Sommes'}
+      </h2>
+      
+      <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
+        <div className="p-6 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
+          <h3 className="text-2xl font-bold mb-2">Villa Maria</h3>
+          <p className="text-blue-200">Via Montebianco 4/64, 58043 Castiglione Della Pescaia (GR)</p>
+        </div>
+        
+        <div className="h-[500px] w-full">
+          <iframe 
+            src="https://www.google.com/maps/place/Via+Monte+Bianco,+4,+58043+Castiglione+della+Pescaia+GR/@42.766572,10.8753447,17z/data=!4m6!3m5!1s0x1329ceda3d6dbe3b:0x8515901c95071347!8m2!3d42.7665602!4d10.8777694!16s%2Fg%2F11csnrh755?entry=ttu&g_ep=EgoyMDI2MDEyMS4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D"
+            width="100%" 
+            height="100%" 
+            style={{ border: 0 }}
+            allowFullScreen="" 
+            loading="lazy" 
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Mappa Villa Maria"
+          />
+        </div>
+        
+        <div className="p-6 bg-gray-50">
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="text-center">
+              <div className="text-blue-600 text-4xl mb-2">🏖️</div>
+              <h4 className="font-bold text-blue-900 mb-1">
+                {language === 'it' ? 'Spiaggia' : 
+                 language === 'en' ? 'Beach' : 
+                 language === 'de' ? 'Strand' : 
+                 'Plage'}
+              </h4>
+              <p className="text-gray-600">
+                {language === 'it' ? '5 minuti a piedi' : 
+                 language === 'en' ? '5 min walk' : 
+                 language === 'de' ? '5 Min. zu Fuß' : 
+                 '5 min à pied'}
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="text-blue-600 text-4xl mb-2">🏛️</div>
+              <h4 className="font-bold text-blue-900 mb-1">
+                {language === 'it' ? 'Centro Storico' : 
+                 language === 'en' ? 'Historic Center' : 
+                 language === 'de' ? 'Altstadt' : 
+                 'Centre Historique'}
+              </h4>
+              <p className="text-gray-600">
+                {language === 'it' ? '10 minuti in auto' : 
+                 language === 'en' ? '10 min by car' : 
+                 language === 'de' ? '10 Min. mit dem Auto' : 
+                 '10 min en voiture'}
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="text-blue-600 text-4xl mb-2">🛒</div>
+              <h4 className="font-bold text-blue-900 mb-1">
+                {language === 'it' ? 'Supermercato' : 
+                 language === 'en' ? 'Supermarket' : 
+                 language === 'de' ? 'Supermarkt' : 
+                 'Supermarché'}
+              </h4>
+              <p className="text-gray-600">
+                {language === 'it' ? '3 minuti in auto' : 
+                 language === 'en' ? '3 min by car' : 
+                 language === 'de' ? '3 Min. mit dem Auto' : 
+                 '3 min en voiture'}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+)}
         {/* CONTATTI */}
         {activeSection === 'contatti' && (
           <section className="py-20 px-4">
