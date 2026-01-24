@@ -1457,7 +1457,7 @@ className={`px-4 py-2 rounded-lg transition capitalize ${
                 <div className="grid md:grid-cols-4 gap-6 mt-8">
   {[
     { title: `2 ${t.bedrooms}`, desc: t.spaciousDecorated, icon: '🛏️' },
-    { title: `1 ${t.bathrooms}`, desc: t.modernEquipped, icon: '🚿' },
+    { title: `1 ${t.bathroom}`, desc: t.modernEquipped, icon: '🚿' },
     { title: `${t.squareMeters}`, desc: t.pureComfort, icon: '☀️' },
     { title: t.pool, desc: t.seaView, icon: '🌳' }
   ].map((feature, idx) => (
