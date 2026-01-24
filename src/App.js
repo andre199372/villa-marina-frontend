@@ -1836,9 +1836,9 @@ className={`px-4 py-2 rounded-lg transition capitalize ${
                         </select>
                       </div>
 
-                      <div className="bg-blue-50 p-4 rounded-lg">
+                         {/*<div className="bg-blue-50 p-4 rounded-lg">
                         <p className="text-lg font-bold text-blue-900">{t.total}: €{calculatePrice()}</p>
-                      </div>
+                      </div>  */}
 
                       <div className="border-t-2 border-gray-200 pt-4">
                         <label className="flex items-start gap-3 cursor-pointer">
