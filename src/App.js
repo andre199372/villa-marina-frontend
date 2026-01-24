@@ -1931,9 +1931,9 @@ className={`px-4 py-2 rounded-lg transition capitalize ${
                  'Plage'}
               </h4>
               <p className="text-gray-600">
-                {language === 'it' ? '5 minuti a piedi' : 
-                 language === 'en' ? '5 min walk' : 
-                 language === 'de' ? '5 Min. zu Fuß' : 
+                {language === 'it' ? '12 minuti a piedi' : 
+                 language === 'en' ? '12 min walk' : 
+                 language === 'de' ? '12 Min. zu Fuß' : 
                  '5 min à pied'}
               </p>
             </div>
@@ -1947,9 +1947,9 @@ className={`px-4 py-2 rounded-lg transition capitalize ${
                  'Centre Historique'}
               </h4>
               <p className="text-gray-600">
-                {language === 'it' ? '10 minuti in auto' : 
-                 language === 'en' ? '10 min by car' : 
-                 language === 'de' ? '10 Min. mit dem Auto' : 
+                {language === 'it' ? '5 minuti in auto' : 
+                 language === 'en' ? '5 min by car' : 
+                 language === 'de' ? '5 Min. mit dem Auto' : 
                  '10 min en voiture'}
               </p>
             </div>
