@@ -40,6 +40,7 @@ const CasaMareSite = () => {
   // Translations
   const translations = {
   it: {
+    mappa: "mappa",
     bathroom: "Bagno",
     about: "chi siamo",
     aboutUs: "Chi Siamo",
@@ -205,6 +206,7 @@ const CasaMareSite = () => {
     backToHome: "Torna alla Home"
   },
   en: {
+    mappa: "map",
     about: "about us",
     aboutUs: "About Us",
     ourHistory: "Our History",
@@ -369,6 +371,7 @@ const CasaMareSite = () => {
     backToHome: "Back to Home"
   },
   de: {
+    mappa: "karte",
     bathroom: "Bad",
     about: "über uns",
     aboutUs: "Über Uns",
@@ -534,6 +537,7 @@ exclusiveRentals: "Exklusive Vermietungen am Meer",
 backToHome: "Zurück zur Startseite"
 },
 fr: {
+  mappa: "carte",
   bathroom: "Bain",
   about: "qui sommes-nous",
 aboutUs: "Qui Sommes-Nous",
@@ -1032,7 +1036,7 @@ if (!validatePhone(formData.phone)) {
             
             {/* Desktop Menu */}
             <nav className="hidden md:flex gap-6">
-  {['home', 'about', 'property', 'gallery', 'services', 'booking', 'contacts'].map(section => (
+  {['home', 'about', 'property', 'gallery', 'services', 'booking', 'mappa','contacts'].map(section => (
     <button
       key={section}
       onClick={() => scrollToSection(
@@ -1075,7 +1079,7 @@ className={`px-4 py-2 rounded-lg transition capitalize ${
           {/* Mobile Menu Dropdown */}
 {showMobileMenu && (
   <nav className="md:hidden mt-4 pb-4 flex flex-col gap-2">
-    {['home', 'about', 'property', 'gallery', 'services', 'booking', 'contacts'].map(section => {
+    {['home', 'about', 'property', 'gallery', 'services', 'booking','mappa', 'contacts'].map(section => {
       const sectionMap = {
         'about': 'chi-siamo',
         'property': 'proprieta',
