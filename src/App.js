@@ -1851,6 +1851,18 @@ className={`px-4 py-2 rounded-lg transition capitalize ${
                         <p className="text-lg font-bold text-blue-900">{t.total}: €{calculatePrice()}</p>
                       </div>  */}
 
+                       <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg">
+                        <div className="flex items-start gap-3">
+                          <AlertCircle className="text-blue-600 flex-shrink-0 mt-0.5" size={20} />
+                          <p className="text-blue-800 text-sm">
+                            {language === 'it' ? 'Questa è una richiesta di prenotazione. Riceverai una conferma via email entro 24 ore.' :
+                             language === 'en' ? 'This is a booking request. You will receive confirmation via email within 24 hours.' :
+                             language === 'de' ? 'Dies ist eine Buchungsanfrage. Sie erhalten innerhalb von 24 Stunden eine Bestätigung per E-Mail.' :
+                             'Ceci est une demande de réservation. Vous recevrez une confirmation par email dans les 24 heures.'}
+                          </p>
+                        </div>
+                      </div>
+
                       <div className="border-t-2 border-gray-200 pt-4">
                         <label className="flex items-start gap-3 cursor-pointer">
                           <input
