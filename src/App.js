@@ -152,8 +152,8 @@ const CasaMareSite = () => {
     accept: "Accetta",
     privacyTitle: "Informativa Privacy",
     dataController: "1. Titolare del Trattamento",
-    dataControllerText: "Villa Maria S.r.l., con sede in Via del Mare 123, 00100 Località Marina",
-    dataControllerContact: "Email: privacy@casamare.it | Tel: +39 123 456 7890",
+    dataControllerText: "",
+    dataControllerContact: "Email: gennylucarelli@live.it | Tel: +39 392 566 2758",
     dataCollected: "2. Dati Raccolti",
     dataCollectedText: "Raccogliamo i seguenti dati personali:",
     dataCollectedList: ["Nome e cognome", "Indirizzo email", "Numero di telefono", "Date di prenotazione e numero ospiti", "Eventuali note o richieste specifiche"],
@@ -316,8 +316,8 @@ const CasaMareSite = () => {
     accept: "Accept",
     privacyTitle: "Privacy Policy",
     dataController: "1. Data Controller",
-    dataControllerText: "Casa Marè S.r.l., located at Via del Mare 123, 00100 Località Marina",
-    dataControllerContact: "Email: privacy@casamare.it | Tel: +39 123 456 7890",
+    dataControllerText: "",
+    dataControllerContact: "Email: gennylucarelli@live.it | Tel: +39 392 566 2758",
     dataCollected: "2. Data Collected",
     dataCollectedText: "We collect the following personal data:",
     dataCollectedList: ["Name and surname", "Email address", "Phone number", "Booking dates and number of guests", "Any notes or specific requests"],
@@ -481,8 +481,8 @@ const CasaMareSite = () => {
     accept: "Akzeptieren",
     privacyTitle: "Datenschutzerklärung",
     dataController: "1. Verantwortlicher für die Datenverarbeitung",
-    dataControllerText: "Casa Marè S.r.l., mit Sitz in Via del Mare 123, 00100 Località Marina",
-    dataControllerContact: "E-Mail: privacy@casamare.it | Tel: +39 123 456 7890",
+    dataControllerText: "",
+    dataControllerContact: "Email: gennylucarelli@live.it | Tel: +39 392 566 2758",
     dataCollected: "2. Erhobene Daten",
     dataCollectedText: "Wir erheben folgende personenbezogene Daten:",
     dataCollectedList: ["Name und Nachname", "E-Mail-Adresse", "Telefonnummer", "Buchungsdaten und Anzahl der Gäste", "Eventuelle Notizen oder spezielle Anfragen"],
@@ -646,8 +646,8 @@ decline: "Refuser",
 accept: "Accepter",
 privacyTitle: "Politique de Confidentialité",
 dataController: "1. Responsable du Traitement",
-dataControllerText: "Casa Marè S.r.l., située à Via del Mare 123, 00100 Località Marina",
-dataControllerContact: "E-mail: privacy@casamare.it | Tél: +39 123 456 7890",
+dataControllerText: "",
+dataControllerContact: "Email: gennylucarelli@live.it | Tel: +39 392 566 2758",
 dataCollected: "2. Données Collectées",
 dataCollectedText: "Nous collectons les données personnelles suivantes:",
 dataCollectedList: ["Nom et prénom", "Adresse e-mail", "Numéro de téléphone", "Dates de réservation et nombre d'invités", "Éventuelles notes ou demandes spécifiques"],
@@ -2008,7 +2008,6 @@ className={`px-4 py-2 rounded-lg transition capitalize ${
     >
       {t.cookiePolicy}
     </button>
-    <span>|</span>
     {/*<span>{t.vat}</span>*/}
   </div>
 </footer>
