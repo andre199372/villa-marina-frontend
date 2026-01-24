@@ -2009,7 +2009,7 @@ className={`px-4 py-2 rounded-lg transition capitalize ${
       {t.cookiePolicy}
     </button>
     <span>|</span>
-    <span>{t.vat}</span>
+    {/*<span>{t.vat}</span>*/}
   </div>
 </footer>
     </div>
