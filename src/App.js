@@ -1480,11 +1480,11 @@ className={`px-4 py-2 rounded-lg transition capitalize ${
               <h2 className="text-5xl font-bold text-center text-blue-900 mb-12">{t.photoGallery}</h2>
               <div className="grid md:grid-cols-3 gap-6">
   {galleryImages.map((image, idx) => (
-    <div key={idx} className="group relative h-64 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition transform hover:scale-105">
+    <div key={idx} className="group relative h-64 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition transform hover:scale-105 bg-gray-100">
       <img 
         src={image.url} 
         alt={image.title}
-        className="w-full h-full object-cover"
+        className={`w-full h-full ${idx === 3 ? 'object-contain' : 'object-cover'}`}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end">
         <span className="text-white text-2xl font-bold p-4 drop-shadow-lg">{image.title}</span>
