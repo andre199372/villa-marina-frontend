@@ -46,19 +46,25 @@
     <!-- Structured Data (Schema.org) per Google Rich Results -->
     <script type="application/ld+json">
     {
-      "identifier": "IT053006C2RQZ6FHWS",
       "@context": "https://schema.org",
       "@type": "VacationRental",
       "name": "Villa Maria",
+      "identifier": "IT053006C2RQZ6FHWS",
       "alternateName": "Casa Mare Castiglione della Pescaia",
+      "additionalType": "https://schema.org/House",
       "description": "Splendida casa vacanze a Castiglione della Pescaia con vista mare panoramica, 2 camere da letto, giardino attrezzato, BBQ e forno pizza. Perfetta per famiglie e gruppi fino a 8 persone.",
-      "url": "https://villamaria-castiglione.netlify.app",
+      "url": "https://villamaria-castiglione.it",
       "telephone": "+39-392-566-2758",
       "email": "gennylucarelli@live.it",
       "image": [
         "https://raw.githubusercontent.com/andre199372/images/de1b6c5b9e6db80f7d364ba0c991d53182f326d9/Vistaest.jpeg",
         "https://raw.githubusercontent.com/andre199372/images/de1b6c5b9e6db80f7d364ba0c991d53182f326d9/panorama.jpeg",
-        "https://raw.githubusercontent.com/andre199372/images/de1b6c5b9e6db80f7d364ba0c991d53182f326d9/sogg.jpeg"
+        "https://raw.githubusercontent.com/andre199372/images/de1b6c5b9e6db80f7d364ba0c991d53182f326d9/sogg.jpeg",
+        "https://raw.githubusercontent.com/andre199372/images/de1b6c5b9e6db80f7d364ba0c991d53182f326d9/matr.jpeg",
+        "https://raw.githubusercontent.com/andre199372/images/de1b6c5b9e6db80f7d364ba0c991d53182f326d9/cuc1.jpeg",
+        "https://raw.githubusercontent.com/andre199372/images/58f9c74e9a08ccedd1b47e43d21aff701ca34b7f/terr.jpeg",
+        "https://raw.githubusercontent.com/andre199372/images/ff59a1322d541d6a0c4e97a04d4783a9fe97faed/Sogg2.jpeg",
+        "https://raw.githubusercontent.com/andre199372/images/refs/heads/main/vista2.jpeg"
       ],
       "priceRange": "€€",
       "address": {
@@ -106,17 +112,21 @@
           "value": true
         }
       ],
-      "containsPlace": [
-    { "@type": "Room", "name": "Camera Matrimoniale", "occupancy": { "@type": "QuantitativeValue", "maxValue": 2 } },
-    { "@type": "Room", "name": "Camera Doppia", "occupancy": { "@type": "QuantitativeValue", "maxValue": 2 } }
-  ],
       "numberOfRooms": 2,
+      "numberOfBedrooms": 2,
+      "numberOfBathroomsTotal": 1,
+      "floorSize": {
+        "@type": "QuantitativeValue",
+        "value": 80,
+        "unitCode": "MTK"
+      },
       "occupancy": {
         "@type": "QuantitativeValue",
+        "value": 4,
         "maxValue": 8
       },
-      "checkinTime": "15:00",
-      "checkoutTime": "10:00"
+      "checkinTime": "15:00:00",
+      "checkoutTime": "10:00:00"
     }
     </script>
     
@@ -127,13 +137,15 @@
       "@type": "LodgingBusiness",
       "name": "Villa Maria",
       "image": "https://raw.githubusercontent.com/andre199372/images/de1b6c5b9e6db80f7d364ba0c991d53182f326d9/panorama.jpeg",
-      "@id": "https://villamaria-castiglione.netlify.app",
-      "url": "https://villamaria-castiglione.netlify.app",
+      "@id": "https://villamaria-castiglione.it",
+      "url": "https://villamaria-castiglione.it",
       "telephone": "+39-392-566-2758",
+      "email": "gennylucarelli@live.it",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Via Montebianco 4/64",
         "addressLocality": "Castiglione della Pescaia",
+        "addressRegion": "Toscana",
         "postalCode": "58043",
         "addressCountry": "IT"
       },
@@ -154,6 +166,7 @@
         "opens": "09:00",
         "closes": "18:00"
       },
+      "priceRange": "€€",
       "sameAs": [
         "https://www.facebook.com/share/1AuCuk24Lh/"
       ]
